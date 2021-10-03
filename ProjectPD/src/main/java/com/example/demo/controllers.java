@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @author matias
  */
 @Controller
-public class saludo {
+public class controllers {
     @GetMapping("/")
         String Saludar() {
         return "Saludar";
@@ -26,6 +26,10 @@ public class saludo {
     @GetMapping("/Ingresar")
     String Ingresar(){
         return "Ingresar";
+    }
+    @GetMapping("/Admin")
+    String IngresarAdmin(){
+        return "IngresarAdmin";
     }
 }
 
