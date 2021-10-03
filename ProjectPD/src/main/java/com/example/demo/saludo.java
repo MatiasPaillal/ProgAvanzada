@@ -18,6 +18,10 @@ public class saludo {
         String Saludar() {
         return "Saludar";
     }
+    @GetMapping("/fondo")
+    String Cliente_Categorias(){
+        return "Cliente_Categorias";
+    }
 }
 
     
