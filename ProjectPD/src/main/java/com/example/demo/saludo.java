@@ -22,6 +22,11 @@ public class saludo {
     String Cliente_Categorias(){
         return "Cliente_Categorias";
     }
+    
+    @GetMapping("/Ingresar")
+    String Ingresar(){
+        return "Ingresar";
+    }
 }
 
     
