@@ -86,5 +86,14 @@ public class controllers {
             return "Admin_Boletas";
          
     }
+    @RequestMapping(value = "opciones", method = RequestMethod.POST)
+    public String guardarProducto(String nombre) {
+        if ("coca-cola".equals(nombre)) {
+            return "AccionIncompleta";}
+        return "AccionCompletada";
+         
+            
+         
+    }
 
 }
