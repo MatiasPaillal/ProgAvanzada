@@ -36,7 +36,7 @@ public class controllers {
         return "Saludar";
     }
 
-    @GetMapping("/fondo")
+    @GetMapping("/Cliente_Categorias")
     String Cliente_Categorias() {
         return "Cliente_Categorias";
     }
