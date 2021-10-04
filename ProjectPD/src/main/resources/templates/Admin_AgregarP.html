@@ -40,14 +40,14 @@ and open the template in the editor.
         <script>
 
         </script>
-        <form method="POST" action="buscarBoleta" style="text-align:center">
+        <form method="POST" action="opciones" style="text-align:center">
             <br><br><br><br><br><br><br>
 
 
             <table style="margin: 0 auto; text-align: right; font-size: x-large">
                 <tr>
                     <td style="width: 30%">Nombre del producto: </td>
-                    <td><input type="text" name="nombre" class="imput" style="width: 90%"/></td>
+                    <td><input id="nombre" type="text" name="nombre" class="imput" style="width: 90%"/></td>
                 </tr>
                 <tr>
                     <td style="width: 30%">Precio:</td>
@@ -66,9 +66,22 @@ and open the template in the editor.
             <br><br>
 
             
-            <input type="submit" value="Agregar producto" class="button">
-
+            <input id="agregarP" type="submit" value="Agregar producto" class="button">
+ >
 
         </form> 
+        <script type="text/javascript">
+        var nombre = document.getElementById('nombre');
+        aagregar.disabled = true;
+nombre.disabled = true;
+ if(nombre=='hola'){
+  
+alert("MENSAJE");
+ btnEnviar.disabled = false;
+ }else{
+ alert("MENSAJEw");
+ btnEnviar.disabled = false;
+ }
+</script>
     </body>
 </html>
