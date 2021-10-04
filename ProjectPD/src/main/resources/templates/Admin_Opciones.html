@@ -5,52 +5,40 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <style>
-    .button {
-        background-color: #660099;
-    border: black;
-    color: white;
-    padding: 15px 30px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    text-align: center;
-    border-radius:22px; 
-
-}
-    </style>
     <head>
-          <link rel="stylesheet" href="../css/cliente_categorias.css">     
+        <title>ADMIN</title>
+        <link rel="stylesheet" href="../css/admin.css">     
     </head>
-    
+
     <body background="../imagenes/Fondo.jpg">
-        <div id="busqueda">
-                <a href="#" title="Volver Atrás">
+        <div>
+            <div style="float: left; padding: 35px; margin: 0 30px">
+                <a href="#" title="Volver Atrás" style="float: left">
                     <img src="../imagenes/Icon ionic-ios-exit.png" alt="" />
                 </a>
+            </div>
+
+            <div id="busqueda" style="float: left">
+
                 <form class="form">
                     <input type="text" id="txtBusqueda" name="barraBusqueda">
                 </form>
-                <a href="#" title="Buscar">
+                <a href="#" title="Buscar" style="margin-left: 10px">
                     <img src="../imagenes/Icon metro-search.png" alt="" width="40"/>
                 </a>
             </div>
-
-            <div id="carrito" class="fontCarrito">
-                <div style="float: left">
-                    <h1><img src="../imagenes/Icon metro-cart.png" alt="" width="35" /> Carrito</h1>
-
-                </div>
+            <div style="float: left; padding: 35px 0">
+                <a href="#" title="Administrador">
+                    <img src="../imagenes/Icon awesome-user-lock.png" alt="" width="60"/>
+                </a>
             </div>
-      
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><h1 align="center" style="font-size: 80px;">Bienvenido 1</h1><br><br><br><br><br>
-              
+        </div>
+        <br><br><br><br><br><br><br><br><br><br>
+        <h1 align="center" style="font-size: 80px;">Bienvenido 1</h1><br><br><br><br><br>
+
         <div align="center"><a href="/AgregarProducto" class="button"  >Agregar un nuevo producto</a></div>
         <div align="center"><a href="/Admin_Categorias" class="button"  >Ver categorias</a></div>
         <div align="center"><a href="/Admin_Boletas" class="button"  >Buscar Boleta</a></div>
-   
+
     </body>
 </html>

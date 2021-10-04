@@ -20,19 +20,19 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 public class controllers {
-    
-    Producto PRO1= new Producto("1","2","3","5");
-    Producto PRO2= new Producto("1","2","3","5");
-    Producto PRO3= new Producto("1","2","3","5");
-    Producto PRO4= new Producto("1","2","3","5");
-    ArrayList<Producto> items= new ArrayList<Producto>();
-    Carro carro= new Carro(items,"yo");
-    
-    Boleta boleta= new Boleta("a","a","a","a","a","a","a");
+
+    Producto PRO1 = new Producto("1", "2", "3", "5");
+    Producto PRO2 = new Producto("1", "2", "3", "5");
+    Producto PRO3 = new Producto("1", "2", "3", "5");
+    Producto PRO4 = new Producto("1", "2", "3", "5");
+    ArrayList<Producto> items = new ArrayList<Producto>();
+    Carro carro = new Carro(items, "yo");
+
+    Boleta boleta = new Boleta("a", "a", "a", "a", "a", "a", "a");
 
     @GetMapping("/")
     String Saludar() {
-         
+
         return "Saludar";
     }
 
@@ -50,49 +50,53 @@ public class controllers {
     String IngresarAdmin() {
         return "IngresarAdmin";
     }
+
     @GetMapping("/Admin_Categorias")
     String desplegarOpcionesAdmin() {
         return "Admin_Categorias";
     }
+
     @GetMapping("/Admin_Boletas")
     String mostrarBoletasAdmin() {
         return "Admin_Boletas";
     }
+
     @GetMapping("/Boletas")
-    String  Boleta(@RequestParam (name="Boleta",required=false, defaultValue = "asda") Boleta boleta, Model modelo) {
+    String Boleta(@RequestParam(name = "Boleta", required = false, defaultValue = "asda") Boleta boleta, Model modelo) {
         modelo.addAttribute(this.boleta);
         return "Boleta";
     }
+
     @GetMapping("/AgregarProducto")
-    String  agregarProducto() {
+    String agregarProducto() {
         return "Admin_AgregarP";
     }
-     
 
     @RequestMapping(value = "consultaAdmin", method = RequestMethod.POST)
     public String consultaAdmin(String name, String password) {
         if ("1".equals(name) && "1".equals(password)) {
-            return "Admin_Opciones";}
-         
-            return "IngresarAdmin";
-         
+            return "Admin_Opciones";
+        }
+
+        return "IngresarAdmin";
+
     }
-    
+
     @RequestMapping(value = "buscarBoleta", method = RequestMethod.POST)
     public String buscarBoleta(String numero) {
         if ("11111".equals(numero)) {
-            return "Boleta";}
-         
-            return "Admin_Boletas";
-         
+            return "Boleta";
+        }
+
+        return "Admin_Boletas";
+
     }
+
     @RequestMapping(value = "opciones")
     public String guardarProducto(String nombre) {
-         
+
         return "Admin_Opciones";
-         
-            
-         
+
     }
 
 }
