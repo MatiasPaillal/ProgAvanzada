@@ -6,58 +6,69 @@ and open the template in the editor.
 -->
 <html>
     <style>
-    input[type=text] {
-  width: 30%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-    }
-  label{
-      font-size: 30px;
-  }
-    .button {
-    background-color: #660099;
-    border: black;
-    color: white;
-    padding: 15px 30px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    text-align: center;
-    border-radius:22px; 
-    text-align: center;
+        input[type=text] {
+            width: 30%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        label{
+            font-size: 30px;
+        }
+        .button {
+            background-color: #660099;
+            border: black;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            text-align: center;
+            border-radius:22px; 
+            text-align: center;
+        }
 
- 
-  
-</style>
+
+    </style>
     <head>
-        
+
     </head>
     <body background="../imagenes/Fondo.jpg">
         <script>
-            document.
-            </script>
-            
-        <form method="POST" action="opciones" style="text-align:center;">
+
+        </script>
+        <form method="POST" action="buscarBoleta" style="text-align:center">
+            <br><br><br><br><br><br><br>
+
+
+
+            <table style="margin: 0 auto; text-align: right">
+                <tr>
+                    <td>Nombre del producto: </td>
+                    <td><input type="text" name="nombre" class="imput" /></td>
+                </tr>
+                <tr>
+                    <td>Precio:</td>
+                    <td><input type="text" name="precio" class="imput" /></td>
+                </tr>
+                <tr>
+                    <td>Categoria:</td>
+                    <td><input type="text" name="Nombre del archivo" class="imput" /></td>
+                </tr>
+                <tr>
+                    <td>N° de boleta:</td>
+                    <td><input type="text" name="nombreArchivo" class="imput" /></td>
+                </tr>
+            </table>
+
+            <br><br>
 
             
-            <br><br><br><br><br><br><br>
-            <div style="font-size: 30px">
-            <label for="fname">Nombre del producto:</label>
-            <input type="text" name="nombre" class="imput" style="margin-left: 100px"/><br>
-             <label for="fname">Precio:</label>
-            <input type="text" name="precio" class="imput" style="margin-left: 100px"/><br>
-              <label for="fname">Categoria:</label>
-            <input type="text" name="Nombre del archivo" class="imput" style="margin-left: 100px"/><br>
-             <label for="fname">N° del archivo:</label>
-            <input type="text" name="nombreArchivo" class="imput" style="margin-left: 100px"/><br>
-            </div>
-             
-                <input type="submit" value="Agregar producto" class="button">
-             
+            <input type="submit" value="Agregar producto" class="button">
+
 
         </form> 
     </body>
