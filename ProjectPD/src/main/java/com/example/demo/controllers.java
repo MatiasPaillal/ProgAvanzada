@@ -31,9 +31,9 @@ public class controllers {
     Boleta boleta = new Boleta("a", "a", "a", "a", "a", "a", "a");
 
     @GetMapping("/")
-    String Saludar() {
+    String LocalHost() {
 
-        return "Saludar";
+        return "Ingresar";
     }
 
     @GetMapping("/Cliente_Categorias")
@@ -71,9 +71,9 @@ public class controllers {
         return "Admin_Categorias";
     }
 
-    @GetMapping("/Admin_Boletas")
+    @GetMapping("/Admin_BuscarBoletas")
     String mostrarBoletasAdmin() {
-        return "Admin_Boletas";
+        return "Admin_BuscarBoletas";
     }
 
     @GetMapping("/Boletas")
@@ -109,10 +109,10 @@ public class controllers {
     @RequestMapping(value = "buscarBoleta", method = RequestMethod.POST)
     public String buscarBoleta(String numero) {
         if ("11111".equals(numero)) {
-            return "Boleta";
+            return "Admin_Boleta";
         }
 
-        return "Admin_Boletas";
+        return "Admin_BuscarBoletas";
 
     }
 
