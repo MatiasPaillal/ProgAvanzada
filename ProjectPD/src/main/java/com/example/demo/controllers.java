@@ -71,6 +71,14 @@ public class controllers {
     String agregarProducto() {
         return "Admin_AgregarP";
     }
+    @GetMapping("/Cliente_Productos")
+    String mostrarProducto() {
+        return "Cliente_Productos";
+    }
+    @GetMapping("/Admin_Productos")
+    String mostrarProductoAdmin() {
+        return "Admin_Productos";
+    }
 
     @RequestMapping(value = "consultaAdmin", method = RequestMethod.POST)
     public String consultaAdmin(String name, String password) {
@@ -96,6 +104,12 @@ public class controllers {
     public String guardarProducto(String nombre) {
 
         return "Admin_Opciones";
+
+    }
+    @RequestMapping(value = "productos")
+    public String verProductoAdmin(String nombre) {
+
+        return "Admin_Productos";
 
     }
 
