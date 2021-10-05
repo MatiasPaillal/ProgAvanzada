@@ -34,10 +34,10 @@ and open the template in the editor.
 
     </style>
     <head>
-<link rel="stylesheet" href="../css/admin.css">
+        <link rel="stylesheet" href="../css/admin.css">
     </head>
     <body background="../imagenes/Fondo.jpg">
-         <div >
+        <div >
             <div style="float: left; padding: 35px; margin: 0 30px ">
                 <a href="opciones" title="Volver Atrás" style="float: left">
                     <img src="../imagenes/Icon ionic-ios-exit.png" alt="" />
@@ -52,12 +52,12 @@ and open the template in the editor.
                 <a href="productos" title="Buscar" style="margin-left: 10px">
                     <img src="../imagenes/Icon metro-search.png" alt="" width="40"/>
                 </a>
-            
-            <div style="float: left; padding: 35px; margin: 0 30px ">
-                <a href="#" title="Administrador" style="float: left">
-                    <img src="../imagenes/Icon awesome-user-lock.png" alt="" width="60"/>
-                </a>
-            </div></div>
+
+                <div style="float: left; padding: 35px; margin: 0 30px ">
+                    <a href="#" title="Administrador" style="float: left">
+                        <img src="../imagenes/Icon awesome-user-lock.png" alt="" width="60"/>
+                    </a>
+                </div></div>
         </div>
         <form method="POST" action="opciones" style="text-align:center; ">
             <br><br><br><br><br><br><br>
@@ -85,22 +85,17 @@ and open the template in the editor.
             <br><br>
 
 
-            <input id="agregarP" type="submit" value="Agregar producto" class="button">
+            <input id="agregarP" type="submit" value="Agregar producto" class="button" onclick="hizoClick()">
 
 
         </form> 
         <script type="text/javascript">
-            var nombre = document.getElementById('nombre');
-            aagregar.disabled = true;
-            nombre.disabled = true;
-            if (nombre == 'hola') {
 
-                alert("MENSAJE");
-                btnEnviar.disabled = false;
-            } else {
-                alert("MENSAJE");
-                btnEnviar.disabled = false;
+            function hizoClick() {
+            alert("Producto agregado");
             }
+
         </script>
+
     </body>
 </html>

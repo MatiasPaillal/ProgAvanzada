@@ -59,12 +59,23 @@ and open the template in the editor.
             
             <div style="margin-left: 330px">
 
-                <input type="submit" value="Guardar" class="button">
+                <input type="submit" value="Guardar" class="button" onclick="actualizarClick()">
             </div >
             <div style=" margin-left: 300px">
-                <input type="submit" value="Eliminar Producto" class="button">
+                <a href="opciones"><input type="submit" value="Eliminar Producto" class="button" onclick="eliminarClick()"></a>
             </div>
-
+ 
         </div>
+        
+        <script type="text/javascript">
+
+            function actualizarClick() {
+            alert("Producto actualizado");
+            }
+            function eliminarClick() {
+            alert("Producto eliminado");
+            }
+
+        </script>
     </body>
 </html>
