@@ -81,10 +81,7 @@ public class controllers {
     String agregarProducto() {
         return "Admin_AgregarP";
     }
-    @GetMapping("/Cliente_Productos")
-    String mostrarProducto() {
-        return "Cliente_Productos";
-    }
+    
     @GetMapping("/Admin_Productos")
     String mostrarProductoAdmin() {
         return "Admin_Productos";
