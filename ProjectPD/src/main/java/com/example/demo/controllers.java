@@ -40,15 +40,20 @@ public class controllers {
     String Cliente_Categorias() {
         return "Cliente_Categorias";
     }
-    
+
     @GetMapping("/Cliente_Productos")
     String Cliente_Productos() {
         return "Cliente_Productos";
     }
-    
+
     @GetMapping("/Cliente_ProductoSeleccionado")
     String Cliente_ProductoSeleccionado() {
         return "Cliente_ProductoSeleccionado";
+    }
+
+    @GetMapping("/Cliente_Boleta")
+    String Cliente_Boleta() {
+        return "Cliente_Boleta";
     }
 
     @GetMapping("/Ingresar")
@@ -81,7 +86,7 @@ public class controllers {
     String agregarProducto() {
         return "Admin_AgregarP";
     }
-    
+
     @GetMapping("/Admin_Productos")
     String mostrarProductoAdmin() {
         return "Admin_Productos";
@@ -113,6 +118,7 @@ public class controllers {
         return "Admin_Opciones";
 
     }
+
     @RequestMapping(value = "productos")
     public String verProductoAdmin(String nombre) {
 
