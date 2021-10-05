@@ -6,11 +6,65 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="../css/admin.css">
     </head>
-    <body>
-        <div>TODO write content</div>
+    <body background="../imagenes/Fondo.jpg">
+        <div>
+            <div style="float: left; padding: 35px; margin: 0 30px ">
+                <a href="Ingresar" title="Volver Atrás" style="float: left">
+                    <img src="../imagenes/Icon ionic-ios-exit.png" alt="" />
+                </a>
+            </div>
+
+            <div id="busqueda" style="float: left">
+
+                <form class="form">
+                    <input type="text" id="txtBusqueda" name="barraBusqueda">
+                </form>
+                <a href="productos" title="Buscar" style="margin-left: 10px">
+                    <img src="../imagenes/Icon metro-search.png" alt="" width="40"/>
+                </a>
+
+                <div style="float: left; padding: 35px; margin: 0 30px ">
+                    <a href="#" title="Administrador" style="float: left">
+                        <img src="../imagenes/Icon awesome-user-lock.png" alt="" width="60"/>
+                    </a>
+                </div></div>
+        </div>
+
+
+        <br><br><br>
+        <div id="Productos" style="display: inline">
+            <div style="display: inline-block">
+
+
+                <form method="POST" action="consultaAdmin" style="text-align:center;">
+
+
+                    <input type="text" name="name" value="NOMBRE DEL PRODUCTO" style="padding: 10px; margin-bottom: 20px"/><br>
+
+                    <input type="text" name="password" value="$00000" style="padding: 10px"/><br><br>
+
+
+                </form> 
+
+                <h1 style="color: gray; font-size: 30px; margin: 50px 30px">ID PRODUCTO: CEL-1234</h1>
+            </div>
+            
+            <div style="display: inline-block">
+                <h2 style=" margin-left: 100px; background-color: white; border: none"><img src="../imagenes/Producto-Celular.jpg" alt="" width="200"/></h2><br>
+                <input type="text" name="name" value="Imagen.jpg" style="padding: 10px; margin-bottom: 20px; margin-left: 105px"/><br>
+            </div>
+            
+            <div style="margin-left: 330px">
+
+                <input type="submit" value="Guardar" class="button">
+            </div >
+            <div style=" margin-left: 300px">
+                <input type="submit" value="Eliminar Producto" class="button">
+            </div>
+
+        </div>
     </body>
 </html>

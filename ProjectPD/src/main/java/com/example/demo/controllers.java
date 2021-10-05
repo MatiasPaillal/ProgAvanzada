@@ -86,6 +86,10 @@ public class controllers {
     String mostrarProductoAdmin() {
         return "Admin_Productos";
     }
+    @GetMapping("/Admin_ProductoSeleccionado")
+    String mostrarProductoSeleccionadoAdmin() {
+        return "Admin_ProductoSeleccionado";
+    }
 
     @RequestMapping(value = "consultaAdmin", method = RequestMethod.POST)
     public String consultaAdmin(String name, String password) {
