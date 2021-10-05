@@ -31,9 +31,9 @@ public class controllers {
     Boleta boleta = new Boleta("a", "a", "a", "a", "a", "a", "a");
 
     @GetMapping("/")
-    String Saludar() {
+    String LocalHost() {
 
-        return "Saludar";
+        return "Ingresar";
     }
 
     @GetMapping("/Cliente_Categorias")
