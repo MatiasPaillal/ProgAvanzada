@@ -40,6 +40,16 @@ public class controllers {
     String Cliente_Categorias() {
         return "Cliente_Categorias";
     }
+    
+    @GetMapping("/Cliente_Productos")
+    String Cliente_Productos() {
+        return "Cliente_Productos";
+    }
+    
+    @GetMapping("/Cliente_ProductoSeleccionado")
+    String Cliente_ProductoSeleccionado() {
+        return "Cliente_ProductoSeleccionado";
+    }
 
     @GetMapping("/Ingresar")
     String Ingresar() {

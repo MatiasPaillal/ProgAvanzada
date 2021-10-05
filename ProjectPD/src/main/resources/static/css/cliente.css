@@ -48,7 +48,7 @@ div#carritoproductos {
     padding: 2%;
     width: 31%;
     float: left;
-    height: 563px;
+    height: 544px;
     background-color: var(--carrito);
     margin-right: 0px;
 }
@@ -95,7 +95,7 @@ h2 {
     font-family: var(--unnamed-font-family-segoe-ui);
     font-style: var(--unnamed-font-style-normal);
     font-weight: var(--unnamed-font-weight-normal);
-    font-size: var(--unnamed-font-size-31);
+    font-size: 25px;
     line-height: var(--unnamed-line-spacing-41);
     letter-spacing: var(--unnamed-character-spacing-0);
     color: black;
@@ -107,15 +107,14 @@ h2 {
 }
 
 h3 {
-    margin: 0px;
     width: auto;
     height: 40px;
     text-align: left;
     font: normal normal normal 25px/33px Segoe UI;
-    letter-spacing: 0px;
     color: black;
     opacity: 1;
     padding: 2px 6px;
+    background-color: white;
 }
 
 .form {
