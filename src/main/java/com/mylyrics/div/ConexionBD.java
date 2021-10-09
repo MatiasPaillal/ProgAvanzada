@@ -15,7 +15,7 @@ class ConexionBD {
 
     public static final String usuario = "root";
     public static final String clave = "";
-    public static final String url = "jdbc:mysql://localhost:3306/tienda";
+    public static final String url = "jdbc:mysql://localhost:3306/mylyrics";
     public static final String driver = "com.mysql.jdbc.Driver";
     public static Connection con;
 

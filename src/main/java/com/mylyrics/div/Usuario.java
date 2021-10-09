@@ -18,6 +18,14 @@ public class Usuario {
 
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
     public boolean cambiarNombre(String nombreUsuario){
         boolean ejecucion=false;
         Pattern pat = Pattern.compile("^[a-zA-Z0-9]*$");
@@ -30,26 +38,26 @@ public class Usuario {
             return false;
         }
   }
-  /*
-    public boolean cambiarNombre2(){
+
+    public void guardarNombre(){
+        boolean ejecucion=false;
         Scanner teclado = new Scanner(System.in);
-        System.out.println("Ingrese nuevo Nombre");
+        do {
+            System.out.println("Ingrese nuevo Nombre");
         String nombreUsuario= teclado.next();
 
-        boolean ejecucion=false;
-        do {
             Pattern pat = Pattern.compile("^[a-zA-Z0-9]*$");
             Matcher mat = pat.matcher(nombreUsuario);
             if (mat.matches()) {
                 this.nombre = nombreUsuario;
-                return true;
+                ejecucion=true;
 
-            }
+            }else{ejecucion=false;}
         }while(ejecucion==false);
-        return ejecucion;
+
     }
 
-*/
+
 
 
 
