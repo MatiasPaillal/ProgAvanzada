@@ -1,4 +1,6 @@
 package com.mylyrics.div;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -6,64 +8,58 @@ import java.util.regex.Pattern;
 import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.Period;
-import java.util.Scanner;
 
-public class Usuario {
 
-    private String nombre;
-    private String password;
-    private String nombreUsuario;
+public class Usuario extends Persona {
     private LocalDate fechaNacimiento;
+    private ArrayList<Cancion> favoritos;
+
+    public Usuario(String nombre, String password, String nombreUsuario, LocalDate fechaNacimiento, ArrayList<Cancion> favoritos) {
+        super(nombre, password, nombreUsuario);
+        this.fechaNacimiento = fechaNacimiento;
+        this.favoritos = favoritos;
+    }
+
+    public Usuario(String nombre, String password, String nombreUsuario) {
+        super(nombre, password, nombreUsuario);
+    }
+
     public Usuario() {
-
+        super();
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getNombreUsuario() {
-        return nombreUsuario;
-    }
-
-    public boolean cambiarNombre(String nombreUsuario){
-        boolean ejecucion=false;
+    public boolean cambiarNombre(String nombreUsuario) {
+        boolean ejecucion = false;
         Pattern pat = Pattern.compile("^[a-zA-Z0-9]*$");
         Matcher mat = pat.matcher(nombreUsuario);
         if (mat.matches()) {
-            this.nombre=nombreUsuario;
+            this.nombre = nombreUsuario;
             return true;
 
         } else {
             return false;
         }
-  }
+    }
 
-    public void guardarNombre(){
-        boolean ejecucion=false;
+    public void guardarNombre() {
+        boolean ejecucion = false;
         Scanner teclado = new Scanner(System.in);
         do {
             System.out.println("Ingrese nuevo Nombre");
-        String nombreUsuario= teclado.next();
+            String nombreUsuario = teclado.next();
 
             Pattern pat = Pattern.compile("^[a-zA-Z0-9]*$");
             Matcher mat = pat.matcher(nombreUsuario);
             if (mat.matches()) {
                 this.nombre = nombreUsuario;
-                ejecucion=true;
+                ejecucion = true;
 
-            }else{ejecucion=false;}
-        }while(ejecucion==false);
+            } else {
+                ejecucion = false;
+            }
+        } while (ejecucion == false);
 
     }
-
-
-
-
-
-
-
-
 
 
     public void setPassword() {
@@ -147,5 +143,42 @@ public class Usuario {
         anio = this.fechaNacimiento.getYear();
         return dia + "/" + mes + "/" + anio;
     }
+
+
+    public void MostrarPlaylist() {
+        this.favoritos.stream().forEach((p) -> {
+            System.out.println(p.getNombre() + p.getNameAutor() + p.getGenero() + p.getNameAlbum());
+        });
+
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
+    }
+
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public ArrayList<Cancion> getFavoritos() {
+        return favoritos;
+    }
+
+    public void setFavoritos(ArrayList<Cancion> favoritos) {
+        this.favoritos = favoritos;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
 
 }

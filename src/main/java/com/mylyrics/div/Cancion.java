@@ -6,33 +6,65 @@ import java.util.Scanner;
 
 public class Cancion {
 
-
-    private LocalDate fecha;
     private String nombre;
     private String letra;
+    private String letraTraducida;
+    private Genero genero;
+    private Autor autor;
+    private Album album;
 
     public Cancion() {
-        this.fecha = null;
-        this.nombre = null;
-        this.letra = null;
-    }
-
-    public boolean agregarFecha(int año, int mes, int dia) {
-
-
-        if (año<LocalDate.now().getYear()&& mes<13 && dia<32) {
-            LocalDate fechaIngresada = LocalDate.of(año, mes, dia);
-            LocalDate fechaActual = LocalDate.now();
-
-            if (fechaIngresada.isBefore(fechaActual)) {
-                this.fecha=fechaIngresada;
-                return true;
-
-            } else {
-                return false;
-            }
-        }else{
-            return false;}
 
     }
+
+    public String getNombre() {
+
+        return this.nombre;
     }
+
+    public String getLetra() {
+
+        return this.letra;
+    }
+
+    public Genero getGenero() {
+
+        return this.genero;
+    }
+
+    public String getNameAutor() {
+
+        return this.autor.getNombreArtistico();
+    }
+
+    public String getNameAlbum() {
+
+        return this.album.getNombre();
+    }
+
+    public boolean ingresarCancion() {
+        ConexionBD bd = new ConexionBD();
+
+        try {
+            bd.setPs(bd.getConexion().prepareStatement("INSERT INTO album (nombreCancion, letra, letraTraducida,idAlbum,idAutor,idGenero) VALUES(?,?,?,?,?)"));
+
+            bd.getPs().setString(1, this.nombre);
+            bd.getPs().setString(1, this.letra);
+            bd.getPs().setString(1, this.letraTraducida);
+            bd.getPs().setInt(3, this.album.getId());
+            bd.getPs().setInt(3, this.autor.getId());
+            bd.getPs().setInt(3, this.genero.getId());
+
+
+            bd.getPs().executeUpdate();
+            return true;
+        } catch (Exception e) {
+            return false;
+
+        }
+
+
+    }
+
+
+}

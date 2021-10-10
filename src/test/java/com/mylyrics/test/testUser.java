@@ -40,7 +40,7 @@ public class testUser {
     public void verificarNumsPassword() {
         //  Debe tener a lo menos dos números.
         user.setPassword("hola1234");
-        boolean hasNumbers = false;
+
         int count = 0;
         for (Character x : user.getPassword().toCharArray()) {
             if (Character.isDigit(x)) {
