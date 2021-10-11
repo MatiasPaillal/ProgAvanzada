@@ -1,0 +1,39 @@
+<changelist name="Uncommitted_changes_before_Update_at_10-10-2021_23_29_[Changes]" date="1633919342224" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10-10-2021_23_29_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 10-10-2021 23:29 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/mylyrics/div/ConexionBD.class" />
+    <option name="AFTER_PATH" value="target/classes/com/mylyrics/div/ConexionBD.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10-10-2021_23_29_[Changes]/ConexionBD.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/mylyrics/div/Administrador.class" />
+    <option name="AFTER_PATH" value="target/classes/com/mylyrics/div/Administrador.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10-10-2021_23_29_[Changes]/Administrador.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/mylyrics/div/Autor.class" />
+    <option name="AFTER_PATH" value="target/classes/com/mylyrics/div/Autor.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10-10-2021_23_29_[Changes]/Autor.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/mylyrics/div/Usuario.class" />
+    <option name="AFTER_PATH" value="target/classes/com/mylyrics/div/Usuario.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10-10-2021_23_29_[Changes]/Usuario.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/mylyrics/div/Cancion.class" />
+    <option name="AFTER_PATH" value="target/classes/com/mylyrics/div/Cancion.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10-10-2021_23_29_[Changes]/Cancion.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/mylyrics/div/Album.class" />
+    <option name="AFTER_PATH" value="target/classes/com/mylyrics/div/Album.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10-10-2021_23_29_[Changes]/Album.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/mylyrics/div/Main.class" />
+    <option name="AFTER_PATH" value="target/classes/com/mylyrics/div/Main.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10-10-2021_23_29_[Changes]/Main.class" />
+  </binary>
+</changelist>
