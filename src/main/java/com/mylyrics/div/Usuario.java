@@ -28,8 +28,25 @@ public class Usuario extends Persona {
         super();
     }
 
+    public boolean registrarUsuario() {
+        try {
+            ConexionBD bd = new ConexionBD();
+            bd.setPs(bd.getConexion().prepareStatement("INSERT INTO persona (nombreUsuario, password, nombre,fechaNacimiento,isAdmin) VALUES(?,?,?,?,?)"));
+
+            bd.getPs().setString(1, this.nombreUsuario);
+            bd.getPs().setString(2, this.password);
+            bd.getPs().setString(3, this.nombre);
+            bd.getPs().setString(4, this.fechaNacimiento.toString());
+            bd.getPs().setBoolean(5, false);
+            bd.getPs().executeUpdate();
+            return true;
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+            return false;
+        }
+    }
+
     public boolean cambiarNombre(String nombreUsuario) {
-        boolean ejecucion = false;
         Pattern pat = Pattern.compile("^[a-zA-Z0-9]*$");
         Matcher mat = pat.matcher(nombreUsuario);
         if (mat.matches()) {
@@ -146,8 +163,8 @@ public class Usuario extends Persona {
 
 
     public void MostrarPlaylist() {
-        this.favoritos.stream().forEach((p) -> {
-            System.out.println(p.getNombre() + p.getNameAutor() + p.getGenero() + p.getNameAlbum());
+        this.favoritos.stream().forEach((cancion) -> {
+            System.out.println(cancion.getNombre() + cancion.getNameAutor() + cancion.getGenero() + cancion.getNameAlbum());
         });
 
     }

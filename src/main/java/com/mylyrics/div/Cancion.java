@@ -17,6 +17,15 @@ public class Cancion {
 
     }
 
+    public Cancion(String nombre, String letra, String letraTraducida, Genero genero, Autor autor, Album album) {
+        this.nombre = nombre;
+        this.letra = letra;
+        this.letraTraducida = letraTraducida;
+        this.genero = genero;
+        this.autor = autor;
+        this.album = album;
+    }
+
     public String getNombre() {
 
         return this.nombre;
@@ -46,19 +55,20 @@ public class Cancion {
         ConexionBD bd = new ConexionBD();
 
         try {
-            bd.setPs(bd.getConexion().prepareStatement("INSERT INTO album (nombreCancion, letra, letraTraducida,idAlbum,idAutor,idGenero) VALUES(?,?,?,?,?)"));
+            bd.setPs(bd.getConexion().prepareStatement("INSERT INTO cancion (nombreCancion, letra, letraTraducida,idAlbum,idAutor,idGenero) VALUES(?,?,?,?,?,?)"));
 
             bd.getPs().setString(1, this.nombre);
-            bd.getPs().setString(1, this.letra);
-            bd.getPs().setString(1, this.letraTraducida);
-            bd.getPs().setInt(3, this.album.getId());
-            bd.getPs().setInt(3, this.autor.getId());
-            bd.getPs().setInt(3, this.genero.getId());
+            bd.getPs().setString(2, this.letra);
+            bd.getPs().setString(3, this.letraTraducida);
+            bd.getPs().setInt(4, this.album.getId());
+            bd.getPs().setInt(5, this.autor.getId());
+            bd.getPs().setInt(6, this.genero.getId());
 
 
             bd.getPs().executeUpdate();
             return true;
         } catch (Exception e) {
+            System.err.println(e.getMessage());
             return false;
 
         }

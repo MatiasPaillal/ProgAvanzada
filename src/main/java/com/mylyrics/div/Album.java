@@ -14,6 +14,17 @@ public class Album {
     public Album() {
     }
 
+    public Album(String nombre, Autor autor) {
+        this.nombre = nombre;
+        this.autor = autor;
+        this.fecha = null;
+    }
+
+    public Album(String nombre) {
+        this.id = 0;
+        this.nombre = nombre;
+    }
+
     public boolean agregarFecha(int año, int mes, int dia) {
 
 
@@ -21,7 +32,7 @@ public class Album {
             LocalDate fechaIngresada = LocalDate.of(año, mes, dia);
             LocalDate fechaActual = LocalDate.now();
 
-            if (fechaIngresada.isBefore(fechaActual)) {
+            if (fechaIngresada.isBefore(LocalDate.now())) {
                 this.fecha = fechaIngresada;
                 return true;
 
@@ -41,6 +52,7 @@ public class Album {
     public boolean ingresarAlbum() {
         try {
             ConexionBD bd = new ConexionBD();
+            System.out.println(this.nombre);
             bd.setPs(bd.getConexion().prepareStatement("INSERT INTO album (nombreAlbum, fechaEstreno, idAutor) VALUES(?,?,?)"));
 
             bd.getPs().setString(1, this.nombre);
@@ -51,6 +63,7 @@ public class Album {
             bd.getPs().executeUpdate();
             return true;
         } catch (Exception e) {
+            System.out.println(e.getMessage());
             return false;
 
         }
@@ -61,9 +74,12 @@ public class Album {
 
         try {
             ConexionBD bd = new ConexionBD();
-            bd.setPs(bd.getConexion().prepareStatement("SELECT * FROM album WHERE nombreAlbum = " + this.nombre));
-
+            System.out.println(this.nombre);
+            bd.setPs(bd.getConexion().prepareStatement("SELECT * FROM album WHERE nombreAlbum = ?"));
+            bd.getPs().setString(1, this.nombre);
+            bd.setRs(bd.getPs().executeQuery());
             if (bd.getRs().next()) {
+                System.out.println(bd.getRs().getInt("id"));
                 this.id = bd.getRs().getInt("id");
             }
 

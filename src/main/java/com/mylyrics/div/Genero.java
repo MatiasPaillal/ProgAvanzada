@@ -12,4 +12,17 @@ public enum Genero {
     int getId() {
         return id;
     }
+
+
+    public Genero buscarGenero(String nombreGenero) {
+        Genero[] generos = Genero.values();
+        for (Genero genero : generos) {
+            //Comparing
+            if (genero.toString().equals(nombreGenero)) {
+                return genero;
+            }
+        }
+        return null;
+    }
 }
+
