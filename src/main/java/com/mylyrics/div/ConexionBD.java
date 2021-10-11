@@ -24,9 +24,7 @@ class ConexionBD {
         try {
             Class.forName(driver);
             con = DriverManager.getConnection(url, usuario, clave);
-            if (con != null) {
-                System.out.println("Conexión Establecida");
-            }
+
         } catch (ClassNotFoundException | SQLException e) {
             try {
                 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/", usuario, clave);
@@ -38,7 +36,7 @@ class ConexionBD {
                         "nombreUsuario VARCHAR(50) PRIMARY KEY NOT NULL," +
                         "password VARCHAR(50) NOT NULL," +
                         "nombre VARCHAR(50) NOT NULL," +
-                        "fechaNacimiento DATE NOT NULL," +
+                        "fechaNacimiento DATE," +
                         "isAdmin BIT NOT NULL)");
                 ps.executeUpdate();
                 ps = con.prepareStatement("" +
@@ -80,6 +78,11 @@ class ConexionBD {
                         "CONSTRAINT fk_Persona FOREIGN KEY (nombreUsuarioPersona) REFERENCES persona (nombreUsuario)," +
                         "CONSTRAINT fk_Cancion FOREIGN KEY (idCancion) REFERENCES cancion (id))");
                 ps.executeUpdate();
+                ps = con.prepareStatement("" +
+                        "INSERT INTO genero VALUES(NULL,'JAZZ'),(NULL,'BLUES'),(NULL,'REGGAETON'),(NULL,'POP'),(NULL,'ROCK')," +
+                        "(NULL,'PUNK'),(NULL,'K-POP'),(NULL,'METAL'),(NULL,'ELECTRONICA'),(NULL,'DUBSTEP'),(NULL,'RAP'),(NULL,'HIP-HOP')," +
+                        "(NULL,'INDEPENDIENTE'),(NULL,'COUNTRY'),(NULL,'REGGAE'),(NULL,'TRAP')");
+                ps.executeUpdate();
                 ps.close();
             } catch (SQLException ex) {
                 System.out.println(ex.getMessage());
@@ -95,7 +98,7 @@ class ConexionBD {
     public void desconectar() {
         con = null;
         if (con == null) {
-            System.out.println("conexion termindad");
+            System.out.println("conexion terminada");
         }
     }
 

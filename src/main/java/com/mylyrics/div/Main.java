@@ -1,15 +1,15 @@
 package com.mylyrics.div;
 
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.time.LocalDate;
 
 public class Main {
     public static Scanner teclado = new Scanner(System.in);
 
     public static Object iniciarSesion() {
         boolean isAdmin = false, login = false;
-        String nombreUsuario, password, nombre = "";
+        String nombreUsuario, password = "", nombre = "";
+        LocalDate fechaNacimiento = LocalDate.now();
 
         do {
             System.out.print("\nIngrese su nombre de usuario: ");
@@ -20,11 +20,17 @@ public class Main {
 
             try {
                 ConexionBD bd = new ConexionBD();
-                bd.setPs(bd.getConexion().prepareStatement("SELECT * FROM persona WHERE nombreUsuario = " + nombreUsuario));
+                bd.setPs(bd.getConexion().prepareStatement("SELECT * FROM persona WHERE nombreUsuario = ?"));
+                bd.getPs().setString(1, nombreUsuario);
                 bd.setRs(bd.getPs().executeQuery());
 
                 if (bd.getRs().next()) {
                     isAdmin = bd.getRs().getBoolean("isAdmin");
+                    nombre = bd.getRs().getString("nombre");
+                    if (!isAdmin) {
+                        fechaNacimiento = bd.getRs().getDate("fechaNacimiento").toLocalDate();
+                    }
+
                     if (password.equals(bd.getRs().getString("password"))) {
                         login = true;
                     } else {
@@ -32,15 +38,23 @@ public class Main {
                     }
                 }
             } catch (Exception e) {
-                System.err.println("Error al encontrar el usuario.");
+                System.out.println("Error al encontrar el usuario.");
             }
         } while (!login);
 
-        return (isAdmin) ? new Administrador(nombre, password, nombreUsuario) : new Usuario(nombre, password, nombreUsuario);
+        return (isAdmin) ? new Administrador(nombre, password, nombreUsuario) : new Usuario(nombre, password, nombreUsuario, fechaNacimiento);
     }
 
-    public static void registrarUsuario() {
+    public static Usuario registrarUsuario() {
+        Usuario newUser = new Usuario();
 
+        newUser.guardarNombreUsuario();
+        newUser.setPassword();
+        newUser.setNombre();
+        newUser.setFechaNacimiento();
+        newUser.registrarUsuario();
+
+        return newUser;
     }
 
     public static Genero buscarGenero(String nombreGenero) {

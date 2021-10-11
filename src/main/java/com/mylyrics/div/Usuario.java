@@ -1,5 +1,6 @@
 package com.mylyrics.div;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -14,14 +15,9 @@ public class Usuario extends Persona {
     private LocalDate fechaNacimiento;
     private ArrayList<Cancion> favoritos;
 
-    public Usuario(String nombre, String password, String nombreUsuario, LocalDate fechaNacimiento, ArrayList<Cancion> favoritos) {
+    public Usuario(String nombre, String password, String nombreUsuario, LocalDate fechaNacimiento) {
         super(nombre, password, nombreUsuario);
         this.fechaNacimiento = fechaNacimiento;
-        this.favoritos = favoritos;
-    }
-
-    public Usuario(String nombre, String password, String nombreUsuario) {
-        super(nombre, password, nombreUsuario);
     }
 
     public Usuario() {
@@ -58,26 +54,25 @@ public class Usuario extends Persona {
         }
     }
 
-    public void guardarNombre() {
+    public void guardarNombreUsuario() {
         boolean ejecucion = false;
         Scanner teclado = new Scanner(System.in);
         do {
-            System.out.println("Ingrese nuevo Nombre");
-            String nombreUsuario = teclado.next();
+            System.out.println("Ingrese un nombre de usuario");
+            String nombreUsuario = teclado.nextLine();
 
             Pattern pat = Pattern.compile("^[a-zA-Z0-9]*$");
             Matcher mat = pat.matcher(nombreUsuario);
             if (mat.matches()) {
-                this.nombre = nombreUsuario;
+                this.nombreUsuario = nombreUsuario;
                 ejecucion = true;
-
-            } else {
-                ejecucion = false;
             }
-        } while (ejecucion == false);
+            if (!ejecucion) {
+                System.out.println("No ingrese caracteres raros, solo alfanumericos (a-z, A-Z, 0-9).");
+            }
+        } while (!ejecucion);
 
     }
-
 
     public void setPassword() {
         String pass;
@@ -92,7 +87,7 @@ public class Usuario extends Persona {
                 System.out.println("La contraseña debe tener a lo menos 8 caracteres.");
             }
 
-            for (Character x : this.getPassword().toCharArray()) {
+            for (Character x : pass.toCharArray()) {
                 if (Character.isDigit(x)) {
                     count++;
                 }
@@ -101,7 +96,7 @@ public class Usuario extends Persona {
                 System.out.println("La contraseña debe tener a lo menos 2 números.");
             }
 
-        } while (pass.length() < 8 && count < 2);
+        } while (pass.length() < 8 || count < 2);
 
         this.password = pass;
     }
@@ -132,6 +127,7 @@ public class Usuario extends Persona {
 
             try {
                 LocalDate fechaNacimiento = LocalDate.of(anio, mes, dia);
+                this.fechaNacimiento = fechaNacimiento;
                 LocalDate now = LocalDate.now();
 
                 Period periodo = Period.between(fechaNacimiento, now);
@@ -140,8 +136,7 @@ public class Usuario extends Persona {
                 System.out.println("La fecha ingresada es incorrecta.");
             }
 
-
-        } while (edad >= 13);
+        } while (!(edad >= 13));
 
     }
 
@@ -158,7 +153,7 @@ public class Usuario extends Persona {
         dia = this.fechaNacimiento.getDayOfMonth();
         mes = this.fechaNacimiento.getMonthValue();
         anio = this.fechaNacimiento.getYear();
-        return dia + "/" + mes + "/" + anio;
+        return dia + "-" + mes + "-" + anio;
     }
 
 
@@ -171,6 +166,11 @@ public class Usuario extends Persona {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public void setNombre() {
+        System.out.print("\nIngrese su nombre: ");
+        this.nombre = new Scanner(System.in).nextLine();
     }
 
     public void setNombreUsuario(String nombreUsuario) {
