@@ -1,0 +1,166 @@
+Index: src/main/java/com/mylyrics/div/Cancion.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.mylyrics.div;\r\n\r\nimport java.time.LocalDate;\r\nimport java.util.Calendar;\r\nimport java.util.Scanner;\r\n\r\npublic class Cancion {\r\n\r\n\r\n    private LocalDate fecha;\r\n    private String nombre;\r\n    private String letra;\r\n\r\n    public Cancion() {\r\n        this.fecha = null;\r\n        this.nombre = null;\r\n        this.letra = null;\r\n    }\r\n\r\n    public boolean agregarFecha(int año, int mes, int dia) {\r\n\r\n\r\n        if (año<LocalDate.now().getYear()&& mes<13 && dia<32) {\r\n            LocalDate fechaIngresada = LocalDate.of(año, mes, dia);\r\n            LocalDate fechaActual = LocalDate.now();\r\n\r\n            if (fechaIngresada.isBefore(fechaActual)) {\r\n                this.fecha=fechaIngresada;\r\n                return true;\r\n\r\n            } else {\r\n                return false;\r\n            }\r\n        }else{\r\n            return false;}\r\n\r\n    }\r\n    }\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/mylyrics/div/Cancion.java b/src/main/java/com/mylyrics/div/Cancion.java
+--- a/src/main/java/com/mylyrics/div/Cancion.java	(revision 56e93c70116fa3a83604566beae3dcb8ef0c5f2b)
++++ b/src/main/java/com/mylyrics/div/Cancion.java	(date 1633827700443)
+@@ -10,29 +10,38 @@
+     private LocalDate fecha;
+     private String nombre;
+     private String letra;
+-
++    private String letraTraducida;
++    private Album album;
+     public Cancion() {
+-        this.fecha = null;
+-        this.nombre = null;
+-        this.letra = null;
++
+     }
++ try {nombreCancion VARCHAR(50) NOT NULL," +
++        "letra MEDIUMTEXT NOT NULL," +
++                "letraTraducida MEDIUMTEXT," +
++                "idAlbum BIGINT UNSIGNED NOT NULL," +
++                "idAutor BIGINT UNSIGNED NOT NULL," +
++                "idGenero INT NOT NULL," +
+ 
+-    public boolean agregarFecha(int año, int mes, int dia) {
++        ConexionBD bd = new ConexionBD();
+ 
+ 
+-        if (año<LocalDate.now().getYear()&& mes<13 && dia<32) {
+-            LocalDate fechaIngresada = LocalDate.of(año, mes, dia);
+-            LocalDate fechaActual = LocalDate.now();
++        bd.setPs(bd.getConexion().prepareStatement("INSERT INTO album (nombreCancion, letra, letraTraducida,idAlbum,idAutor,idGenero) VALUES(?,?,?,?,?)"));
+ 
+-            if (fechaIngresada.isBefore(fechaActual)) {
+-                this.fecha=fechaIngresada;
+-                return true;
+-
+-            } else {
+-                return false;
+-            }
+-        }else{
+-            return false;}
++        bd.getPs().setString( 1, this.nombre);
++        bd.getPs().setString( 1, this.letra);
++        bd.getPs().setString( 1, this.letraTraducida);
++        bd.getPs().setInt( 3, this.album.getId());
++        bd.getPs().setInt( 3, this.autor.getId());
++        bd.getPs().setInt( 3, this.genero.getId());
++
++
++        bd.getPs().executeUpdate();
++        return true;
++    } catch (Exception e) {
++        return false;
++
++    }
+ 
+-    }
+-    }
++}
++
++}
+\ No newline at end of file
+Index: src/main/java/com/mylyrics/div/Album.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.mylyrics.div;\r\n\r\nimport java.util.ArrayList;\r\n\r\npublic class Album {\r\n    private String nombre;\r\n    private Autor autor;\r\n    private ArrayList<Cancion> canciones;\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/mylyrics/div/Album.java b/src/main/java/com/mylyrics/div/Album.java
+--- a/src/main/java/com/mylyrics/div/Album.java	(revision 56e93c70116fa3a83604566beae3dcb8ef0c5f2b)
++++ b/src/main/java/com/mylyrics/div/Album.java	(date 1633828623025)
+@@ -1,9 +1,49 @@
+ package com.mylyrics.div;
+ 
++import java.time.LocalDate;
+ import java.util.ArrayList;
+ 
+ public class Album {
+     private String nombre;
+     private Autor autor;
+     private ArrayList<Cancion> canciones;
++    private LocalDate fecha;
++
++    public Album() {
++    }
++    public boolean agregarFecha(int año, int mes, int dia) {
++
++
++        if (año<LocalDate.now().getYear()&& mes<13 && dia<32) {
++            LocalDate fechaIngresada = LocalDate.of(año, mes, dia);
++            LocalDate fechaActual = LocalDate.now();
++
++            if (fechaIngresada.isBefore(fechaActual)) {
++                this.fecha=fechaIngresada;
++                return true;
++
++            } else {
++                return false;
++            }
++        }else{
++            return false;}
++
++    }
++
++
++    public void agregarId() {
++
++        try {
++            ConexionBD bd = new ConexionBD();
++            bd.setPs(bd.getConexion().prepareStatement("SELECT * FROM aAlbum WHERE nombreAlbum = " +this.nombre));
++
++            if (bd.getRs().next()) {
++                this.id = bd.getRs().getInt("id");
++            }
++
++        } catch (Exception e) {
++
++        }
++
++    }
+ }
+Index: src/test/java/com/mylyrics/test/TestCancion.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.mylyrics.test;\r\n\r\n\r\nimport com.mylyrics.div.Cancion;\r\nimport com.mylyrics.div.Usuario;\r\nimport org.junit.jupiter.api.Assertions;\r\nimport org.junit.jupiter.api.Test;\r\n\r\nimport java.time.LocalDate;\r\n\r\npublic class TestCancion {\r\n\r\n    @Test\r\n    public void comprobarFechaTest(){\r\n        Cancion c = new Cancion();\r\n        int año=1222;\r\n        int mes=12;\r\n        int dia=12;\r\n        boolean respuesta= c.agregarFecha(año,mes,dia);\r\n        Assertions.assertTrue(respuesta);\r\n\r\n    }\r\n    @Test\r\n    public void comprobarSintaxisFechaTest(){\r\n        Cancion c = new Cancion();\r\n        int año=1223;\r\n        int mes=12;\r\n        int dia=12;\r\n        boolean respuesta= c.agregarFecha(año,mes,dia);\r\n        Assertions.assertTrue(respuesta);\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/com/mylyrics/test/TestCancion.java b/src/test/java/com/mylyrics/test/TestCancion.java
+--- a/src/test/java/com/mylyrics/test/TestCancion.java	(revision 56e93c70116fa3a83604566beae3dcb8ef0c5f2b)
++++ b/src/test/java/com/mylyrics/test/TestCancion.java	(date 1633816197886)
+@@ -2,7 +2,7 @@
+ 
+ 
+ import com.mylyrics.div.Cancion;
+-import com.mylyrics.div.Usuario;
++import com.mylyrics.div.Album;
+ import org.junit.jupiter.api.Assertions;
+ import org.junit.jupiter.api.Test;
+ 
+@@ -12,7 +12,7 @@
+ 
+     @Test
+     public void comprobarFechaTest(){
+-        Cancion c = new Cancion();
++        Album c = new Album();
+         int año=1222;
+         int mes=12;
+         int dia=12;
+@@ -22,7 +22,7 @@
+     }
+     @Test
+     public void comprobarSintaxisFechaTest(){
+-        Cancion c = new Cancion();
++        Album c = new Album();
+         int año=1223;
+         int mes=12;
+         int dia=12;

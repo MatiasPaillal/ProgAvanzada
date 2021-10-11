@@ -27,22 +27,15 @@ public class Album {
 
     public boolean agregarFecha(int año, int mes, int dia) {
 
-
         if (año < LocalDate.now().getYear() && mes < 13 && dia < 32) {
             LocalDate fechaIngresada = LocalDate.of(año, mes, dia);
-            LocalDate fechaActual = LocalDate.now();
 
             if (fechaIngresada.isBefore(LocalDate.now())) {
                 this.fecha = fechaIngresada;
                 return true;
-
-            } else {
-                return false;
             }
-        } else {
-            return false;
         }
-
+        return false;
     }
 
     public String getNombre() {
