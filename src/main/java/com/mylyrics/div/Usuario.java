@@ -156,12 +156,13 @@ public class Usuario extends Persona {
         return dia + "-" + mes + "-" + anio;
     }
 
-
-    public void MostrarPlaylist() {
+    public void mostrarFavoritas() {
         this.favoritos.stream().forEach((cancion) -> {
-            System.out.println(cancion.getNombre() + cancion.getNameAutor() + cancion.getGenero() + cancion.getNameAlbum());
+            System.out.println(cancion.getNombre() +
+                    cancion.getNameAutor() +
+                    cancion.getGenero() +
+                    cancion.getNameAlbum());
         });
-
     }
 
     public void setNombre(String nombre) {

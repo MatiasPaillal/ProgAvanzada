@@ -147,7 +147,7 @@ public class Main {
             do {
                 System.out.println("1) Agregar un album");
                 System.out.println("2) Agregar una canción");
-                System.out.println("3) Agregar una Autor");
+                System.out.println("3) Agregar un Autor");
                 System.out.println("0) Cerrar Sesión");
                 opcion = teclado.nextInt();
                 teclado.nextLine();
