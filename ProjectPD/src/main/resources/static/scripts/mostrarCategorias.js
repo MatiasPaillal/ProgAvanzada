@@ -13,38 +13,42 @@ xhttp.onreadystatechange = function () {
         let tablaCategorias = document.querySelector('#tablaCategorias');
         tablaCategorias.innerHTML = '';
 
-        tablaCategorias.innerHTML += `<tr> <th><a href="/Cliente_Productos" title="Categoria ${datos[0].nombre}"><img src="${datos[0].imagen}" alt="" width="${datos[0].ancho}"/></a></th>`;
+        let html = "";
+
+        html += `<tr> <th><a href="/Cliente_Productos" title="Categoria ${datos[0].nombre}"><img src="${datos[0].imagen}" alt="" width="${datos[0].ancho}"/></a></th>`;
         for (let i = 1; i < 4; i++) {
-            tablaCategorias.innerHTML += `
+            html += `
                 <th><img src="${datos[i].imagen}" alt="" width="${datos[i].ancho}"/></th>
             `
         }
-        tablaCategorias.innerHTML += '</tr>';
+        html += `</tr>`;
 
-        tablaCategorias.innerHTML += '<tr style="text-align: center">';
+        html += `<tr style="text-align: center">`;
         for (let i = 0; i < 4; i++) {
-            tablaCategorias.innerHTML += `
+            html += `
                 <td>${datos[i].nombre}</td>
             `
         }
-        tablaCategorias.innerHTML += '</tr>';
+        html += `</tr>`;
 
         //--------------------------------------------------------------------------------------
 
         for (let i = 4; i < 8; i++) {
-            tablaCategorias.innerHTML += `
+            html += `
                 <th><img src="${datos[i].imagen}" alt="" width="${datos[i].ancho}"/></th>
             `
         }
-        tablaCategorias.innerHTML += '</tr>';
+        html += `</tr>`;
 
-        tablaCategorias.innerHTML += '<tr style="text-align: center">';
+        html += `<tr style="text-align: center">`;
         for (let i = 4; i < 8; i++) {
-            tablaCategorias.innerHTML += `
+            html += `
                 <td>${datos[i].nombre}</td>
             `
         }
-        tablaCategorias.innerHTML += '</tr>';
+        html += `</tr>`;
+        
+        tablaCategorias.innerHTML = html;
 
     }
 
