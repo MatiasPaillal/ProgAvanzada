@@ -93,8 +93,7 @@ public class controllers {
     }
     @GetMapping("/Admin_ProductoSeleccionado")
     String mostrarProductoSeleccionadoAdmin(Model modelo) {
-        modelo.addAttribute("producto", new Producto("1","2","3","4"));
-     
+         
         return "Admin_ProductoSeleccionado";
     }
 

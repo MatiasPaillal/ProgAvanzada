@@ -1,6 +1,6 @@
 
 const xhttp = new XMLHttpRequest();
-xhttp.open('GET', '../scripts/categorias.json', true);
+xhttp.open('GET', '../JSON/categorias.json', true);
 
 xhttp.send();
 
