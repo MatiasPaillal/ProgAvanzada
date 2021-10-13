@@ -20,7 +20,7 @@ xhttp.onreadystatechange = function () {
 
         let html = "";
 
-        html += `<tr> <th><a href="/Admin_ProductoSeleccionado" title="Producto ${datos[0].nombre}"><img src="${datos[0].imagen}" alt="" width="${datos[0].ancho}"/></a></th>`;
+        html += `<tr> <th><a href="/Cliente_ProductoSeleccionado" title="Producto ${datos[0].nombre}"><img src="${datos[0].imagen}" alt="" width="${datos[0].ancho}"/></a></th>`;
         for (let i = 1; i < 5; i++) {
             html += `
                 <th><img src="${datos[i].imagen}" alt="" width="${datos[i].ancho}"/></th>
