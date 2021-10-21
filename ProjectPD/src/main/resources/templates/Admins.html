@@ -27,12 +27,12 @@ YbOOl7+AMvyTG2x" crossorigin="anonymous">
                 <h2>Admins</h2>
            
             <br>
-                <table>
+                <table class="table">
                 <tbody> 
-                    <tr th:each="administrador: ${lista}">
-                        <td th:text="${administrador.usuario}"></td>
-                         <td th:text="${administrador.password}"> </td>
-                             <td th:text="${administrador.nombre}"></td>
+                    <tr th:each="admin: ${lista}">
+                        <td th:text="${admin.usuario}">
+                         <td th:text="${admin.password}"> 
+                             <td th:text="${admin.nombre}">
                     </tr>
                     
                 </tbody>  
