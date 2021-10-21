@@ -1,25 +1,35 @@
+package com.example.demo;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.example.demo;
+
 
 import java.util.ArrayList;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import com.example.demo.Admin.servicios.ServicioAdmin;
+import com.example.demo.Boleta;
+import com.example.demo.Carro;
+import com.example.demo.Producto;
 
 /**
  *
  * @author matias
  */
+
+ 
 @Controller
 public class controllers {
+    @Autowired
+    private ServicioAdmin servicioAdmin;
 
     Producto PRO1 = new Producto("1", "2", "3", "5");
     Producto PRO2 = new Producto("1", "2", "3", "5");
@@ -39,6 +49,10 @@ public class controllers {
     @GetMapping("/Cliente_Categorias")
     String Cliente_Categorias() {
         return "Cliente_Categorias";
+    }
+    @GetMapping("/Ejemplo")
+    String ej() {
+        return "ejemplo";
     }
 
     @GetMapping("/Cliente_Productos")
@@ -97,6 +111,7 @@ public class controllers {
         return "Admin_ProductoSeleccionado";
     }
 
+    /*
     @RequestMapping(value = "consultaAdmin", method = RequestMethod.POST)
     public String consultaAdmin(String name, String password) {
         if ("1".equals(name) && "1".equals(password)) {
@@ -105,7 +120,39 @@ public class controllers {
 
         return "IngresarAdmin";
 
+   
+    
+    
+    private ServicioAdmin ServicioAdmin;
+    
+     @RequestMapping(value="consultaAdmin" , method = RequestMethod.POST)
+    public String Cliente_Categorias( String nombre, String password,Model modelo) {
+        modelo.addAttribute("Lista", ServicioAdmin.getAll());
+        ArrayList<Administrador> admins = (ArrayList<Administrador>) ServicioAdmin.getAll();
+        for(int i=0;i < 10;i++){
+        if (admins.get(i).equals(nombre)){
+            return "Admin_Opciones";
+        }
+        }
+       
+       
+        return "IngresarAdmin";
+    } } 
+    private ServicioAdmin ServicioAdmin;
+    
+     */
+    
+    
+   
+    
+   @RequestMapping("/a")
+     public String mostrarAdmin(Model modelo) {
+        modelo.addAttribute("lista", servicioAdmin.getAll());
+        
+        return "Admins";
     }
+      
+   
 
     @RequestMapping(value = "buscarBoleta", method = RequestMethod.POST)
     public String buscarBoleta(String numero) {
