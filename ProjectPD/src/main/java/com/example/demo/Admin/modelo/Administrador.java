@@ -14,8 +14,10 @@ import javax.persistence.*;
 @Entity
 public class Administrador {
 
-    @Id
-    @Column(length = 15)
+  @Id 
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(length = 15)
+ 
     private String usuario;
 
     @Column(length = 20, nullable = false)
@@ -24,8 +26,8 @@ public class Administrador {
     @Column(length = 80, nullable = false)
     private String nombre;
 
-    public Administrador(int id, String usuario, String password, String nombre) {
-        this.id = id;
+    public Administrador(String usuario, String password, String nombre) {
+        
         this.usuario = usuario;
         this.password = password;
         this.nombre = nombre;
@@ -57,5 +59,6 @@ public class Administrador {
     public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
+ 
     
 }
