@@ -26,12 +26,14 @@ public class Administrador {
     @Column
     private String nombre;
 
-    public Administrador(String nombre, String password, String nombreUsuario) {
-        this.nombre = nombre;
+    public Administrador(int id, String usuario, String password, String nombre) {
+        this.id = id;
+        this.usuario = usuario;
         this.password = password;
-        this.usuario = nombreUsuario;
+        this.nombre = nombre;
     }
 
+    
     public Administrador() {
     }
 
@@ -57,6 +59,22 @@ public class Administrador {
 
     public void setNombreUsuario(String nombreUsuario) {
         this.usuario = nombreUsuario;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
     
     
