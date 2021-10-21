@@ -12,25 +12,5 @@ import java.util.ArrayList;
  * @author matias
  */
 public class Carro {
-    private ArrayList<Producto> items;
-    private String dueño;
 
-    public Carro(ArrayList<Producto> items, String dueño) {
-        this.items = items;
-        this.dueño = dueño;
-    }
-
-     
-
-    public ArrayList<Producto> getItems() {
-        return items;
-    }
-
-    public void setItems(ArrayList<Producto> items) {
-        this.items = items;
-    }
-    public void guardarProducto(Producto producto){
-        this.items.add(producto);
-    
-    }
 }
