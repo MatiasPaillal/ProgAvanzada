@@ -5,9 +5,7 @@
  */
 package com.example.demo.models;
 
- 
 import javax.persistence.*;
- 
 
 /**
  *
@@ -16,11 +14,10 @@ import javax.persistence.*;
 @Entity
 @Table(name = "administrador")
 public class Administrador {
-    
-    @Id 
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(length = 15)
- 
+
+    @Id
+    @Column(length = 15)
+
     private String usuario;
 
     @Column(length = 20, nullable = false)
@@ -30,13 +27,12 @@ public class Administrador {
     private String nombre;
 
     public Administrador(String usuario, String password, String nombre) {
-        
+
         this.usuario = usuario;
         this.password = password;
         this.nombre = nombre;
     }
 
-    
     public Administrador() {
     }
 
@@ -64,6 +60,4 @@ public class Administrador {
         this.usuario = usuario;
     }
 
-       
-    
 }
