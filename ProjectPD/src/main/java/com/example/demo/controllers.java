@@ -31,13 +31,6 @@ public class controllers {
     @Autowired
     private ServicioAdmin servicioAdmin;
 
-    Producto PRO1 = new Producto("1", "2", "3", "5");
-    Producto PRO2 = new Producto("1", "2", "3", "5");
-    Producto PRO3 = new Producto("1", "2", "3", "5");
-    Producto PRO4 = new Producto("1", "2", "3", "5");
-    ArrayList<Producto> items = new ArrayList<Producto>();
-    Carro carro = new Carro(items, "yo");
-
     Boleta boleta = new Boleta("a", "a", "a", "a", "a", "a", "a");
 
     @GetMapping("/")
