@@ -7,6 +7,7 @@ package com.example.demo;
  */
 
 
+import com.example.demo.Admin.modelo.Administrador;
 import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +19,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.example.demo.Admin.servicios.ServicioAdmin;
 import com.example.demo.Boleta;
 import com.example.demo.Carro;
+import org.springframework.web.bind.annotation.PathVariable;
+
 
 /**
  *
@@ -143,6 +146,18 @@ public class controllers {
         
         return "Admins";
     }
+     
+     @GetMapping("/guardar/{id}")
+     public String mostrarAdminGuardad(@PathVariable("id") int id, Model modelo) {
+        if(id!=0){
+            modelo.addAttribute("admin", servicioAdmin.obtener(id));
+        }else{
+            modelo.addAttribute("admin", new Administrador());
+        }
+        
+        return "Admins";
+    }
+      
       
    
 

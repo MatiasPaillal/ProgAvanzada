@@ -23,21 +23,22 @@ YbOOl7+AMvyTG2x" crossorigin="anonymous">
         <br>
             <h2 th:if="${lista.isEmpty()}">no hay personas</h2>
             
-            <div th:if="${lista.isEmpty()}">
+            <div th:if="${!lista.isEmpty()}">
                 <h2>Admins</h2>
-            </div>
+           
             <br>
-                <table>
+                <table class="table">
                 <tbody> 
-                    <tr th:each="Administrador: ${lista}">
-                        <td th:text="${Administrador:.usuario}"></td>
-                         <td th:text="${Administrador:.password}"> </td>
-                             <td th:text="${Administrador:.nombre}"></td>
+                    <tr th:each="admin: ${lista}">
+                        <td th:text="${admin.usuario}">
+                         <td th:text="${admin.password}"> 
+                             <td th:text="${admin.nombre}">
                     </tr>
                     
                 </tbody>  
                 
                 </table>
-            </div>
+            </div> 
+        </div>
     </body>
 </html>
