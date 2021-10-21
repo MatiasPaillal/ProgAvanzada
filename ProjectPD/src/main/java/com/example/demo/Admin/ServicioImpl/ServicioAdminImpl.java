@@ -5,7 +5,7 @@
  */
 package com.example.demo.Admin.ServicioImpl;
 
-import com.example.demo.models.Administrador;
+import com.example.demo.Admin.modelo.Administrador;
 import com.example.demo.Admin.servicios.ServicioAdmin;
 import com.example.demo.Admin.Commons.servicioGenImpl;
 import com.example.demo.Admin.interfaz.InterfazAdmin;
@@ -22,7 +22,7 @@ public class ServicioAdminImpl extends servicioGenImpl<Administrador, String> im
     
     @Autowired
     private InterfazAdmin interfazAdmin;
-    
+
     @Autowired
     public CrudRepository<Administrador, String> obtener(){
     

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.example.demo.models;
+package com.example.demo.Admin.modelo;
 
 import javax.persistence.*;
 

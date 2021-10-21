@@ -5,7 +5,7 @@
  */
 package com.example.demo.Admin.interfaz;
 
-import com.example.demo.models.Administrador;
+import com.example.demo.Admin.modelo.Administrador;
 import org.springframework.data.repository.CrudRepository;
 
 /**

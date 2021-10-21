@@ -7,7 +7,7 @@ package com.example.demo;
  */
 
 
-import com.example.demo.models.Administrador;
+import com.example.demo.Admin.modelo.Administrador;
 import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
