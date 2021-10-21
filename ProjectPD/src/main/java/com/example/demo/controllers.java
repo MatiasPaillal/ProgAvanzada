@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.example.demo.Admin.servicios.ServicioAdmin;
 import com.example.demo.Boleta;
 import com.example.demo.Carro;
-import com.example.demo.Producto;
 
 /**
  *

@@ -5,9 +5,7 @@
  */
 package com.example.demo.Admin.modelo;
 
- 
 import javax.persistence.*;
- 
 
 /**
  *
@@ -15,15 +13,15 @@ import javax.persistence.*;
  */
 @Entity
 public class Administrador {
-    
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    @Column
+    @Column(length = 15)
     private String usuario;
-    @Column
+
+    @Column(length = 20, nullable = false)
     private String password;
-    @Column
+
+    @Column(length = 80, nullable = false)
     private String nombre;
 
     public Administrador(String nombre, String password, String nombreUsuario) {
@@ -58,6 +56,5 @@ public class Administrador {
     public void setNombreUsuario(String nombreUsuario) {
         this.usuario = nombreUsuario;
     }
-    
-    
+
 }
