@@ -24,8 +24,7 @@ public class Administrador {
     @Column(length = 80, nullable = false)
     private String nombre;
 
-    public Administrador(int id, String usuario, String password, String nombre) {
-        this.id = id;
+    public Administrador(String usuario, String password, String nombre) {
         this.usuario = usuario;
         this.password = password;
         this.nombre = nombre;
