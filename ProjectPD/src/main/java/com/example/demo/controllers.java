@@ -116,37 +116,37 @@ public class controllers {
         return "IngresarAdmin";
 
    
+    */
     
     
-    private ServicioAdmin ServicioAdmin;
     
      @RequestMapping(value="consultaAdmin" , method = RequestMethod.POST)
-    public String Cliente_Categorias( String nombre, String password,Model modelo) {
-        modelo.addAttribute("Lista", ServicioAdmin.getAll());
-        ArrayList<Administrador> admins = (ArrayList<Administrador>) ServicioAdmin.getAll();
-        for(int i=0;i < 10;i++){
-        if (admins.get(i).equals(nombre)){
+    public String Cliente_Categorias( String usuario, String password,Model modelo) {
+        modelo.addAttribute("lista", servicioAdmin.getAll());
+        
+        ArrayList<Administrador> admins = (ArrayList<Administrador>) servicioAdmin.getAll();
+         
+        for(int i=0;i <admins.size();i++){             
+        if (admins.get(i).getUsuario().equals(usuario)&& admins.get(i).getPassword().equals(password)){
             return "Admin_Opciones";
         }
-        }
-       
-       
+        }          
         return "IngresarAdmin";
-    } } 
-    private ServicioAdmin ServicioAdmin;
+    }  
     
-     */
+    
+     
     
     
    
-    
+   /*
    @RequestMapping("/a")
      public String mostrarAdmin(Model modelo) {
         modelo.addAttribute("lista", servicioAdmin.getAll());
         
         return "Admins";
     }
-     
+      
      @GetMapping("/guardar/{id}")
      public String mostrarAdminGuardad(@PathVariable("id") int id, Model modelo) {
         if(id!=0){
@@ -157,7 +157,7 @@ public class controllers {
         
         return "Admins";
     }
-      
+    */  
       
    
 

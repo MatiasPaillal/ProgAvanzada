@@ -18,16 +18,14 @@ public class Administrador {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    @Column
     private String usuario;
     @Column
     private String password;
     @Column
     private String nombre;
 
-    public Administrador(int id, String usuario, String password, String nombre) {
-        this.id = id;
+    public Administrador(String usuario, String password, String nombre) {
+        
         this.usuario = usuario;
         this.password = password;
         this.nombre = nombre;
@@ -53,22 +51,6 @@ public class Administrador {
         this.password = password;
     }
 
-    public String getNombreUsuario() {
-        return usuario;
-    }
-
-    public void setNombreUsuario(String nombreUsuario) {
-        this.usuario = nombreUsuario;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getUsuario() {
         return usuario;
     }
@@ -76,6 +58,7 @@ public class Administrador {
     public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
-    
+
+       
     
 }
