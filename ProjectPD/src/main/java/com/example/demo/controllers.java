@@ -5,9 +5,9 @@ package com.example.demo;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
 import com.example.demo.Admin.modelo.Administrador;
+import com.example.demo.Admin.modelo.CategoriaModel;
+import com.example.demo.Admin.modelo.ProductoModel;
 import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,21 +17,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.example.demo.Admin.servicios.ServicioAdmin;
+import com.example.demo.Admin.servicios.ServicioCategoria;
+import com.example.demo.Admin.servicios.ServicioProducto;
 import com.example.demo.Boleta;
 import com.example.demo.Carro;
 import org.springframework.web.bind.annotation.PathVariable;
-
 
 /**
  *
  * @author matias
  */
-
- 
 @Controller
 public class controllers {
+
     @Autowired
     private ServicioAdmin servicioAdmin;
+    @Autowired
+    private ServicioProducto servicioProducto;
+    @Autowired
+    private ServicioCategoria servicioCategoria;
 
     Boleta boleta = new Boleta("a", "a", "a", "a", "a", "a", "a");
 
@@ -45,6 +49,7 @@ public class controllers {
     String Cliente_Categorias() {
         return "Cliente_Categorias";
     }
+
     @GetMapping("/Ejemplo")
     String ej() {
         return "ejemplo";
@@ -100,9 +105,10 @@ public class controllers {
     String mostrarProductoAdmin() {
         return "Admin_Productos";
     }
+
     @GetMapping("/Admin_ProductoSeleccionado")
     String mostrarProductoSeleccionadoAdmin(Model modelo) {
-         
+
         return "Admin_ProductoSeleccionado";
     }
 
@@ -116,18 +122,17 @@ public class controllers {
         return "IngresarAdmin";
 
    
-    */
-    
-    
-    
-     @RequestMapping(value = "consultaAdmin", method = RequestMethod.POST)
+     */
+    @RequestMapping(value = "consultaAdmin", method = RequestMethod.POST)
     public String Cliente_Categorias(String usuario, String password, Model modelo) {
-        modelo.addAttribute("lista", servicioAdmin.getAll());
+        modelo.addAttribute("listaAdmin", servicioAdmin.getAll());
+        modelo.addAttribute("lista", servicioProducto.getAll());
+        modelo.addAttribute("listaC", servicioCategoria.getAll());
 
         Administrador admins = (Administrador) servicioAdmin.obtener(usuario);
 
         try {
-            if (admins.getUsuario().equals(usuario) && admins.getPassword().equals(password)) {
+            if (admins.getPassword().equals(password)) {
                 return "Admin_Opciones";
             }
         } catch (NullPointerException e) {
@@ -135,19 +140,41 @@ public class controllers {
 
         return "IngresarAdmin";
     }
-    
-    
-     
-    
-    
-   
-   /*
-   @RequestMapping("/a")
-     public String mostrarAdmin(Model modelo) {
-        modelo.addAttribute("lista", servicioAdmin.getAll());
-        
-        return "Admins";
+
+    @RequestMapping(value = "guardarProducto", method = RequestMethod.POST)
+    public String guardarProducto(String fURL, String fnombre, String fprecio, String categorias, Model modelo) {
+        CategoriaModel categoria = (CategoriaModel) servicioCategoria.obtener((Long.parseLong(categorias)));
+
+        ProductoModel producto = new ProductoModel(fnombre, Integer.parseInt(fprecio), categoria, fURL);
+
+        servicioProducto.guardar(producto);
+        modelo.addAttribute("listaAdmin", servicioAdmin.getAll());
+        modelo.addAttribute("lista", servicioProducto.getAll());
+        modelo.addAttribute("listaC", servicioCategoria.getAll());
+
+        return "redirect:opciones";
     }
+
+    @GetMapping(value = "/eliminar/{id}")
+    public String eliminarProducto(@PathVariable String id, Model modelo) {
+
+        try {
+            servicioProducto.eliminar(Long.parseLong(id));
+        }
+        catch(NumberFormatException e){
+        }
+        return "redirect:/opciones";
+    }
+
+    /*
+    
+    @RequestMapping("/Admin_Opciones")
+     public String mostrarAdmin(Model modelo) {
+        modelo.addAttribute("lista", servicioProducto.getAll());
+        return "Admin_Opciones";
+    }
+   
+  
       
      @GetMapping("/guardar/{id}")
      public String mostrarAdminGuardad(@PathVariable("id") int id, Model modelo) {
@@ -159,10 +186,7 @@ public class controllers {
         
         return "Admins";
     }
-    */  
-      
-   
-
+     */
     @RequestMapping(value = "buscarBoleta", method = RequestMethod.POST)
     public String buscarBoleta(String numero) {
         if ("11111".equals(numero)) {
@@ -174,7 +198,10 @@ public class controllers {
     }
 
     @RequestMapping(value = "opciones")
-    public String guardarProducto(String nombre) {
+    public String guardarProducto(String nombre, Model modelo) {
+        modelo.addAttribute("listaAdmin", servicioAdmin.getAll());
+        modelo.addAttribute("lista", servicioProducto.getAll());
+        modelo.addAttribute("listaC", servicioCategoria.getAll());
 
         return "Admin_Opciones";
 

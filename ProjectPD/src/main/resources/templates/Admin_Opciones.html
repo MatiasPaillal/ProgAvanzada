@@ -1,44 +1,75 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>ADMIN</title>
-        <link rel="stylesheet" href="../css/admin.css">     
-    </head>
 
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    </head>
     <body background="../imagenes/Fondo.jpg">
         <div>
-            <div style="float: left; padding: 35px; margin: 0 30px ">
-                <a href="Ingresar" title="Volver Atrás" style="float: left">
-                    <img src="../imagenes/Icon ionic-ios-exit.png" alt="" />
-                </a>
-            </div>
 
-            <div id="busqueda" style="float: left">
+            <h1 class="display-1" style="font-size: 70px; text-align: center; color: white" th:each="admin: ${listaAdmin}" th:text="'BIENVENIDO  ' + ${admin.nombre}"></h1>
+            <br><br><br>
 
-                <form class="form">
-                    <input type="text" id="txtBusqueda" name="barraBusqueda">
-                </form>
-                <a href="productos" title="Buscar" style="margin-left: 10px">
-                    <img src="../imagenes/Icon metro-search.png" alt="" width="40"/>
-                </a>
-            
-            <div style="float: left; padding: 35px; margin: 0 30px ">
-                <a href="#" title="Administrador" style="float: left">
-                    <img src="../imagenes/Icon awesome-user-lock.png" alt="" width="60"/>
-                </a>
-            </div></div>
         </div>
-        <br><br><br><br><br><br><br><br><br><br>
-        <h1 align="center" style="font-size: 80px;">Bienvenido 1</h1><br><br><br><br><br>
+        <div class="container">
 
-        <div align="center"><a href="/AgregarProducto" class="button"  >Agregar un nuevo producto</a></div>
-        <div align="center"><a href="/Admin_Categorias" class="button"  >Ver categorias</a></div>
-        <div align="center"><a href="/Admin_BuscarBoletas" class="button"  >Buscar Boleta</a></div>
+            <h2 th:if="${lista.isEmpty()}">no hay productos</h2>
 
+            <div th:if="${!lista.isEmpty()}" style="background-color: white; padding: 15px; max-height: 25%; box-shadow: 2px 2px 5px #999999;">
+                <h2 class="display-5" style="text-align: center">Productos</h2>
+
+                <h5 class="display-6" style="font-size: 22px">Agregar un nuevo producto</h5>
+
+                <form method="POST" action="guardarProducto">
+                    <table>
+                        <tr>
+                            <th><input class="form-control form-control-lg" type="text" id="fURL" name="fURL" required=""  placeholder="URL Imagen"></th>
+                            <th><input class="form-control form-control-lg" type="text" id="fnombre" name="fnombre" required="" placeholder="Nombre"></th>
+                            <th><input class="form-control form-control-lg" min="1" max="999999999" type="number" id="fprecio" name="fprecio" required="" placeholder="Precio" size="5"></th>
+                            <th>
+                                <select class="form-control form-control-lg"  id="categorias" name="categorias" size="1" style="padding: 3px 15px" required>
+                                    <option value="">Seleccionar Categoría</option>
+                                    <option th:each="categoria : ${listaC}" th:value="${categoria.id}" th:text="${categoria.categoria}"></option>
+                                </select>
+                            </th>
+                            <th><input type="submit" value="Guardar" class="btn btn-primary" style="margin-left: 15px"></th>
+                        </tr>
+                        
+                    </table>
+                </form>
+
+                <table  class="table">
+                    <thead>
+                        <tr>
+                        <th>Codigo</th>
+                        <th>Imagen</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Categoria</th>
+                        <th>Opciones</th>
+                        </tr>
+
+                    </thead>
+                <tbody>
+                    <tr th:each="producto: ${lista}">
+                        <td th:text="${producto.idProducto}">
+                         <td><img width="35" height="45" th:src="@{${producto.URLImagen}}" alt=""/></td>
+                         <td th:text="${producto.nombre}">
+                         <td th:text="${producto.precio}">
+                         <td th:text="${producto.idCateg.getCategoria()}">
+
+                             <td><a class="btn btn-info" th:href="@{/save/{id}(id=${producto.idProducto})}">Editar</a> 
+                                 <a class="btn btn-danger" th:href="@{/eliminar/{id}(id=${producto.idProducto})}">Eliminar</a></td>
+                    </tr>
+
+                </tbody>
+
+                </table>
+            </div>
+        </div>
     </body>
 </html>
