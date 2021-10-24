@@ -9,7 +9,8 @@ import javax.persistence.*;
 public class BoletaModel {
 
     @Id
-    private Integer nroBoleta;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long nroBoleta;
 
     @Column(nullable = false)
     private LocalDateTime fechaEmision;
@@ -21,11 +22,11 @@ public class BoletaModel {
     @JoinColumn(nullable = false, referencedColumnName = "rutTienda")
     private TiendaModel rutTienda;
 
-    public Integer getNroBoleta() {
+    public Long getNroBoleta() {
         return this.nroBoleta;
     }
 
-    public void setNroBoleta(Integer nroBoleta) {
+    public void setNroBoleta(Long nroBoleta) {
         this.nroBoleta = nroBoleta;
     }
 
