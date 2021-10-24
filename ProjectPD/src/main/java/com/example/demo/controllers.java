@@ -46,9 +46,12 @@ public class controllers {
     }
 
     @GetMapping("/Cliente_Categorias")
-    String Cliente_Categorias() {
+    String Cliente_Categorias(Model modelo) {
+        modelo.addAttribute("listaC", servicioCategoria.getAll());
+        
         return "Cliente_Categorias";
     }
+     
 
     @GetMapping("/Ejemplo")
     String ej() {
@@ -139,6 +142,23 @@ public class controllers {
         }
 
         return "IngresarAdmin";
+    }
+    @RequestMapping(value = "buscarProducto", method = RequestMethod.POST)
+    public String consultaProductos(String codigo, Model modelo) {
+        ProductoModel producto = servicioProducto.obtener(Long.parseLong(codigo));
+       modelo.addAttribute("listaAdmin", servicioAdmin.getAll()); 
+       modelo.addAttribute("listaC", servicioCategoria.getAll());
+       ArrayList<ProductoModel> productos= new ArrayList<ProductoModel>();
+       productos.add(producto);
+       
+       if(productos != null){ 
+        modelo.addAttribute("lista", productos);
+        return "Admin_Opciones";
+       }else{
+         modelo.addAttribute("lista", servicioProducto.getAll());
+        return "Admin_Opciones";
+       }
+         
     }
 
     @RequestMapping(value = "guardarProducto", method = RequestMethod.POST)
