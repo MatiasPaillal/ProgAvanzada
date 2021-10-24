@@ -12,6 +12,19 @@ public class CategoriaModel {
 
     @Column(length = 30, nullable = false)
     private String categoria;
+    
+    @Column(nullable = false)
+    private String urlImagenC;
+
+    public String getUrlImagenC() {
+        return urlImagenC;
+    }
+
+    public void setUrlImagenC(String urlImagenC) {
+        this.urlImagenC = urlImagenC;
+    }
+    
+   
 
     public Long getId() {
         return id;
