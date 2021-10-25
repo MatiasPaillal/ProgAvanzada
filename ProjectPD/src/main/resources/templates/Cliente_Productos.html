@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -8,101 +9,130 @@ and open the template in the editor.
 
     <head>
         <style>
-        #moopio, #moopio a{
-		background-color: transparent;
-		width: 100%;
-	}
-	#moopio a{
-		display:block;
-	}
-	#moopio a:hover {
-		cursor:default;
-               box-shadow: 0px 8px 16px 1px rgba(0, 0, 0, 0.2)
-	}
-	</style>
+            #moopio, #moopio a{
+                background-color: transparent;
+                width: 100%;
+            }
+            #moopio a{
+                display:block;
+            }
+            #moopio a:hover {
+                cursor:default;
+                box-shadow: 0px 8px 16px 1px rgba(0, 0, 0, 0.2)
+            }
+        </style>
         <title>CLIENTE-CATEGORIAS</title>
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../css/cliente.css">
+        <link rel="stylesheet" href="../css/cliente.css"></link>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"></link>
 
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <meta charset="utf-8"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head> 
 
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <body style="background-image: url('../imagenes/Fondo.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center; background-attachment: fixed;">
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <header>
+            <div class="navbar-left">
+                <nav class="navbar navbar-inverse navbar-static-top navbar-dark bg-dark" role="navigation">
+                    <div class="container-fluid justify-content-center">
+                        <form action="" class="d-flex col-8">
+                            <input type="search" class="form-control me-2 col" placeholder="Buscar producto" aria-label="Buscar producto" id="txtBusqueda" name="barraBusqueda"></input>
+                            <button type="submit" class="btn ml-2">
+                                <a href="/Cliente_Productos" title="Buscar">
+                                    <img src="../imagenes/search.svg" width="25" style="filter: invert(1.5)"></img>
+                                </a>
+                            </button>
 
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    </head>
-    <body background="../imagenes/Fondo.jpg" style="background-repeat: no-repeat">
-        <div>
-            <div id="busqueda">
-                <a href="/Cliente_Categorias" title="Volver Atrás">
-                    <img src="../imagenes/Icon ionic-ios-exit.png" alt="" />
-                </a>
-                <form class="form">
-                    <input type="text" id="txtBusqueda" name="barraBusqueda">
-                </form>
-                <a href="/Cliente_Productos" title="Buscar">
-                    <img src="../imagenes/Icon metro-search.png" alt="" width="40"/>
-                </a>
-            </div>
-
-            <div id="carrito" class="fontCarrito">
-                <div style="float: left">
-                    <h1><img src="../imagenes/Icon metro-cart.png" alt="" width="35" /> Carrito</h1>
-
-                </div>
-            </div>
-
-           <div id="Productos">
-                
-         <div class=" float-left" style="display: inline-block;"> 
-            <div class="container">
-
-
-            <h2 th:if="${listaP.isEmpty()}">no hay productos</h2>
-
-            <div th:if="${!listaP.isEmpty()}" style="background-color: white; padding: 15px; max-height: 25%; overflow-y: scroll; height: 550px;" >
-                <h2 class="display-5" style="text-align: center">Productos</h2>
-
-                
-                              <div>                                                              
-                                  <div th:each="productos,b :${listaP}" th:if="${b.count} > 0" style="display: inline-block; max-width: 150px " id="moopio" >
-                                <a th:href="@{/mostrarProducto/{id}(id=${productos.idProducto})}" >
-                                <img width="100%" th:src="@{${productos.URLImagen}}" alt=""/>
-                                <h3 th:text="${productos.nombre}"></h3>
+                        </form>
+                        <button class="btn ml-2">
+                            <a class="btn btn-outline-info" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                                <img src="../imagenes/Icon metro-cart.png" width="25" style="filter: invert(1.5)"/>
+                                Carrito
                             </a>
-                                </div>
-                                  </div>
-                                  
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+
+
+
+        <div class=" bg-light container " > 
+            <div class="d-flex justify-content-center mt-4 pt-2"> 
+          <h2 class="display-5" style="text-align: center">Productos</h2>
+          </div>
+            <div th:if="${!listaP.isEmpty()}"  class="row row-cols-4 " >
+                
+
+
+                <div  style="width: 150px" th:each="productos :${listaP}" id="moopio" class="col card " >
+
+                    <a style="text-decoration: none; color: inherit" th:href="@{/mostrarProducto/{id}(id=${productos.idProducto})}" >
+                        <div   id="moopio" class="card-body  p-2 border bg-light">
+ 
+                            <img class="card-img-top" width="100%" th:src="@{${productos.URLImagen}}" alt=""/>
+                            <p th:text="${productos.nombre}" class="card-text "></p>
+
+                        </div> 
+                    </a>
+
+                </div>
+
+            </div>
+
         </div>
-        </div>
-        <div>
-<p>
-  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    Link with href
-  </a>
-   </p>
-        </div>
-<div  class="collapse float-lg-right" id="collapseExample">
-    
-  <div class="card card-body " style="overflow-y: scroll; height: 340px;">
-      <div id="carrito" class="fontCarrito conta">
-                <div style="float: left">
-                    <h1><img src="../imagenes/Icon metro-cart.png" alt="" width="35" /> Carrito</h1>
+
+
+        <div class="offcanvas offcanvas-end mt-6" tabindex="-1" data-bs-backdrop="false" data-bs-keyboard="true" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <img src="../imagenes/Icon metro-cart.png" width="25"/>
+                <h5 class="offcanvas-title" id="offcanvasTitulo">Carrito</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div>
+
+                    <div style="display: inline">
+                        <div style="margin-top: 20px">
+                            <h2 style="background-color: white; display: inline-block; margin-right: 50px">Apple Iphone 12</h2>
+                            <img src="../imagenes/productos/celulares/Apple Iphone 12.jpg" alt="" style="background-color: white; display: inline-block; float: right" width="100"/>
+                        </div>
+
+                        <div style="margin-top: 15px">
+                            <a href="#" title="Eliminar" style="display: inline-block"><img src="../imagenes/Icon ionic-ios-trash.png" alt="" style="margin-right: 15px"/></a>
+                            <h3 style="display: inline-block">$1.200.000</h3>
+                            <h3 style="display: inline-block">1 <img src="../imagenes/Icon ionic-ios-arrow-down.png" alt=""/></h3>
+                        </div>
+                    </div>
+
+                    <div style="display: inline">
+                        <div style="margin-top: 50px">
+                            <h2 style="background-color: white; display: inline-block; margin-right: 50px">Memoria RAM HyperX</h2>
+                            <img src="../imagenes/productos/ComponentesPC/Memoria RAM HyperX DDR4 8GB.jpg" alt="" style="background-color: white; display: inline-block; float: right" width="100"/>
+                        </div>
+
+                        <div style="margin-top: 15px">
+                            <a href="#" title="Eliminar" style="display: inline-block"><img src="../imagenes/Icon ionic-ios-trash.png" alt="" style="margin-right: 15px"/></a>
+                            <h3 style="display: inline-block">$98.800</h3>
+                            <h3 style="display: inline-block">2 <img src="../imagenes/Icon ionic-ios-arrow-down.png" alt=""/></h3>
+                        </div>
+                    </div>
+
+
+                    <div style="position: absolute; bottom: 50px; right: 70px">
+                        <a href="/Cliente_Boleta"><h3 style="background-color: rgb(125,98,180); color: white; float: left; margin-right: 35px">Realizar Compra</h3></a>
+                        <h3 style="display: inline-block">Total:</h3>
+                        <h3 style="display: inline-block">$1.298.800</h3>
+                    </div>
+
 
                 </div>
             </div>
-
-            </div>
-           
         </div>
-
-
-  <script src="../scripts/JSProductosCliente.js"> 
-            </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     </body>
 
 </html>
