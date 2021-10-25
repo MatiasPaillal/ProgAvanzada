@@ -59,7 +59,8 @@ public class controllers {
     }
 
     @GetMapping("/Cliente_Productos")
-    String Cliente_Productos() {
+    String Cliente_Productos(Model modelo) {
+        modelo.addAttribute("listaP", servicioProducto.getAll());
         return "Cliente_Productos";
     }
 
@@ -127,7 +128,7 @@ public class controllers {
    
      */
     @RequestMapping(value = "consultaAdmin", method = RequestMethod.POST)
-    public String Cliente_Categorias(String usuario, String password, Model modelo) {
+    public String admin_Opciones(String usuario, String password, Model modelo) {
         modelo.addAttribute("listaAdmin", servicioAdmin.getAll());
         modelo.addAttribute("lista", servicioProducto.getAll());
         modelo.addAttribute("listaC", servicioCategoria.getAll());
@@ -184,6 +185,21 @@ public class controllers {
         catch(NumberFormatException e){
         }
         return "redirect:/opciones";
+    }
+    
+     @GetMapping(value = "/mostrarProducto/{id}")
+    public String mostrarProducto(@PathVariable String id, Model modelo) {
+        ProductoModel producto = (ProductoModel) servicioProducto.obtener(Long.parseLong(id));
+             
+        
+        ArrayList<ProductoModel> productos= new ArrayList<ProductoModel>();
+       productos.add(producto);
+        try {
+            modelo.addAttribute("listaP", productos);
+        }
+        catch(NumberFormatException e){
+        }
+        return "/Cliente_ProductoSeleccionado";
     }
 
     /*

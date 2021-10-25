@@ -30,12 +30,15 @@ and open the template in the editor.
                 <a href="/Ingresar" title="Volver Atrás">
                     <img src="../imagenes/Icon ionic-ios-exit.png" alt="" />
                 </a>
-                <form class="form">
-                    <input type="text" id="txtBusqueda" name="barraBusqueda">
+                <td>
+                <form class="form" action="Cliente_Productos" >
+                 
+                <input type="text" name="termino" style="display: inline-block;">
+                <input type="submit" value="Guardar" style="margin-left: 15px" src="../imagenes/Icon metro-search.png">
+                 
+                     
                 </form>
-                <a href="/Cliente_Productos" title="Buscar">
-                    <img src="../imagenes/Icon metro-search.png" alt="" width="40"/>
-                </a>
+                </td>
             </div>
 
              
@@ -74,15 +77,12 @@ and open the template in the editor.
   <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
     Link with href
   </a>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    Button with data-target
-  </button>
-</p>
+   </p>
         </div>
 <div  class="collapse float-lg-right" id="collapseExample">
     
-  <div class="card card-body">
-      <div id="carrito" class="fontCarrito">
+  <div class="card card-body " style="overflow-y: scroll; height: 340px;">
+      <div id="carrito" class="fontCarrito conta">
                 <div style="float: left">
                     <h1><img src="../imagenes/Icon metro-cart.png" alt="" width="35" /> Carrito</h1>
 
