@@ -4,15 +4,37 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html lang="es-CL">
+<html lang="es-CL " xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
     <head>
+        <style>
+        #moopio, #moopio a{
+		background-color: transparent;
+		width: 100%;
+	}
+	#moopio a{
+		display:block;
+	}
+	#moopio a:hover {
+		cursor:default;
+               box-shadow: 0px 8px 16px 1px rgba(0, 0, 0, 0.2)
+	}
+	</style>
         <title>CLIENTE-CATEGORIAS</title>
-        <meta charset="UTF-8">
+        
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/cliente.css">
-    </head>
 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </head>
     <body background="../imagenes/Fondo.jpg" style="background-repeat: no-repeat">
         <div>
             <div id="busqueda">
@@ -35,53 +57,47 @@ and open the template in the editor.
             </div>
 
            <div id="Productos">
-                <table id="tablaProductos" style="width: 100%; height: 500px">
+                
+         <div class=" float-left" style="display: inline-block;"> 
+            <div class="container">
 
-                </table>
 
+            <h2 th:if="${listaP.isEmpty()}">no hay productos</h2>
+
+            <div th:if="${!listaP.isEmpty()}" style="background-color: white; padding: 15px; max-height: 25%; overflow-y: scroll; height: 550px;" >
+                <h2 class="display-5" style="text-align: center">Productos</h2>
+
+                
+                              <div>                                                              
+                                  <div th:each="productos,b :${listaP}" th:if="${b.count} > 0" style="display: inline-block; max-width: 150px " id="moopio" >
+                                <a th:href="@{/mostrarProducto/{id}(id=${productos.idProducto})}" >
+                                <img width="100%" th:src="@{${productos.URLImagen}}" alt=""/>
+                                <h3 th:text="${productos.nombre}"></h3>
+                            </a>
+                                </div>
+                                  </div>
+                                  
+        </div>
+        </div>
+        <div>
+<p>
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Link with href
+  </a>
+   </p>
+        </div>
+<div  class="collapse float-lg-right" id="collapseExample">
+    
+  <div class="card card-body " style="overflow-y: scroll; height: 340px;">
+      <div id="carrito" class="fontCarrito conta">
+                <div style="float: left">
+                    <h1><img src="../imagenes/Icon metro-cart.png" alt="" width="35" /> Carrito</h1>
+
+                </div>
             </div>
 
-            <div id="carritoproductos" style="position: inherit; right: 0">
-
-                <div style="display: inline">
-                    <div style="margin-top: 20px">
-                        <h2 style="background-color: white; display: inline-block; margin-right: 50px">Apple Iphone 12</h2>
-                        <img src="../imagenes/productos/celulares/Apple Iphone 12.jpg" alt="" style="background-color: white; display: inline-block; float: right" width="100"/>
-                    </div>
-
-                    <div style="margin-top: 15px">
-                        <a href="#" title="Eliminar" style="display: inline-block"><img src="../imagenes/Icon ionic-ios-trash.png" alt="" style="margin-right: 15px"/></a>
-                        <h3 style="display: inline-block">$1.200.000</h3>
-                        <h3 style="display: inline-block">1 <img src="../imagenes/Icon ionic-ios-arrow-down.png" alt=""/></h3>
-                    </div>
-                </div>
-
-                <div style="display: inline">
-                    <div style="margin-top: 50px">
-                        <h2 style="background-color: white; display: inline-block; margin-right: 50px">Memoria RAM HyperX</h2>
-                        <img src="../imagenes/productos/ComponentesPC/Memoria RAM HyperX DDR4 8GB.jpg" alt="" style="background-color: white; display: inline-block; float: right" width="100"/>
-                    </div>
-
-                    <div style="margin-top: 15px">
-                        <a href="#" title="Eliminar" style="display: inline-block"><img src="../imagenes/Icon ionic-ios-trash.png" alt="" style="margin-right: 15px"/></a>
-                        <h3 style="display: inline-block">$98.800</h3>
-                        <h3 style="display: inline-block">2 <img src="../imagenes/Icon ionic-ios-arrow-down.png" alt=""/></h3>
-                    </div>
-                </div>
-
-
-                <div style="position: absolute; bottom: 50px; right: 70px">
-                    <a href="/Cliente_Boleta"><h3 style="background-color: rgb(125,98,180); color: white; float: left; margin-right: 35px">Realizar Compra</h3></a>
-                    <h3 style="display: inline-block">Total:</h3>
-                    <h3 style="display: inline-block">$1.298.800</h3>
-                </div>
-
-
             </div>
-
-
-
-
+           
         </div>
 
 
