@@ -187,6 +187,23 @@ public class controllers {
         return "redirect:/opciones";
     }
     
+    
+       @RequestMapping(value = "actualizarProducto", method = RequestMethod.POST)
+    public String actualizarProducto(String id,String url, String nombre, String precio, String categoria, Model modelo) {
+        CategoriaModel categoriaProducto = (CategoriaModel) servicioCategoria.obtener((Long.parseLong(categoria)));
+
+        ProductoModel producto = new ProductoModel(Long.parseLong(id),nombre, Integer.parseInt(precio), categoriaProducto, url);
+
+        servicioProducto.guardar(producto);
+        modelo.addAttribute("listaAdmin", servicioAdmin.getAll());
+        modelo.addAttribute("lista", servicioProducto.getAll());
+        modelo.addAttribute("listaC", servicioCategoria.getAll());
+
+        return "redirect:opciones";
+    }
+
+   
+    
      @GetMapping(value = "/mostrarProducto/{id}")
     public String mostrarProducto(@PathVariable String id, Model modelo) {
         ProductoModel producto = (ProductoModel) servicioProducto.obtener(Long.parseLong(id));
