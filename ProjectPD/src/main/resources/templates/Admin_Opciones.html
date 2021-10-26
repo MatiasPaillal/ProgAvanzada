@@ -16,6 +16,9 @@
 
     </head>
     <body background="../imagenes/Fondo.jpg" >
+        
+        
+         
         <div>
 
             <h1 class="display-1" style="font-size: 70px; text-align: center; color: white" th:each="admin: ${listaAdmin}" th:text="'BIENVENIDO  ' + ${admin.nombre}"></h1>
@@ -81,7 +84,9 @@
                                 <td th:text="${producto.precio}">
                                 <td th:text="${producto.idCateg.getCategoria()}">
                                 <td>
-                                    <button th:value= ${producto.idProducto} id="btn-EditarProducto" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Editar</button>
+                                   
+                                    <button onclick="PasarValor(this);" id="btn-EditarProducto" th:value="${producto.idProducto}+';'+${producto.URLImagen}+';'+${producto.nombre}+';'+${producto.precio}+';'+${producto.idCateg.getId()}" type="" class="boton btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" >Editar</button>
+                                      
                                     <a class="btn btn-danger" th:href="@{/eliminar/{id}(id=${producto.idProducto})}">Eliminar</a>
                                 </td>
 
@@ -93,12 +98,8 @@
                 </div>
             </div>
         </div>
-
-        <div class="container">
-
-
-
-        </div>
+   
+   
 
 
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -112,7 +113,7 @@
                     </div>
                     <div class="modal-body">
 
-                        <form>
+                        <form  >
                             <div class="form-group">
                                 <label for="URLProducto" class="col-form-label">URL de imagen:</label>
                                 <input type="text" class="form-control" id="URLProducto">
@@ -142,7 +143,22 @@
                 </div>
             </div>
         </div>
-
-
+        
+        <script>
+   function PasarValor(elemento){
+       
+       
+       var arrayDeCadenas = elemento.value.split(";");
+        
+        console.log(arrayDeCadenas);
+       document.getElementById("URLProducto").value = arrayDeCadenas[1];
+       document.getElementById("nombreProducto").value = arrayDeCadenas[2];
+       document.getElementById("precioProducto").value = arrayDeCadenas[3];
+       document.getElementById("categoriaProducto").value = arrayDeCadenas[4];
+       
+       
+ }
+</script> 
+     
     </body>
 </html>
