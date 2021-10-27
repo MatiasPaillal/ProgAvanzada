@@ -14,7 +14,7 @@ xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
 
         let datos = JSON.parse(this.responseText);
-
+        var carro= java.values(Carro);
         let tablaCategorias = document.querySelector('#tablaProductos');
         tablaCategorias.innerHTML = '';
 

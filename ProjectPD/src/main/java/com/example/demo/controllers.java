@@ -36,6 +36,7 @@ public class controllers {
     private ServicioProducto servicioProducto;
     @Autowired
     private ServicioCategoria servicioCategoria;
+    private Carro carro;
 
     Boleta boleta = new Boleta("a", "a", "a", "a", "a", "a", "a");
 
