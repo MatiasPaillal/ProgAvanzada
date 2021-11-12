@@ -25,10 +25,10 @@ public class Album {
         this.nombre = nombre;
     }
 
-    public boolean agregarFecha(int año, int mes, int dia) {
+    public boolean agregarFecha(int anio, int mes, int dia) {
 
-        if (año < LocalDate.now().getYear() && mes < 13 && dia < 32) {
-            LocalDate fechaIngresada = LocalDate.of(año, mes, dia);
+        if (anio < LocalDate.now().getYear() && mes < 13 && dia < 32) {
+            LocalDate fechaIngresada = LocalDate.of(anio, mes, dia);
 
             if (fechaIngresada.isBefore(LocalDate.now())) {
                 this.fecha = fechaIngresada;

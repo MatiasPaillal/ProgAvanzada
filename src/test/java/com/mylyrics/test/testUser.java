@@ -39,7 +39,7 @@ public class testUser {
     @Test
     public void verificarNumsPassword() {
         //  Debe tener a lo menos dos números.
-        user.setPassword("hola1234");
+        user.setPassword("holaasd12");
 
         int count = 0;
         for (Character x : user.getPassword().toCharArray()) {

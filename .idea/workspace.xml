@@ -4,11 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b22a6bd4-c1a2-4bd5-8321-f2952f685604" name="Changes" comment="menu listo">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10-10-2021_19_09__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10-10-2021_19_09__Changes_.xml" afterDir="false" />
+    <list default="true" id="b22a6bd4-c1a2-4bd5-8321-f2952f685604" name="Changes" comment="Cambios">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09-10-2021_18_45_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09-10-2021_18_45__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10-10-2021_23_25_[Changes]/Administrador.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10-10-2021_23_25_[Changes]/Album.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10-10-2021_23_25_[Changes]/Autor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10-10-2021_23_25_[Changes]/Cancion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10-10-2021_23_25_[Changes]/ConexionBD.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10-10-2021_23_25_[Changes]/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10-10-2021_23_25_[Changes]/Usuario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10-10-2021_23_25_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10-10-2021_23_25__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Album.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Cancion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Cancion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/mylyrics/test/TestCancion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mylyrics/test/TestCancion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/mylyrics/test/testUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mylyrics/test/testUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Album.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Album.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/mylyrics/test/TestCancion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/mylyrics/test/TestCancion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/mylyrics/test/testUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/mylyrics/test/testUser.class" afterDir="false" />
     </list>
     <list id="6f293e73-ea3b-49a1-b8fe-509865340e49" name="Changes by Francisco" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +39,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Tag Library Descriptor" />
       </list>
     </option>
   </component>
@@ -33,10 +53,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Proyecto_Aplicacion/PDAProject" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -44,9 +66,9 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="advanced.settings" />
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.testUser.verificarNumsPassword">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.mylyrics.div.Main" />
       <module name="Progra" />
@@ -91,7 +113,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="testUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="testUser.verificarLargoPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Progra" />
       <extension name="coverage">
         <pattern>
@@ -101,12 +123,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.mylyrics.test" />
       <option name="MAIN_CLASS_NAME" value="com.mylyrics.test.testUser" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="verificarLargoPassword" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="testUser.setNombreTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="testUser.verificarNumsPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Progra" />
       <extension name="coverage">
         <pattern>
@@ -116,7 +139,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.mylyrics.test" />
       <option name="MAIN_CLASS_NAME" value="com.mylyrics.test.testUser" />
-      <option name="METHOD_NAME" value="setNombreTest" />
+      <option name="METHOD_NAME" value="verificarNumsPassword" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -124,11 +147,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.testUser.verificarNumsPassword" />
+        <item itemvalue="JUnit.testUser.verificarLargoPassword" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.TestCancion.comprobarFechaTest" />
         <item itemvalue="JUnit.TestCancion" />
-        <item itemvalue="JUnit.testUser" />
-        <item itemvalue="JUnit.testUser.setNombreTest" />
       </list>
     </recent_temporary>
   </component>
@@ -142,7 +165,17 @@
       <updated>1633729088625</updated>
       <workItem from="1633815671389" duration="6473000" />
       <workItem from="1633903690372" duration="15295000" />
-      <workItem from="1633988272268" duration="6109000" />
+      <workItem from="1633988272268" duration="6189000" />
+      <workItem from="1634069075608" duration="1743000" />
+      <workItem from="1634074302564" duration="79000" />
+      <workItem from="1634937159571" duration="1018000" />
+      <workItem from="1635023352347" duration="15000" />
+      <workItem from="1635461552413" duration="2087000" />
+      <workItem from="1635814422964" duration="246000" />
+      <workItem from="1635814729529" duration="197000" />
+      <workItem from="1635815281370" duration="164000" />
+      <workItem from="1636676708135" duration="1691000" />
+      <workItem from="1636684223401" duration="128000" />
     </task>
     <task id="LOCAL-00001" summary="proyecto">
       <created>1633729251929</created>
@@ -214,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633918903628</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Cambios">
+      <created>1633998428954</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1633998428954</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,7 +279,8 @@
     <MESSAGE value="nuevas clases" />
     <MESSAGE value="nuevas clases y atributos" />
     <MESSAGE value="menu listo" />
-    <option name="LAST_COMMIT_MESSAGE" value="menu listo" />
+    <MESSAGE value="Cambios" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambios" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -76,15 +76,15 @@ public class Main {
 
         Album album = new Album(nombreAlbum, autor);
         boolean bol = false;
-        int año, mes, dia;
+        int anio, mes, dia;
         do {
             System.out.println("año");
-            año = teclado.nextInt();
+            anio = teclado.nextInt();
             System.out.println("mes");
             mes = teclado.nextInt();
             System.out.println("dia");
             dia = teclado.nextInt();
-            bol = album.agregarFecha(año, mes, dia);
+            bol = album.agregarFecha(anio, mes, dia);
         } while (!bol);
 
         album.ingresarAlbum();

@@ -1,0 +1,9 @@
+com\mylyrics\div\Album.class
+com\mylyrics\div\ConexionBD.class
+com\mylyrics\div\Main.class
+com\mylyrics\div\Persona.class
+com\mylyrics\div\Autor.class
+com\mylyrics\div\Genero.class
+com\mylyrics\div\Usuario.class
+com\mylyrics\div\Administrador.class
+com\mylyrics\div\Cancion.class

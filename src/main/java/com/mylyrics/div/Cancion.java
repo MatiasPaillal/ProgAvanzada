@@ -55,17 +55,17 @@ public class Cancion {
         ConexionBD bd = new ConexionBD();
 
         try {
-            bd.setPs(bd.getConexion().prepareStatement("INSERT INTO cancion (nombreCancion, letra, letraTraducida,idAlbum,idAutor,idGenero) VALUES(?,?,?,?,?,?)"));
+            ConexionBD.setPs(bd.getConexion().prepareStatement("INSERT INTO cancion (nombreCancion, letra, letraTraducida,idAlbum,idAutor,idGenero) VALUES(?,?,?,?,?,?)"));
 
-            bd.getPs().setString(1, this.nombre);
-            bd.getPs().setString(2, this.letra);
-            bd.getPs().setString(3, this.letraTraducida);
-            bd.getPs().setInt(4, this.album.getId());
-            bd.getPs().setInt(5, this.autor.getId());
-            bd.getPs().setInt(6, this.genero.getId());
+            ConexionBD.getPs().setString(1, this.nombre);
+            ConexionBD.getPs().setString(2, this.letra);
+            ConexionBD.getPs().setString(3, this.letraTraducida);
+            ConexionBD.getPs().setInt(4, this.album.getId());
+            ConexionBD.getPs().setInt(5, this.autor.getId());
+            ConexionBD.getPs().setInt(6, this.genero.getId());
 
 
-            bd.getPs().executeUpdate();
+            ConexionBD.getPs().executeUpdate();
             return true;
         } catch (Exception e) {
             System.err.println(e.getMessage());
