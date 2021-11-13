@@ -22,8 +22,8 @@ public class testUser {
     public void setNombreTest() {
 
         Usuario usuario = new Usuario();
-        boolean nose = usuario.cambiarNombre("holaaaa");
-        Assertions.assertTrue(nose);
+        boolean respuesta = usuario.guardarNombreUser("matias");
+        Assertions.assertTrue(respuesta);
     }
 
 

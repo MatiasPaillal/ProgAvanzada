@@ -5,12 +5,14 @@
     <profiles>
         <profile>
             <id>sonar</id>
-            <artifactId>proyectoProgAvanz</artifactId>
+            <artifactId>proyectoProg</artifactId>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <sonar.host.url>http://myserver:9000</sonar.host.url>
+                <sonar.host.url>
+                    http://myserver:9000
+                </sonar.host.url>
             </properties>
         </profile>
     </profiles>

@@ -2,6 +2,7 @@ package com.mylyrics.div;
 
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -12,6 +13,7 @@ import java.time.Period;
 
 
 public class Usuario extends Persona {
+    public static final Scanner TECLADO = new Scanner(System.in);
     private LocalDate fechaNacimiento;
     private ArrayList<Cancion> favoritos;
 
@@ -42,7 +44,7 @@ public class Usuario extends Persona {
         }
     }
 
-    public boolean cambiarNombre(String nombreUsuario) {
+    public boolean guardarNombreUser(String nombreUsuario) {
         Pattern pat = Pattern.compile("^[a-zA-Z0-9]*$");
         Matcher mat = pat.matcher(nombreUsuario);
         if (mat.matches()) {
@@ -53,6 +55,7 @@ public class Usuario extends Persona {
             return false;
         }
     }
+
 
     public void guardarNombreUsuario() {
         boolean ejecucion = false;
@@ -198,5 +201,84 @@ public class Usuario extends Persona {
         return nombreUsuario;
     }
 
+    public void mostrarAutores() {
+        try {
+            ConexionBD bd = new ConexionBD();
 
+            ConexionBD.setPs(bd.getConexion().prepareStatement("SELECT * FROM autor"));
+            ConexionBD.setRs(ConexionBD.getPs().executeQuery());
+            System.out.println("<------Autores------>");
+            while (ConexionBD.getRs().next()) {
+                System.out.println(ConexionBD.getRs().getString("nombreArtistico"));
+            }
+
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+
+    }
+
+    public void mostrarGeneros() {
+        for (Genero genero : Genero.values()) {
+            System.out.println(genero);
+        }
+    }
+
+    public void mostrarCancionesPorNombre(String nombreCancion) {
+        try {
+            ConexionBD bd = new ConexionBD();
+
+            ConexionBD.setPs(bd.getConexion().prepareStatement("SELECT * FROM cancion WHERE nombreCancion LIKE ?"));
+            ConexionBD.getPs().setString(1, "%" + nombreCancion + "%");
+            ConexionBD.setRs(ConexionBD.getPs().executeQuery());
+            System.out.println("<------Canciones------>");
+            while (ConexionBD.getRs().next()) {
+                System.out.println(ConexionBD.getRs().getInt("id") + ") " + ConexionBD.getRs().getString("nombreCancion"));
+            }
+
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+    }
+
+    public void buscarAutor() {
+        System.out.println("Ingrese uno de los autores");
+        String nombreAutor = TECLADO.next();
+        Autor autor = new Autor(nombreAutor);
+
+        try {
+            autor.agregarId();
+            ConexionBD bd = new ConexionBD();
+
+            ConexionBD.setPs(bd.getConexion().prepareStatement("SELECT * FROM cancion WHERE idAutor=?"));
+            ConexionBD.getPs().setString(1, String.valueOf(autor.getId()));
+            ConexionBD.setRs(ConexionBD.getPs().executeQuery());
+            System.out.println("<------Canciones------>");
+            while (ConexionBD.getRs().next()) {
+                System.out.println(ConexionBD.getRs().getString("nombreCancion"));
+            }
+
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+
+
+    }
+
+    public void mostrarAlbumes() {
+        try {
+            ConexionBD bd = new ConexionBD();
+
+            ConexionBD.setPs(bd.getConexion().prepareStatement("SELECT * FROM album"));
+            ConexionBD.setRs(ConexionBD.getPs().executeQuery());
+            System.out.println("<------Albumes------>");
+            while (ConexionBD.getRs().next()) {
+                System.out.println(ConexionBD.getRs().getString("nombreAlbum"));
+            }
+
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+
+    }
 }

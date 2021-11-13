@@ -17,6 +17,11 @@ public class Cancion {
 
     }
 
+    public Cancion(String nombre, Autor autor) {
+        this.nombre = nombre;
+        this.autor = autor;
+    }
+
     public Cancion(String nombre, String letra, String letraTraducida, Genero genero, Autor autor, Album album) {
         this.nombre = nombre;
         this.letra = letra;
@@ -64,6 +69,26 @@ public class Cancion {
             ConexionBD.getPs().setInt(5, this.autor.getId());
             ConexionBD.getPs().setInt(6, this.genero.getId());
 
+
+            ConexionBD.getPs().executeUpdate();
+            return true;
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+            return false;
+
+        }
+
+
+    }
+
+    public boolean editarTraduccion(String letra) {
+        ConexionBD bd = new ConexionBD();
+
+        try {
+            ConexionBD.setPs(bd.getConexion().prepareStatement("UPDATE cancion SET letraTraducida=? WHERE nombreCancion=? AND idAutor=?"));
+            ConexionBD.getPs().setString(1, letra);
+            ConexionBD.getPs().setString(2, this.nombre);
+            ConexionBD.getPs().setString(3, String.valueOf(this.autor.getId()));
 
             ConexionBD.getPs().executeUpdate();
             return true;

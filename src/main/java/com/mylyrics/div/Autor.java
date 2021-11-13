@@ -7,6 +7,10 @@ public class Autor {
     private String nombreArtistico;
     private ArrayList<Album> albums;
 
+    public Autor(int id,String nombreArtistico) {
+        this.id=id;
+        this.nombreArtistico = nombreArtistico;
+    }
     public Autor() {
 
     }
@@ -53,6 +57,23 @@ public class Autor {
             }
 
         } catch (Exception e) {
+
+        }
+
+    }
+
+    public boolean editarNombre(String nombre) {
+        ConexionBD bd = new ConexionBD();
+
+        try {
+            ConexionBD.setPs(bd.getConexion().prepareStatement("UPDATE autor SET nombreArtistico=? WHERE id=?"));
+            ConexionBD.getPs().setString(1, nombre);
+            ConexionBD.getPs().setString(2, String.valueOf(this.id));
+            ConexionBD.getPs().executeUpdate();
+            return true;
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+            return false;
 
         }
 
