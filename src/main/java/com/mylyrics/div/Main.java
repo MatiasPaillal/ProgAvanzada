@@ -1,7 +1,9 @@
 package com.mylyrics.div;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.time.LocalDate;
+import java.util.List;
 
 public class Main {
     public static Scanner teclado = new Scanner(System.in);
@@ -127,4 +129,41 @@ public class Main {
             menuUsuario((Usuario) usuario);
         }
     }
+
+    public static ArrayList<Cancion> obtenerCancionesBD() {
+
+        try {
+            ArrayList<Cancion> canciones = new ArrayList<Cancion>();
+            ConexionBD bd = new ConexionBD();
+
+            ConexionBD.setPs(bd.getConexion().prepareStatement("SELECT * FROM cancion"));
+            ConexionBD.setRs(ConexionBD.getPs().executeQuery());
+            Cancion cancion = new Cancion();
+
+            while (ConexionBD.getRs().next()) {
+
+                System.out.println("HOLIIIIII");
+                String nombre = ConexionBD.getRs().getString("nombreCancion");
+                String letra = ConexionBD.getRs().getString("letra");
+                String letraTraducida = ConexionBD.getRs().getString("letraTraducida");
+                int id = ConexionBD.getRs().getInt("id");
+                int idAlbum = ConexionBD.getRs().getInt("idAlbum");
+                int idAutor = ConexionBD.getRs().getInt("idAutor");
+                int idGenero = ConexionBD.getRs().getInt("idGenero");
+
+                cancion.rellenarCancion(id, nombre, letra, letraTraducida, idAlbum, idAutor, idGenero);
+                System.out.println(cancion.toString());
+                canciones.add(cancion);
+
+            }
+            return canciones;
+
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+            return null;
+        }
+
+
+    }
+
 }

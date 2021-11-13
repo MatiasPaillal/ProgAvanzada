@@ -15,6 +15,11 @@ public class Autor {
 
     }
 
+    public Autor(int id) {
+        this.id = id;
+        rellenarAutorNombre();
+    }
+
     public Autor(String nombreArtistico) {
         this.id = 0;
         this.nombreArtistico = nombreArtistico;
@@ -77,6 +82,26 @@ public class Autor {
 
         }
 
+    }
+
+
+    public void rellenarAutorNombre() {
+        try {
+            ConexionBD bd = new ConexionBD();
+
+            ConexionBD.setPs(bd.getConexion().prepareStatement("SELECT * FROM autor WHERE id = ?"));
+            ConexionBD.getPs().setInt(1, this.id);
+
+            ConexionBD.setRs(ConexionBD.getPs().executeQuery());
+
+            if (ConexionBD.getRs().next()) {
+                this.nombreArtistico = ConexionBD.getRs().getString("nombreArtistico");
+
+            }
+
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
     }
 
 

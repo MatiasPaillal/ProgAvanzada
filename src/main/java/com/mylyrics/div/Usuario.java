@@ -241,9 +241,8 @@ public class Usuario extends Persona {
         }
     }
 
-    public void buscarAutor() {
-        System.out.println("Ingrese uno de los autores");
-        String nombreAutor = TECLADO.next();
+    public void mostrarCancionesPorAutor(String nombreAutor) {
+
         Autor autor = new Autor(nombreAutor);
 
         try {
@@ -251,7 +250,7 @@ public class Usuario extends Persona {
             ConexionBD bd = new ConexionBD();
 
             ConexionBD.setPs(bd.getConexion().prepareStatement("SELECT * FROM cancion WHERE idAutor=?"));
-            ConexionBD.getPs().setString(1, String.valueOf(autor.getId()));
+            ConexionBD.getPs().setInt(1, autor.getId());
             ConexionBD.setRs(ConexionBD.getPs().executeQuery());
             System.out.println("<------Canciones------>");
             while (ConexionBD.getRs().next()) {

@@ -5,7 +5,7 @@ import java.util.Calendar;
 import java.util.Scanner;
 
 public class Cancion {
-
+    private int id;
     private String nombre;
     private String letra;
     private String letraTraducida;
@@ -15,6 +15,10 @@ public class Cancion {
 
     public Cancion() {
 
+    }
+
+    public Cancion(String nombre) {
+        this.nombre = nombre;
     }
 
     public Cancion(String nombre, Autor autor) {
@@ -54,6 +58,14 @@ public class Cancion {
     public String getNameAlbum() {
 
         return this.album.getNombre();
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public boolean ingresarCancion() {
