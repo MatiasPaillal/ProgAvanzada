@@ -1,7 +1,7 @@
 package com.mylyrics.div;
 
-import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -29,14 +29,14 @@ public class Usuario extends Persona {
     public boolean registrarUsuario() {
         try {
             ConexionBD bd = new ConexionBD();
-            bd.setPs(bd.getConexion().prepareStatement("INSERT INTO persona (nombreUsuario, password, nombre,fechaNacimiento,isAdmin) VALUES(?,?,?,?,?)"));
+            ConexionBD.setPs(bd.getConexion().prepareStatement("INSERT INTO persona (nombreUsuario, password, nombre,fechaNacimiento,isAdmin) VALUES(?,?,?,?,?)"));
 
-            bd.getPs().setString(1, this.nombreUsuario);
-            bd.getPs().setString(2, this.password);
-            bd.getPs().setString(3, this.nombre);
-            bd.getPs().setString(4, this.fechaNacimiento.toString());
-            bd.getPs().setBoolean(5, false);
-            bd.getPs().executeUpdate();
+            ConexionBD.getPs().setString(1, this.nombreUsuario);
+            ConexionBD.getPs().setString(2, this.password);
+            ConexionBD.getPs().setString(3, this.nombre);
+            ConexionBD.getPs().setString(4, this.fechaNacimiento.toString());
+            ConexionBD.getPs().setBoolean(5, false);
+            ConexionBD.getPs().executeUpdate();
             return true;
         } catch (Exception e) {
             System.err.println(e.getMessage());
@@ -114,7 +114,10 @@ public class Usuario extends Persona {
 
     public void setFechaNacimiento() {
         Scanner teclado = new Scanner(System.in);
-        int dia, mes, anio, edad = 0;
+        int dia;
+        int mes;
+        int anio;
+        int edad = 0;
 
         do {
 
@@ -129,17 +132,17 @@ public class Usuario extends Persona {
             anio = teclado.nextInt();
 
             try {
-                LocalDate fechaNacimiento = LocalDate.of(anio, mes, dia);
-                this.fechaNacimiento = fechaNacimiento;
+                LocalDate nacimientoFecha = LocalDate.of(anio, mes, dia);
+                this.fechaNacimiento = nacimientoFecha;
                 LocalDate now = LocalDate.now();
 
-                Period periodo = Period.between(fechaNacimiento, now);
+                Period periodo = Period.between(nacimientoFecha, now);
                 edad = periodo.getYears();
             } catch (DateTimeException e) {
                 System.out.println("La fecha ingresada es incorrecta.");
             }
 
-        } while (!(edad >= 13));
+        } while (edad < 13);
 
     }
 
@@ -152,20 +155,20 @@ public class Usuario extends Persona {
     }
 
     public String getStringFechaNacimiento() {
-        int dia, mes, anio;
-        dia = this.fechaNacimiento.getDayOfMonth();
-        mes = this.fechaNacimiento.getMonthValue();
-        anio = this.fechaNacimiento.getYear();
+        int dia = this.fechaNacimiento.getDayOfMonth();
+        int mes = this.fechaNacimiento.getMonthValue();
+        int anio = this.fechaNacimiento.getYear();
+
         return dia + "-" + mes + "-" + anio;
     }
 
     public void mostrarFavoritas() {
-        this.favoritos.stream().forEach((cancion) -> {
-            System.out.println(cancion.getNombre() +
-                    cancion.getNameAutor() +
-                    cancion.getGenero() +
-                    cancion.getNameAlbum());
-        });
+        this.favoritos.stream().forEach(cancion ->
+                System.out.println(cancion.getNombre() +
+                        cancion.getNameAutor() +
+                        cancion.getGenero() +
+                        cancion.getNameAlbum())
+        );
     }
 
     public void setNombre(String nombre) {
@@ -185,12 +188,12 @@ public class Usuario extends Persona {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public ArrayList<Cancion> getFavoritos() {
+    public List<Cancion> getFavoritos() {
         return favoritos;
     }
 
-    public void setFavoritos(ArrayList<Cancion> favoritos) {
-        this.favoritos = favoritos;
+    public void setFavoritos(List<Cancion> favoritos) {
+        this.favoritos = (ArrayList<Cancion>) favoritos;
     }
 
     public String getNombre() {
@@ -224,6 +227,23 @@ public class Usuario extends Persona {
         }
     }
 
+    public void mostrarAlbumes() {
+        try {
+            ConexionBD bd = new ConexionBD();
+
+            ConexionBD.setPs(bd.getConexion().prepareStatement("SELECT * FROM album"));
+            ConexionBD.setRs(ConexionBD.getPs().executeQuery());
+            System.out.println("<------Albumes------>");
+            while (ConexionBD.getRs().next()) {
+                System.out.println(ConexionBD.getRs().getString("nombreAlbum"));
+            }
+
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+
+    }
+
     public void mostrarCancionesPorNombre(String nombreCancion) {
         try {
             ConexionBD bd = new ConexionBD();
@@ -246,7 +266,6 @@ public class Usuario extends Persona {
         Autor autor = new Autor(nombreAutor);
 
         try {
-            autor.agregarId();
             ConexionBD bd = new ConexionBD();
 
             ConexionBD.setPs(bd.getConexion().prepareStatement("SELECT * FROM cancion WHERE idAutor=?"));
@@ -254,30 +273,67 @@ public class Usuario extends Persona {
             ConexionBD.setRs(ConexionBD.getPs().executeQuery());
             System.out.println("<------Canciones------>");
             while (ConexionBD.getRs().next()) {
-                System.out.println(ConexionBD.getRs().getString("nombreCancion"));
+                System.out.println(ConexionBD.getRs().getInt("id") + ") " + ConexionBD.getRs().getString("nombreCancion"));
             }
 
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
 
-
     }
 
-    public void mostrarAlbumes() {
+    public void mostrarCancionesPorGenero(String generoSelect) {
+        Genero genero = Genero.buscarGenero(generoSelect);
+
         try {
             ConexionBD bd = new ConexionBD();
 
-            ConexionBD.setPs(bd.getConexion().prepareStatement("SELECT * FROM album"));
+            ConexionBD.setPs(bd.getConexion().prepareStatement("SELECT * FROM cancion WHERE idGenero=?"));
+            ConexionBD.getPs().setInt(1, genero.getId());
+
             ConexionBD.setRs(ConexionBD.getPs().executeQuery());
-            System.out.println("<------Albumes------>");
+            System.out.println("<------Canciones------>");
             while (ConexionBD.getRs().next()) {
-                System.out.println(ConexionBD.getRs().getString("nombreAlbum"));
+                System.out.println(ConexionBD.getRs().getInt("id") + ") " + ConexionBD.getRs().getString("nombreCancion"));
+            }
+
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+    }
+
+    public List<Cancion> mostrarCancionesPorAlbum(String albumSelect) {
+        Album album = new Album(albumSelect);
+        List<Cancion> listaCanciones = new ArrayList<>();
+
+        try {
+            ConexionBD bd = new ConexionBD();
+
+            ConexionBD.setPs(bd.getConexion().prepareStatement("SELECT * FROM cancion WHERE idAlbum=?"));
+            ConexionBD.getPs().setInt(1, album.getId());
+
+            ConexionBD.setRs(ConexionBD.getPs().executeQuery());
+            System.out.println("<------Canciones------>");
+            while (ConexionBD.getRs().next()) {
+                int id = ConexionBD.getRs().getInt("id");
+                String nombre = ConexionBD.getRs().getString("nombreCancion");
+                String letra = ConexionBD.getRs().getString("letra");
+                String letraTraducida = ConexionBD.getRs().getString("letraTraducida");
+                int idAlbum = ConexionBD.getRs().getInt("idAlbum");
+                int idAutor = ConexionBD.getRs().getInt("idAutor");
+                int idGenero = ConexionBD.getRs().getInt("idGenero");
+
+                Cancion cancion = new Cancion();
+                cancion.rellenarCancion(id, nombre, letra, letraTraducida, idAlbum, idAutor, idGenero);
+                listaCanciones.add(cancion);
             }
 
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
 
+        return listaCanciones;
+
     }
+
 }

@@ -1,0 +1,42 @@
+Index: src/test/java/com/mylyrics/test/TestCancion.java
+===================================================================
+diff --git a/src/test/java/com/mylyrics/test/TestCancion.java b/src/test/java/com/mylyrics/test/TestAlbum.java
+rename from src/test/java/com/mylyrics/test/TestCancion.java
+rename to src/test/java/com/mylyrics/test/TestAlbum.java
+--- a/src/test/java/com/mylyrics/test/TestCancion.java	
++++ b/src/test/java/com/mylyrics/test/TestAlbum.java	
+@@ -8,25 +8,25 @@
+ 
+ import java.time.LocalDate;
+ 
+-public class TestCancion {
++public class TestAlbum {
+ 
+     @Test
+-    public void comprobarFechaTest(){
+-        Album c = new Album();
+-        int año=1222;
++    public void comprobarFechaFuturaTest(){
++        Album cry = new Album();
++        int anio=1222;
+         int mes=12;
+         int dia=12;
+-        boolean respuesta= c.agregarFecha(año,mes,dia);
++        boolean respuesta= cry.agregarFecha(anio,mes,dia);
+         Assertions.assertTrue(respuesta);
+ 
+     }
+     @Test
+     public void comprobarSintaxisFechaTest(){
+-        Album c = new Album();
+-        int año=1223;
+-        int mes=13;
++        Album YHLQMDLG = new Album();
++        int anio=1223;
++        int mes=14;
+         int dia=12;
+-        boolean respuesta= c.agregarFecha(año,mes,dia);
++        boolean respuesta= YHLQMDLG.agregarFecha(anio,mes,dia);
+         Assertions.assertTrue(respuesta);
+ 
+     }

@@ -10,7 +10,7 @@ import java.time.LocalDate;
 import java.time.Period;
 
 
-public class testUser {
+class testUser {
     public static Usuario user;
 
     @BeforeAll
@@ -19,7 +19,7 @@ public class testUser {
     }
 
     @Test
-    public void setNombreTest() {
+    void setNombreTest() {
 
         Usuario usuario = new Usuario();
         boolean respuesta = usuario.guardarNombreUser("matias");
@@ -28,7 +28,7 @@ public class testUser {
 
 
     @Test
-    public void verificarLargoPassword() {
+    void verificarLargoPassword() {
         //  La contraseña deberá tener a lo menos 8 caracteres.
         user.setPassword("holahola");
         int largoPass = user.getPassword().length();
@@ -37,7 +37,7 @@ public class testUser {
     }
 
     @Test
-    public void verificarNumsPassword() {
+    void verificarNumsPassword() {
         //  Debe tener a lo menos dos números.
         user.setPassword("holaasd12");
 
@@ -52,7 +52,7 @@ public class testUser {
     }
 
     @Test
-    public void verificarEdad() {
+    void verificarEdad() {
         //El Usuario debe tener más de 13 años.
         int anio, mes, dia, edad;
         anio = 2002;
@@ -69,7 +69,7 @@ public class testUser {
     }
 
     @Test
-    public void verificarFecha() {
+    void verificarFecha() {
         //Verificar que la fecha ingresada sea correcta.
         boolean isCorrect;
         int anio, mes, dia;

@@ -1,36 +1,28 @@
 package com.mylyrics.div;
 
-
 import java.sql.*;
-
-/**
- * @author matias
- */
-
 
 class ConexionBD {
 
-    public static final String usuario = "root";
-    public static final String clave = "";
-    public static final String url = "jdbc:mysql://localhost:3306/mylyrics";
-    public static final String driver = "com.mysql.jdbc.Driver";
-    public static Connection con;
-    public static PreparedStatement ps;
-    public static ResultSet rs;
+    private static final String USUARIO = "root";
+    private static final String CLAVE = "";
+    private static final String URL = "jdbc:mysql://localhost:3306/mylyrics";
+    private static final String COMMON_ID = "id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,";
+    private static Connection con = null;
+    private static PreparedStatement ps;
+    private static ResultSet rs;
 
 
     public ConexionBD() {
-        con = null;
         try {
-            Class.forName(driver);
-            con = DriverManager.getConnection(url, usuario, clave);
+            con = DriverManager.getConnection(URL, USUARIO, CLAVE);
 
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             try {
-                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/", usuario, clave);
+                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/", USUARIO, CLAVE);
                 ps = con.prepareStatement("CREATE DATABASE mylyrics");
                 ps.executeUpdate();
-                con = DriverManager.getConnection(url, usuario, clave);
+                con = DriverManager.getConnection(URL, USUARIO, CLAVE);
                 ps = con.prepareStatement("" +
                         "CREATE TABLE persona (" +
                         "nombreUsuario VARCHAR(50) PRIMARY KEY NOT NULL," +
@@ -41,12 +33,12 @@ class ConexionBD {
                 ps.executeUpdate();
                 ps = con.prepareStatement("" +
                         "CREATE TABLE autor (" +
-                        "id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY," +
+                        COMMON_ID +
                         "nombreArtistico VARCHAR(50) NOT NULL)");
                 ps.executeUpdate();
                 ps = con.prepareStatement("" +
                         "CREATE TABLE album (" +
-                        "id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY," +
+                        COMMON_ID +
                         "nombreAlbum VARCHAR(50) NOT NULL," +
                         "fechaEstreno DATE NOT NULL," +
                         "idAutor BIGINT UNSIGNED NOT NULL," +
@@ -59,7 +51,7 @@ class ConexionBD {
                 ps.executeUpdate();
                 ps = con.prepareStatement("" +
                         "CREATE TABLE cancion (" +
-                        "id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY," +
+                        COMMON_ID +
                         "nombreCancion VARCHAR(50) NOT NULL," +
                         "letra MEDIUMTEXT NOT NULL," +
                         "letraTraducida MEDIUMTEXT," +
@@ -85,7 +77,7 @@ class ConexionBD {
                 ps.executeUpdate();
                 ps.close();
             } catch (SQLException ex) {
-                System.out.println(ex.getMessage());
+                System.err.println(ex.getMessage());
                 System.err.println("Error al crear la base de datos");
             }
         }
@@ -97,9 +89,7 @@ class ConexionBD {
 
     public void desconectar() {
         con = null;
-        if (con == null) {
-            System.out.println("conexion terminada");
-        }
+        System.out.println("Conexión Terminada");
     }
 
     public static PreparedStatement getPs() {

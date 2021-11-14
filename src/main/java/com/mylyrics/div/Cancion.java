@@ -1,9 +1,5 @@
 package com.mylyrics.div;
 
-import java.time.LocalDate;
-import java.util.Calendar;
-import java.util.Scanner;
-
 public class Cancion {
     private int id;
     private String nombre;
@@ -110,8 +106,37 @@ public class Cancion {
 
         }
 
+    }
+
+    public void rellenarCancion(int id, String nombre, String letra, String letraTraducida, int idAlbum, int idAutor, int idGenero) {
+
+        this.id = id;
+        this.nombre = nombre;
+        this.letra = letra;
+        this.letraTraducida = letraTraducida;
+
+        Autor autor = new Autor(idAutor);
+
+        Album album = new Album(idAlbum);
+
+        Genero genero = Genero.buscarGeneroXid(idGenero);
+
+        this.autor = autor;
+        this.album = album;
+        this.genero = genero;
 
     }
 
-
+    @Override
+    public String toString() {
+        return "Cancion{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", letra='" + letra + '\'' +
+                ", letraTraducida='" + letraTraducida + '\'' +
+                ", genero=" + genero +
+                ", autor=" + autor +
+                ", album=" + album +
+                '}';
+    }
 }

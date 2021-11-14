@@ -6,25 +6,26 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 
-public class TestCancion {
+class TestCancion {
 
     @Test
-    public void comprobarFechaTest(){
+    void comprobarFechaTest() {
         Album c = new Album();
-        int anio=1222;
-        int mes=12;
-        int dia=12;
-        boolean respuesta= c.agregarFecha(anio,mes,dia);
+        int anio = 1222;
+        int mes = 12;
+        int dia = 12;
+        boolean respuesta = c.agregarFecha(anio, mes, dia);
         Assertions.assertTrue(respuesta);
 
     }
+
     @Test
-    public void comprobarSintaxisFechaTest(){
+    void comprobarSintaxisFechaTest() {
         Album c = new Album();
-        int anio=1223;
-        int mes=13;
-        int dia=12;
-        boolean respuesta= c.agregarFecha(anio,mes,dia);
+        int anio = 1223;
+        int mes = 12;
+        int dia = 12;
+        boolean respuesta = c.agregarFecha(anio, mes, dia);
         Assertions.assertTrue(respuesta);
 
     }

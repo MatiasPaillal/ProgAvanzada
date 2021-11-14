@@ -2,12 +2,13 @@ package com.mylyrics.div;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Album {
     private int id;
     private String nombre;
     private Autor autor;
-    private ArrayList<Cancion> canciones;
+    private ArrayList<Cancion> canciones = new ArrayList<>();
     private LocalDate fecha;
 
 
@@ -28,6 +29,7 @@ public class Album {
     public Album(String nombre) {
         this.id = 0;
         this.nombre = nombre;
+        agregarId();
     }
 
     public boolean agregarFecha(int anio, int mes, int dia) {
@@ -50,20 +52,19 @@ public class Album {
     public boolean ingresarAlbum() {
         try {
             ConexionBD bd = new ConexionBD();
-            System.out.println(this.nombre);
-            bd.setPs(bd.getConexion().prepareStatement("INSERT INTO album (nombreAlbum, fechaEstreno, idAutor) VALUES(?,?,?)"));
 
-            bd.getPs().setString(1, this.nombre);
-            bd.getPs().setString(2, String.valueOf(this.fecha));
-            bd.getPs().setInt(3, this.autor.getId());
+            ConexionBD.setPs(bd.getConexion().prepareStatement("INSERT INTO album (nombreAlbum, fechaEstreno, idAutor) VALUES(?,?,?)"));
+
+            ConexionBD.getPs().setString(1, this.nombre);
+            ConexionBD.getPs().setString(2, String.valueOf(this.fecha));
+            ConexionBD.getPs().setInt(3, this.autor.getId());
 
 
-            bd.getPs().executeUpdate();
+            ConexionBD.getPs().executeUpdate();
             return true;
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.err.println(e.getMessage());
             return false;
-
         }
 
     }
@@ -72,17 +73,19 @@ public class Album {
 
         try {
             ConexionBD bd = new ConexionBD();
-            System.out.println(this.nombre);
-            bd.setPs(bd.getConexion().prepareStatement("SELECT * FROM album WHERE nombreAlbum = ?"));
-            bd.getPs().setString(1, this.nombre);
-            bd.setRs(bd.getPs().executeQuery());
-            if (bd.getRs().next()) {
-                System.out.println(bd.getRs().getInt("id"));
-                this.id = bd.getRs().getInt("id");
+
+            ConexionBD.setPs(bd.getConexion().prepareStatement("SELECT * FROM album WHERE nombreAlbum = ?"));
+            ConexionBD.getPs().setString(1, this.nombre);
+
+            ConexionBD.setRs(ConexionBD.getPs().executeQuery());
+
+            if (ConexionBD.getRs().next()) {
+                System.out.println(ConexionBD.getRs().getInt("id"));
+                this.id = ConexionBD.getRs().getInt("id");
             }
 
         } catch (Exception e) {
-
+            System.err.println(e.getMessage());
         }
 
     }
@@ -109,5 +112,33 @@ public class Album {
 
     public int getId() {
         return id;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Autor getAutor() {
+        return autor;
+    }
+
+    public void setAutor(Autor autor) {
+        this.autor = autor;
+    }
+
+    public List<Cancion> getCanciones() {
+        return canciones;
+    }
+
+    public void setCanciones(List<Cancion> canciones) {
+        this.canciones = (ArrayList<Cancion>) canciones;
+    }
+
+    public LocalDate getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
     }
 }
