@@ -5,7 +5,7 @@
     <profiles>
         <profile>
             <id>sonar</id>
-            <artifactId>proyectoProg</artifactId>
+            <artifactId>proyectoProgAvanz</artifactId>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>

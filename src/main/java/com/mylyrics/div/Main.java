@@ -1,9 +1,7 @@
 package com.mylyrics.div;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 import java.time.LocalDate;
-import java.util.List;
 
 public class Main {
     public static final Scanner TECLADO = new Scanner(System.in);
@@ -78,7 +76,7 @@ public class Main {
 
     }
 
-    public static void menuAdmin(Administrador admin) {
+    public static void menuAdmin() {
         int opcion = 0;
         boolean exit = false;
 
@@ -96,19 +94,19 @@ public class Main {
 
             switch (opcion) {
                 case 1:
-                    admin.formularioAlbum();
+                    Administrador.formularioAlbum();
                     break;
                 case 2:
-                    admin.formularioCancion();
+                    Administrador.formularioCancion();
                     break;
                 case 3:
-                    admin.formularioAutor();
+                    Administrador.formularioAutor();
                     break;
                 case 4:
-                    admin.cambiarTraduccion();
+                    Administrador.cambiarTraduccion();
                     break;
                 case 5:
-                    admin.cambiarNombreAutor();
+                    Administrador.cambiarNombreAutor();
                     break;
                 default:
                     exit = true;
@@ -160,18 +158,7 @@ public class Main {
                     System.out.println("Ingrese el álbum de la canción: ");
 
                     break;
-                case 5:
-                    List<Cancion> canciones = obtenerCancionesBD();
-                    for (int i = 0; i < canciones.size(); i++) {
-                        System.out.println(canciones.get(i).getNombre());
-                        System.out.println(canciones.get(i).getGenero());
-                        System.out.println(canciones.get(i).getLetra());
-                        System.out.println(canciones.get(i).getNameAlbum());
-                        System.out.println(canciones.get(i).getNameAutor());
-                        System.out.println("<----------------------------->");
-                    }
 
-                    break;
                 default:
                     exit = true;
                     break;
@@ -184,46 +171,10 @@ public class Main {
         Object usuario = menu();
 
         if (usuario instanceof Administrador) {
-            menuAdmin((Administrador) usuario);
+            menuAdmin();
         } else {
             menuUsuario((Usuario) usuario);
         }
-    }
-
-    public static ArrayList<Cancion> obtenerCancionesBD() {
-
-        try {
-            ArrayList<Cancion> canciones = new ArrayList<Cancion>();
-            ConexionBD bd = new ConexionBD();
-
-            ConexionBD.setPs(bd.getConexion().prepareStatement("SELECT * FROM cancion"));
-            ConexionBD.setRs(ConexionBD.getPs().executeQuery());
-            Cancion cancion = new Cancion();
-
-            while (ConexionBD.getRs().next()) {
-
-                System.out.println("HOLIIIIII");
-                String nombre = ConexionBD.getRs().getString("nombreCancion");
-                String letra = ConexionBD.getRs().getString("letra");
-                String letraTraducida = ConexionBD.getRs().getString("letraTraducida");
-                int id = ConexionBD.getRs().getInt("id");
-                int idAlbum = ConexionBD.getRs().getInt("idAlbum");
-                int idAutor = ConexionBD.getRs().getInt("idAutor");
-                int idGenero = ConexionBD.getRs().getInt("idGenero");
-
-                //cancion.rellenarCancion(id, nombre, letra, letraTraducida, idAlbum, idAutor, idGenero);
-                System.out.println(cancion.toString());
-                //canciones.add(cancion);
-
-            }
-            return canciones;
-
-        } catch (Exception e) {
-            System.err.println(e.getMessage());
-            return null;
-        }
-
-
     }
 
 }

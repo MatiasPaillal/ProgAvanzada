@@ -1,7 +1,6 @@
 package com.mylyrics.div;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -14,6 +13,9 @@ import java.time.Period;
 
 public class Usuario extends Persona {
     public static final Scanner TECLADO = new Scanner(System.in);
+    public static final String TEXT_CANCIONES = "<------Canciones------>";
+    public static final String NOM_CANCION = "nombreCancion";
+
     private LocalDate fechaNacimiento;
     private ArrayList<Cancion> favoritos;
 
@@ -130,6 +132,8 @@ public class Usuario extends Persona {
 
             System.out.print("Año: ");
             anio = teclado.nextInt();
+
+            TECLADO.nextLine(); //Limpiar Buffer del Scanner
 
             try {
                 LocalDate nacimientoFecha = LocalDate.of(anio, mes, dia);
@@ -251,9 +255,9 @@ public class Usuario extends Persona {
             ConexionBD.setPs(bd.getConexion().prepareStatement("SELECT * FROM cancion WHERE nombreCancion LIKE ?"));
             ConexionBD.getPs().setString(1, "%" + nombreCancion + "%");
             ConexionBD.setRs(ConexionBD.getPs().executeQuery());
-            System.out.println("<------Canciones------>");
+            System.out.println(TEXT_CANCIONES);
             while (ConexionBD.getRs().next()) {
-                System.out.println(ConexionBD.getRs().getInt("id") + ") " + ConexionBD.getRs().getString("nombreCancion"));
+                System.out.println(ConexionBD.getRs().getInt("id") + ") " + ConexionBD.getRs().getString(NOM_CANCION));
             }
 
         } catch (Exception e) {
@@ -271,9 +275,9 @@ public class Usuario extends Persona {
             ConexionBD.setPs(bd.getConexion().prepareStatement("SELECT * FROM cancion WHERE idAutor=?"));
             ConexionBD.getPs().setInt(1, autor.getId());
             ConexionBD.setRs(ConexionBD.getPs().executeQuery());
-            System.out.println("<------Canciones------>");
+            System.out.println(TEXT_CANCIONES);
             while (ConexionBD.getRs().next()) {
-                System.out.println(ConexionBD.getRs().getInt("id") + ") " + ConexionBD.getRs().getString("nombreCancion"));
+                System.out.println(ConexionBD.getRs().getInt("id") + ") " + ConexionBD.getRs().getString(NOM_CANCION));
             }
 
         } catch (Exception e) {
@@ -292,9 +296,9 @@ public class Usuario extends Persona {
             ConexionBD.getPs().setInt(1, genero.getId());
 
             ConexionBD.setRs(ConexionBD.getPs().executeQuery());
-            System.out.println("<------Canciones------>");
+            System.out.println(TEXT_CANCIONES);
             while (ConexionBD.getRs().next()) {
-                System.out.println(ConexionBD.getRs().getInt("id") + ") " + ConexionBD.getRs().getString("nombreCancion"));
+                System.out.println(ConexionBD.getRs().getInt("id") + ") " + ConexionBD.getRs().getString(NOM_CANCION));
             }
 
         } catch (Exception e) {
@@ -313,10 +317,10 @@ public class Usuario extends Persona {
             ConexionBD.getPs().setInt(1, album.getId());
 
             ConexionBD.setRs(ConexionBD.getPs().executeQuery());
-            System.out.println("<------Canciones------>");
+            System.out.println(TEXT_CANCIONES);
             while (ConexionBD.getRs().next()) {
                 int id = ConexionBD.getRs().getInt("id");
-                String nombre = ConexionBD.getRs().getString("nombreCancion");
+                String nombre = ConexionBD.getRs().getString(NOM_CANCION);
                 String letra = ConexionBD.getRs().getString("letra");
                 String letraTraducida = ConexionBD.getRs().getString("letraTraducida");
                 int idAlbum = ConexionBD.getRs().getInt("idAlbum");

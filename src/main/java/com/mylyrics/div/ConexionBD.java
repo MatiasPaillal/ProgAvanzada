@@ -1,11 +1,12 @@
 package com.mylyrics.div;
 
+import java.io.*;
 import java.sql.*;
 
 class ConexionBD {
 
     private static final String USUARIO = "root";
-    private static final String CLAVE = "";
+    private static String clave;
     private static final String URL = "jdbc:mysql://localhost:3306/mylyrics";
     private static final String COMMON_ID = "id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,";
     private static Connection con = null;
@@ -14,15 +15,27 @@ class ConexionBD {
 
 
     public ConexionBD() {
-        try {
-            con = DriverManager.getConnection(URL, USUARIO, CLAVE);
+        File starting = new File(System.getProperty("user.dir"));
+        File archivo = new File(starting, "pass.txt");
 
+        try (FileReader fr = new FileReader(archivo); BufferedReader br = new BufferedReader(fr)) {
+            clave = br.readLine();
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
+
+        try {
+            con = DriverManager.getConnection(URL, USUARIO, clave);
         } catch (SQLException e) {
             try {
-                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/", USUARIO, CLAVE);
+                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/", USUARIO, clave);
                 ps = con.prepareStatement("CREATE DATABASE mylyrics");
                 ps.executeUpdate();
-                con = DriverManager.getConnection(URL, USUARIO, CLAVE);
+                ps = con.prepareStatement("ALTER USER 'root'@'localhost' IDENTIFIED VIA mysql_native_password USING PASSWORD(?)");
+                ps.setString(1, clave);
+                ps.executeUpdate();
+
+                con = DriverManager.getConnection(URL, USUARIO, clave);
                 ps = con.prepareStatement("" +
                         "CREATE TABLE persona (" +
                         "nombreUsuario VARCHAR(50) PRIMARY KEY NOT NULL," +
@@ -85,11 +98,6 @@ class ConexionBD {
 
     public Connection getConexion() {
         return con;
-    }
-
-    public void desconectar() {
-        con = null;
-        System.out.println("Conexión Terminada");
     }
 
     public static PreparedStatement getPs() {

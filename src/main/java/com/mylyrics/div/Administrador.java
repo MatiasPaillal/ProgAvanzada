@@ -14,6 +14,7 @@ public class Administrador extends Persona {
     }
 
     public static void formularioAlbum() {
+
         System.out.print("\nIngrese nombre del autor: ");
         String nombreAutor = TECLADO.nextLine();
         Autor autor = new Autor(nombreAutor);
@@ -22,7 +23,9 @@ public class Administrador extends Persona {
 
         Album album = new Album(nombreAlbum, autor);
         boolean bol = false;
-        int anio, mes, dia;
+        int anio;
+        int mes;
+        int dia;
         do {
             System.out.println("año");
             anio = TECLADO.nextInt();
@@ -30,6 +33,7 @@ public class Administrador extends Persona {
             mes = TECLADO.nextInt();
             System.out.println("dia");
             dia = TECLADO.nextInt();
+            TECLADO.nextLine(); //Limpiar Buffer del Scanner
             bol = album.agregarFecha(anio, mes, dia);
         } while (!bol);
 
@@ -37,6 +41,7 @@ public class Administrador extends Persona {
     }
 
     public static void formularioAutor() {
+
         System.out.print("\nIngrese el nombre artístico del autor: ");
         String nombreAutor = TECLADO.nextLine();
         Autor autor = new Autor(nombreAutor);
@@ -71,7 +76,6 @@ public class Administrador extends Persona {
     }
 
     public static void cambiarTraduccion() {
-        ConexionBD bd = new ConexionBD();
         try {
             System.out.print("\nIngrese el nombre del autor: ");
             String nombreAutor = TECLADO.nextLine();
@@ -92,7 +96,6 @@ public class Administrador extends Persona {
     }
 
     public static void cambiarNombreAutor() {
-        ConexionBD bd = new ConexionBD();
         try {
             System.out.print("\nIngrese el nombre del autor: ");
             String nombreAutor = TECLADO.nextLine();
