@@ -115,15 +115,15 @@ public class Cancion {
         this.letra = letra;
         this.letraTraducida = letraTraducida;
 
-        Autor autor = new Autor(idAutor);
+        Autor autorRecibido = new Autor(idAutor);
 
-        Album album = new Album(idAlbum);
+        Album albumRecibido = new Album(idAlbum);
 
-        Genero genero = Genero.buscarGeneroXid(idGenero);
+        Genero generoRecibido = Genero.buscarGeneroXid(idGenero);
 
-        this.autor = autor;
-        this.album = album;
-        this.genero = genero;
+        this.autor = autorRecibido;
+        this.album = albumRecibido;
+        this.genero = generoRecibido;
 
     }
 

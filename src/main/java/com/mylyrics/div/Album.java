@@ -34,7 +34,7 @@ public class Album {
 
     public boolean agregarFecha(int anio, int mes, int dia) {
 
-        if (anio < LocalDate.now().getYear() && mes < 13 && dia < 32) {
+        if (anio <= LocalDate.now().getYear() && mes < 13 && dia < 32) {
             LocalDate fechaIngresada = LocalDate.of(anio, mes, dia);
 
             if (fechaIngresada.isBefore(LocalDate.now())) {

@@ -2,5 +2,5 @@ projectKey=proyectoProgAvanz
 serverUrl=http://localhost:9000
 serverVersion=9.1.0.47736
 dashboardUrl=http://localhost:9000/dashboard?id=proyectoProgAvanz
-ceTaskId=AX0RzrF8u-I4JbwTVwbu
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AX0RzrF8u-I4JbwTVwbu
+ceTaskId=AX0g9qa-RWJMQ6hRgsKd
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AX0g9qa-RWJMQ6hRgsKd
