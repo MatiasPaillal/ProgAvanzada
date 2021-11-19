@@ -15,7 +15,6 @@ public enum Genero {
         return id;
     }
 
-
     public static Genero buscarGenero(String nombreGenero) {
         Genero[] generos = Genero.values();
         for (Genero genero : generos) {
@@ -29,7 +28,7 @@ public enum Genero {
 
     public static Genero buscarGeneroXid(int idGenero) {
         for (Genero genero : Genero.values()) {
-            //Comparing
+
             if (genero.getId() == idGenero) {
                 return genero;
             }
