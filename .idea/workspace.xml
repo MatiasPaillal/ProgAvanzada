@@ -5,25 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b22a6bd4-c1a2-4bd5-8321-f2952f685604" name="Changes" comment="Cambios">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12-11-2021_18_56__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12-11-2021_18_56__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12-11-2021_18_56__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12-11-2021_18_56__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14-11-2021_18_22__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14-11-2021_18_22__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14-11-2021_18_32__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14-11-2021_18_32__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Administrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Administrador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Album.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Cancion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Cancion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/ConexionBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/ConexionBD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Usuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Administrador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Administrador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Album.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Album.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Cancion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Cancion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mylyrics/div/ConexionBD.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mylyrics/div/ConexionBD.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Genero.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Genero.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Usuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/sonar/report-task.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/sonar/report-task.txt" afterDir="false" />
     </list>
-    <list id="6f293e73-ea3b-49a1-b8fe-509865340e49" name="Changes by Francisco" comment="" />
+    <list id="6f293e73-ea3b-49a1-b8fe-509865340e49" name="Changes by Francisco" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Genero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Genero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Usuario.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -172,6 +167,8 @@
       <workItem from="1636756612011" duration="12206000" />
       <workItem from="1636834280269" duration="9775000" />
       <workItem from="1636924244859" duration="902000" />
+      <workItem from="1637098874138" duration="28000" />
+      <workItem from="1637274616556" duration="5611000" />
     </task>
     <task id="LOCAL-00001" summary="proyecto">
       <created>1633729251929</created>

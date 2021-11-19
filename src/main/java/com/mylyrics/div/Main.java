@@ -156,6 +156,11 @@ public class Main {
                 case 4:
                     user.mostrarAlbumes();
                     System.out.println("Ingrese el álbum de la canción: ");
+                    String nombreAlbum = TECLADO.nextLine();
+
+                    for (Cancion cancion : user.mostrarCancionesPorAlbum(nombreAlbum)) {
+                        System.out.println(cancion.getId() + ") "+ cancion.getNombre());
+                    }
 
                     break;
 
