@@ -5,20 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b22a6bd4-c1a2-4bd5-8321-f2952f685604" name="Changes" comment="Cambios">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14-11-2021_18_22__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14-11-2021_18_22__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14-11-2021_18_32__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14-11-2021_18_32__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12-11-2021_18_56_[Changes]1/Administrador.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12-11-2021_18_56_[Changes]1/Album.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12-11-2021_18_56_[Changes]1/Autor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12-11-2021_18_56_[Changes]1/Cancion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12-11-2021_18_56_[Changes]1/ConexionBD.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12-11-2021_18_56_[Changes]1/Genero.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12-11-2021_18_56_[Changes]1/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12-11-2021_18_56_[Changes]1/Persona.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12-11-2021_18_56_[Changes]1/Usuario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12-11-2021_18_56_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12-11-2021_18_56_[Changes]1/testUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12-11-2021_18_56__Changes_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14-11-2021_18_22_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14-11-2021_18_22__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14-11-2021_18_32_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14-11-2021_18_32__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Administrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Administrador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Administrador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Administrador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Genero.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Genero.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Usuario.class" afterDir="false" />
     </list>
-    <list id="6f293e73-ea3b-49a1-b8fe-509865340e49" name="Changes by Francisco" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Genero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Genero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Usuario.java" afterDir="false" />
-    </list>
+    <list id="6f293e73-ea3b-49a1-b8fe-509865340e49" name="Changes by Francisco" comment="Changes by Francisco" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -168,7 +173,10 @@
       <workItem from="1636834280269" duration="9775000" />
       <workItem from="1636924244859" duration="902000" />
       <workItem from="1637098874138" duration="28000" />
-      <workItem from="1637274616556" duration="5611000" />
+      <workItem from="1637274616556" duration="5848000" />
+      <workItem from="1637368114613" duration="36000" />
+      <workItem from="1637881299306" duration="2757000" />
+      <workItem from="1638132134323" duration="1369000" />
     </task>
     <task id="LOCAL-00001" summary="proyecto">
       <created>1633729251929</created>
@@ -275,7 +283,21 @@
       <option name="project" value="LOCAL" />
       <updated>1636924627183</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Cambios">
+      <created>1637280445873</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1637280445873</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Changes by Francisco">
+      <created>1637280461300</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1637280461301</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,10 +321,10 @@
     <MESSAGE value="tests" />
     <MESSAGE value="nuevas clases" />
     <MESSAGE value="nuevas clases y atributos" />
-    <MESSAGE value="Changes by Francisco" />
     <MESSAGE value="menu listo" />
     <MESSAGE value="Cambios" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambios" />
+    <MESSAGE value="Changes by Francisco" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes by Francisco" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
