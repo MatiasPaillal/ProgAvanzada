@@ -3,17 +3,18 @@ package com.mylyrics.div;
 
 import java.util.Scanner;
 
-    public class Administrador extends Persona {
-        public static final Scanner TECLADO = new Scanner(System.in);
+public class Administrador extends Persona {
+    public static final Scanner TECLADO = new Scanner(System.in);
 
-        public Administrador(String nombre, String password, String nombreUsuario) {
-            super(nombre, password, nombreUsuario);
-        }
+    public Administrador(String nombre, String password, String nombreUsuario) {
+        super(nombre, password, nombreUsuario);
+    }
 
-        public Administrador() {
-            super();
-        }
-    public static void formularioAlbum(){
+    public Administrador() {
+        super();
+    }
+
+    public static void formularioAlbum() {
 
         System.out.print("\nIngrese nombre del autor: ");
         String nombreAutor = TECLADO.nextLine();

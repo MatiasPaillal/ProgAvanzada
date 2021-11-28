@@ -6,7 +6,7 @@ import java.time.LocalDate;
 public class Main {
     public static final Scanner TECLADO = new Scanner(System.in);
 
-    public static Object iniciarSesion() {
+    public static Persona iniciarSesion() {
         boolean isAdmin = false;
         boolean login = false;
         String nombreUsuario;
@@ -63,7 +63,7 @@ public class Main {
     }
 
 
-    public static Object menu() {
+    public static Persona menu() {
         System.out.println("1) Iniciar sesión.      2) Registrarse.");
         int opcion = TECLADO.nextInt();
         TECLADO.nextLine();
@@ -173,12 +173,12 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Object usuario = menu();
+        Persona persona = menu();
 
-        if (usuario instanceof Administrador) {
+        if (persona instanceof Administrador) {
             menuAdmin();
         } else {
-            menuUsuario((Usuario) usuario);
+            menuUsuario((Usuario) persona);
         }
     }
 
