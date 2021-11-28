@@ -13,7 +13,7 @@ import java.util.Scanner;
         public Administrador() {
             super();
         }
-    public static void formularioAlbum(){
+        public static void formularioAlbum(){
 
         System.out.print("\nIngrese nombre del autor: ");
         String nombreAutor = TECLADO.nextLine();
