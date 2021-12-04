@@ -3,8 +3,10 @@ package com.mylyrics.div;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Album {
+    public static final Scanner TECLADO = new Scanner(System.in);
     private int id;
     private String nombre;
     private Autor autor;
@@ -108,6 +110,33 @@ public class Album {
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
+    }
+
+    public static void formularioAlbum() {
+
+        System.out.print("\nIngrese nombre del autor: ");
+        String nombreAutor = TECLADO.nextLine();
+        Autor autor = new Autor(nombreAutor);
+        System.out.print("\nIngrese nombre del album: ");
+        String nombreAlbum = TECLADO.nextLine();
+
+        Album album = new Album(nombreAlbum, autor);
+        boolean bol = false;
+        int anio;
+        int mes;
+        int dia;
+        do {
+            System.out.println("año");
+            anio = TECLADO.nextInt();
+            System.out.println("mes");
+            mes = TECLADO.nextInt();
+            System.out.println("dia");
+            dia = TECLADO.nextInt();
+            TECLADO.nextLine(); //Limpiar Buffer del Scanner
+            bol = album.agregarFecha(anio, mes, dia);
+        } while (!bol);
+
+        album.ingresarAlbum();
     }
 
     public int getId() {

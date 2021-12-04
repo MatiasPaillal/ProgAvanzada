@@ -7,8 +7,28 @@
     <list default="true" id="b22a6bd4-c1a2-4bd5-8321-f2952f685604" name="Changes" comment="Cambios">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Administrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Administrador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Album.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Autor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Autor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Cancion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Cancion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/mylyrics/test/TestCancion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mylyrics/test/TestCancion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Administrador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Administrador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Album.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Album.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Autor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Autor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Cancion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Cancion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Persona.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Persona.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Usuario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/mylyrics/test/TestCancion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/mylyrics/test/TestCancion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/mylyrics/test/testUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/mylyrics/test/testUser.class" afterDir="false" />
     </list>
-    <list id="6f293e73-ea3b-49a1-b8fe-509865340e49" name="Changes by Francisco" comment="Changes by Francisco" />
+    <list id="6f293e73-ea3b-49a1-b8fe-509865340e49" name="Changes by Francisco" comment="Changes by Francisco">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Cancion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Cancion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Persona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Usuario.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/mylyrics/test/testUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mylyrics/test/testUser.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,13 +37,42 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Tag Library Descriptor" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Cancion.java">
+      <ranges>
+        <range start1="2" end1="2" start2="2" end2="5" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
+        <range start1="3" end1="3" start2="6" end2="7" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
+        <range start1="14" end1="14" start2="18" end2="26" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
+        <range start1="79" end1="80" start2="91" end2="91" changelist="6f293e73-ea3b-49a1-b8fe-509865340e49" />
+        <range start1="85" end1="86" start2="96" end2="96" changelist="6f293e73-ea3b-49a1-b8fe-509865340e49" />
+        <range start1="87" end1="89" start2="97" end2="97" changelist="6f293e73-ea3b-49a1-b8fe-509865340e49" />
+        <range start1="128" end1="128" start2="136" end2="159" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Main.java">
+      <ranges>
+        <range start1="2" end1="2" start2="2" end2="4" changelist="6f293e73-ea3b-49a1-b8fe-509865340e49" />
+        <range start1="49" end1="50" start2="51" end2="52" changelist="6f293e73-ea3b-49a1-b8fe-509865340e49" />
+        <range start1="52" end1="54" start2="54" end2="56" changelist="6f293e73-ea3b-49a1-b8fe-509865340e49" />
+        <range start1="96" end1="97" start2="98" end2="99" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
+        <range start1="99" end1="100" start2="101" end2="114" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
+        <range start1="102" end1="103" start2="116" end2="117" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
+        <range start1="105" end1="106" start2="119" end2="120" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
+        <range start1="108" end1="109" start2="122" end2="123" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
+        <range start1="117" end1="118" start2="131" end2="132" changelist="6f293e73-ea3b-49a1-b8fe-509865340e49" />
+        <range start1="161" end1="162" start2="175" end2="176" changelist="6f293e73-ea3b-49a1-b8fe-509865340e49" />
+        <range start1="177" end1="178" start2="191" end2="192" changelist="6f293e73-ea3b-49a1-b8fe-509865340e49" />
+        <range start1="180" end1="181" start2="194" end2="195" changelist="6f293e73-ea3b-49a1-b8fe-509865340e49" />
+      </ranges>
+    </file>
   </component>
   <component name="ProjectId" id="1zF1aoR931n4ZhK9YxQ6ozeyKDA" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -47,21 +96,8 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="advanced.settings" />
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.mylyrics.div.Main" />
-      <module name="Progra" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.mylyrics.div.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestAlbum.comprobarFechaFuturaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.TestCancion.comprobarFormulariov1">
+    <configuration name="TestCancion.comprobarFormulario" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Progra" />
       <extension name="coverage">
         <pattern>
@@ -71,43 +107,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.mylyrics.test" />
       <option name="MAIN_CLASS_NAME" value="com.mylyrics.test.TestCancion" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="testUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Progra" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.mylyrics.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.mylyrics.test" />
-      <option name="MAIN_CLASS_NAME" value="com.mylyrics.test.testUser" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="testUser.verificarLargoPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Progra" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.mylyrics.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.mylyrics.test" />
-      <option name="MAIN_CLASS_NAME" value="com.mylyrics.test.testUser" />
-      <option name="METHOD_NAME" value="verificarLargoPassword" />
+      <option name="METHOD_NAME" value="comprobarFormulario" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="testUser.verificarNumsPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestCancion.comprobarFormularioCancionv1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Progra" />
       <extension name="coverage">
         <pattern>
@@ -116,8 +122,56 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.mylyrics.test" />
-      <option name="MAIN_CLASS_NAME" value="com.mylyrics.test.testUser" />
-      <option name="METHOD_NAME" value="verificarNumsPassword" />
+      <option name="MAIN_CLASS_NAME" value="com.mylyrics.test.TestCancion" />
+      <option name="METHOD_NAME" value="comprobarFormularioCancionv1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCancion.comprobarFormularioCancionv2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Progra" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mylyrics.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mylyrics.test" />
+      <option name="MAIN_CLASS_NAME" value="com.mylyrics.test.TestCancion" />
+      <option name="METHOD_NAME" value="comprobarFormularioCancionv2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCancion.comprobarFormulariov1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Progra" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mylyrics.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mylyrics.test" />
+      <option name="MAIN_CLASS_NAME" value="com.mylyrics.test.TestCancion" />
+      <option name="METHOD_NAME" value="comprobarFormulariov1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCancion.comprobarFormulariov2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Progra" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mylyrics.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mylyrics.test" />
+      <option name="MAIN_CLASS_NAME" value="com.mylyrics.test.TestCancion" />
+      <option name="METHOD_NAME" value="comprobarFormulariov2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -125,11 +179,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.testUser" />
-        <item itemvalue="JUnit.TestAlbum.comprobarFechaFuturaTest" />
-        <item itemvalue="JUnit.testUser.verificarNumsPassword" />
-        <item itemvalue="JUnit.testUser.verificarLargoPassword" />
+        <item itemvalue="JUnit.TestCancion.comprobarFormulariov1" />
+        <item itemvalue="JUnit.TestCancion.comprobarFormulariov2" />
+        <item itemvalue="JUnit.TestCancion.comprobarFormulario" />
+        <item itemvalue="JUnit.TestCancion.comprobarFormularioCancionv1" />
+        <item itemvalue="JUnit.TestCancion.comprobarFormularioCancionv2" />
       </list>
     </recent_temporary>
   </component>
@@ -162,7 +216,11 @@
       <workItem from="1637368114613" duration="36000" />
       <workItem from="1637881299306" duration="2757000" />
       <workItem from="1638132134323" duration="1795000" />
-      <workItem from="1638136421712" duration="1049000" />
+      <workItem from="1638136421712" duration="2337000" />
+      <workItem from="1638251597313" duration="7000" />
+      <workItem from="1638565446204" duration="134000" />
+      <workItem from="1638565822343" duration="73000" />
+      <workItem from="1638567686164" duration="9077000" />
     </task>
     <task id="LOCAL-00001" summary="proyecto">
       <created>1633729251929</created>
@@ -290,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638133663752</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Cambios">
+      <created>1638138391018</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1638138391018</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

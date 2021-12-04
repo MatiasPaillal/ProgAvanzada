@@ -2,8 +2,10 @@ package com.mylyrics.div;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Autor {
+    public static final Scanner TECLADO = new Scanner(System.in);
     private int id;
     private String nombreArtistico;
     private ArrayList<Album> albums;
@@ -94,6 +96,28 @@ public class Autor {
 
             }
 
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+    }
+
+    public static void formularioAutor() {
+
+        System.out.print("\nIngrese el nombre artístico del autor: ");
+        String nombreAutor = TECLADO.nextLine();
+        Autor autor = new Autor(nombreAutor);
+        autor.registrarAutor();
+
+    }
+    public static void cambiarNombreAutor() {
+        try {
+            System.out.print("\nIngrese el nombre del autor: ");
+            String nombreAutor = TECLADO.nextLine();
+            System.out.print("\nIngrese nuevo nombre del autor: ");
+            String nuevoNombreAutor = TECLADO.nextLine();
+
+            Autor autor = new Autor(nombreAutor);
+            autor.editarNombre(nuevoNombreAutor);
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }

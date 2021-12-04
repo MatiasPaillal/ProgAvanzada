@@ -94,19 +94,31 @@ public class Main {
 
             switch (opcion) {
                 case 1:
-                    Administrador.formularioAlbum();
+                    Album.formularioAlbum();
                     break;
                 case 2:
-                    Administrador.formularioCancion();
+                    System.out.print("\nIngrese nombre del autor: ");
+                    String nombreAutor = TECLADO.nextLine();
+                    System.out.print("\nIngrese nombre del album ");
+                    String nombreAlbum = TECLADO.nextLine();
+                    System.out.print("\nIngrese nombre del genero ");
+                    String nombreGenero = TECLADO.nextLine();
+                    System.out.print("\nIngrese nombre de cancion: ");
+                    String nombreCancion = TECLADO.nextLine();
+                    System.out.print("\nIngrese letra de la cancion: ");
+                    String letraCancion = TECLADO.nextLine();
+                    System.out.print("\nIngrese letra traducida de la cancion: ");
+                    String traduccionCancion = TECLADO.nextLine();
+                    Cancion.formularioCancion(nombreAutor, nombreAlbum, nombreGenero, nombreCancion, letraCancion, traduccionCancion);
                     break;
                 case 3:
-                    Administrador.formularioAutor();
+                    Autor.formularioAutor();
                     break;
                 case 4:
-                    Administrador.cambiarTraduccion();
+                    Cancion.cambiarTraduccion();
                     break;
                 case 5:
-                    Administrador.cambiarNombreAutor();
+                    Autor.cambiarNombreAutor();
                     break;
                 default:
                     exit = true;

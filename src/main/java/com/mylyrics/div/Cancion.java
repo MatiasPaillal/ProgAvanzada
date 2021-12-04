@@ -1,6 +1,10 @@
 package com.mylyrics.div;
 
+import java.sql.SQLException;
+import java.util.Scanner;
+
 public class Cancion {
+    public static final Scanner TECLADO = new Scanner(System.in);
     private int id;
     private String nombre;
     private String letra;
@@ -11,6 +15,14 @@ public class Cancion {
 
     public Cancion() {
 
+    }
+    public static boolean formularioCancion(String nombreAutor, String nombreAlbum, String nombreGenero, String nombreCancion, String letraCancion, String traduccionCancion) {
+
+        Autor autor = new Autor(nombreAutor);
+        Album album = new Album(nombreAlbum);
+        Genero genero = Genero.buscarGenero(nombreGenero);
+        Cancion cancion= new Cancion(nombreCancion, letraCancion, traduccionCancion, genero, autor, album);
+        return cancion.ingresarCancion();
     }
 
     public Cancion(String nombre) {
@@ -125,6 +137,29 @@ public class Cancion {
         this.album = albumRecibido;
         this.genero = generoRecibido;
 
+    }
+
+
+
+
+    public static void cambiarTraduccion() {
+        try {
+            System.out.print("\nIngrese el nombre del autor: ");
+            String nombreAutor = TECLADO.nextLine();
+
+            System.out.print("\nIngrese el nombre de la cancion: ");
+            String nombreCancion = TECLADO.nextLine();
+
+
+            Autor autor = new Autor(nombreAutor);
+            System.out.print("\nIngrese traduccion de la letra ");
+            String letra = TECLADO.nextLine();
+
+            Cancion cancion = new Cancion(nombreCancion, autor);
+            cancion.editarTraduccion(letra);
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
     }
 
     @Override
