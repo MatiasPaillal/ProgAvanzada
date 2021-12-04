@@ -89,16 +89,12 @@ public class Cancion {
             ConexionBD.getPs().setInt(5, this.autor.getId());
             ConexionBD.getPs().setInt(6, this.genero.getId());
 
-
             ConexionBD.getPs().executeUpdate();
             return true;
         } catch (Exception e) {
             System.err.println(e.getMessage());
             return false;
-
         }
-
-
     }
 
     public boolean editarTraduccion(String letra) {

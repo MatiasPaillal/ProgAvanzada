@@ -1,6 +1,6 @@
 package com.mylyrics.test;
 
-import com.mylyrics.div.Usuario;
+import com.mylyrics.div.Persona;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -11,17 +11,17 @@ import java.time.Period;
 
 
 class testUser {
-    public static Usuario user;
+    public static Persona user;
 
     @BeforeAll
     static void setUp() {
-        user = new Usuario();
+        user = new Persona();
     }
 
     @Test
     void setNombreTest() {
 
-        Usuario usuario = new Usuario();
+        Persona usuario = new Persona();
         boolean respuesta = usuario.guardarNombreUser("matias");
         Assertions.assertTrue(respuesta);
     }

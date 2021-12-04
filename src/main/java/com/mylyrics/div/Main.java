@@ -1,5 +1,7 @@
 package com.mylyrics.div;
 
+import java.time.DateTimeException;
+import java.time.Period;
 import java.util.Scanner;
 import java.time.LocalDate;
 
@@ -47,11 +49,11 @@ public class Main {
             }
         } while (!login);
 
-        return (isAdmin) ? new Administrador(nombre, password, nombreUsuario) : new Usuario(nombre, password, nombreUsuario, fechaNacimiento);
+        return new Persona(nombre, password, nombreUsuario, isAdmin);
     }
 
-    public static Usuario registrarUsuario() {
-        Usuario newUser = new Usuario();
+    public static Persona registrarUsuario() {
+        Persona newUser = new Persona();
 
         newUser.guardarNombreUsuario();
         newUser.setPassword();
@@ -127,7 +129,7 @@ public class Main {
         } while (!exit);
     }
 
-    public static void menuUsuario(Usuario user) {
+    public static void menuUsuario(Persona user) {
 
         int opcion = 0;
         boolean exit = false;
@@ -171,7 +173,7 @@ public class Main {
                     String nombreAlbum = TECLADO.nextLine();
 
                     for (Cancion cancion : user.mostrarCancionesPorAlbum(nombreAlbum)) {
-                        System.out.println(cancion.getId() + ") "+ cancion.getNombre());
+                        System.out.println(cancion.getId() + ") " + cancion.getNombre());
                     }
 
                     break;
@@ -187,10 +189,10 @@ public class Main {
     public static void main(String[] args) {
         Persona persona = menu();
 
-        if (persona instanceof Administrador) {
+        if (persona.isAdmin()) {
             menuAdmin();
         } else {
-            menuUsuario((Usuario) persona);
+            menuUsuario(persona);
         }
     }
 
