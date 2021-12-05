@@ -59,7 +59,7 @@ class testUser {
         mes = 04;
         dia = 02;
 
-        user.setFechaNacimiento(dia, mes, anio);
+        user.setFechaNacimientoTest(dia, mes, anio);
         LocalDate now = LocalDate.now();
 
         Period periodo = Period.between(user.getFechaNacimiento(), now);
@@ -74,15 +74,27 @@ class testUser {
         boolean isCorrect;
         int anio, mes, dia;
         anio = 2002;
-        mes = 02;
+        mes = 12;
         dia = 28;
 
         try {
-            user.setFechaNacimiento(dia, mes, anio);
+            user.setFechaNacimientoTest(dia, mes, anio);
             isCorrect = true;
         } catch (DateTimeException e) {
             isCorrect = false;
         }
+
+        Assertions.assertTrue(isCorrect);
+    }
+
+    @Test
+    void setFechaNacimientoTest() {
+        int anio, mes, dia;
+        anio = 2002;
+        mes = 12;
+        dia = 31;
+
+        boolean isCorrect = user.setFechaNacimiento(dia,mes,anio);
 
         Assertions.assertTrue(isCorrect);
     }

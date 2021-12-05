@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b22a6bd4-c1a2-4bd5-8321-f2952f685604" name="Changes" comment="Cambios">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Cancion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Cancion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Persona.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Cancion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Cancion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/mylyrics/test/testUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mylyrics/test/testUser.java" afterDir="false" />
     </list>
     <list id="9bf0b5c8-1235-4f17-b2ba-77350c7cf7a1" name="Changes by Francisco" comment="Changes by Francisco" />
     <option name="SHOW_DIALOG" value="false" />

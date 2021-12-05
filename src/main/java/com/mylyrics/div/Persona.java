@@ -26,6 +26,7 @@ public class Persona {
         this.nombre = nombre;
         this.password = password;
         this.nombreUsuario = nombreUsuario;
+        this.fechaNacimiento = fechaNacimiento;
         this.isAdmin = isAdmin;
     }
 
@@ -142,7 +143,7 @@ public class Persona {
     }
 
     public boolean verificarFechaNacimiento(int dia, int mes, int anio) {
-        int edad = 0;
+        int edad;
         try {
             edad = Period.between(LocalDate.of(anio, mes, dia), LocalDate.now()).getYears();
 
@@ -153,10 +154,19 @@ public class Persona {
             System.out.println("La fecha ingresada es incorrecta.");
             return false;
         }
-        return (edad < 13) ? false : true;
+        return edad >= 13;
     }
 
-    public void setFechaNacimiento(int dia, int mes, int anio) {
+    public boolean setFechaNacimiento(int dia, int mes, int anio) {
+        boolean isFechaCorrecta = verificarFechaNacimiento(dia, mes, anio);
+
+        if (isFechaCorrecta) {
+            this.fechaNacimiento = LocalDate.of(anio, mes, dia);
+        }
+        return isFechaCorrecta;
+    }
+
+    public void setFechaNacimientoTest(int dia, int mes, int anio) {
         this.fechaNacimiento = LocalDate.of(anio, mes, dia);
     }
 
@@ -164,17 +174,9 @@ public class Persona {
         return fechaNacimiento;
     }
 
-    public String getStringFechaNacimiento() {
-        int dia = this.fechaNacimiento.getDayOfMonth();
-        int mes = this.fechaNacimiento.getMonthValue();
-        int anio = this.fechaNacimiento.getYear();
-
-        return dia + "-" + mes + "-" + anio;
-    }
-
     public void mostrarFavoritas() {
         try {
-            this.favoritos.stream().forEach(cancion ->
+            this.favoritos.forEach(cancion ->
                     System.out.println(cancion.getId() + ") " + cancion.getNombre()));
         } catch (NullPointerException e) {
             System.out.println("Usted no tiene canciones en su lista de canciones favoritas");
@@ -199,6 +201,7 @@ public class Persona {
         }
 
     }
+
     public boolean agregarFavoritos(Cancion cancion) {
         ConexionBD bd = new ConexionBD();
 
