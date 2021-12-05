@@ -75,13 +75,13 @@ public class Autor {
         try {
             ConexionBD bd = new ConexionBD();
 
-            bd.setPs(bd.getConexion().prepareStatement("SELECT * FROM autor WHERE id = ?"));
-            bd.getPs().setInt(1, this.id);
+            ConexionBD.setPs(bd.getConexion().prepareStatement("SELECT * FROM autor WHERE id = ?"));
+            ConexionBD.getPs().setInt(1, this.id);
 
-            bd.setRs(bd.getPs().executeQuery());
+            ConexionBD.setRs(ConexionBD.getPs().executeQuery());
 
-            if (bd.getRs().next()) {
-                this.nombreArtistico = bd.getRs().getString("nombreArtistico");
+            if (ConexionBD.getRs().next()) {
+                this.nombreArtistico = ConexionBD.getRs().getString("nombreArtistico");
             }
 
         } catch (Exception e) {
@@ -96,7 +96,8 @@ public class Autor {
         autor.registrarAutor();
 
     }
-    public static void cambiarNombreAutor(String nombreAutor,String nuevoNombreAutor) {
+
+    public static void cambiarNombreAutor(String nombreAutor, String nuevoNombreAutor) {
         try {
             Autor autor = new Autor(nombreAutor);
             autor.editarNombre(nuevoNombreAutor);

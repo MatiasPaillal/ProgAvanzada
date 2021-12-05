@@ -69,12 +69,12 @@ public class Persona {
         Scanner teclado = new Scanner(System.in);
         do {
             System.out.println("Ingrese un nombre de usuario");
-            String nombreUsuario = teclado.nextLine();
+            String nombreUser = teclado.nextLine();
 
             Pattern pat = Pattern.compile("^[a-zA-Z0-9]*$");
-            Matcher mat = pat.matcher(nombreUsuario);
+            Matcher mat = pat.matcher(nombreUser);
             if (mat.matches()) {
-                this.nombreUsuario = nombreUsuario;
+                this.nombreUsuario = nombreUser;
                 ejecucion = true;
             }
             if (!ejecucion) {
@@ -224,15 +224,14 @@ public class Persona {
         try {
             ConexionBD bd = new ConexionBD();
 
-            bd.setPs(bd.getConexion().prepareStatement("SELECT * FROM cancionesfavoritas WHERE nombreUsuarioPersona = ?"));
-            bd.getPs().setString(1, this.nombreUsuario);
+            ConexionBD.setPs(bd.getConexion().prepareStatement("SELECT * FROM cancionesfavoritas WHERE nombreUsuarioPersona = ?"));
+            ConexionBD.getPs().setString(1, this.nombreUsuario);
 
-            bd.setRs(bd.getPs().executeQuery());
-            ResultSet rs = bd.getRs();
+            ConexionBD.setRs(ConexionBD.getPs().executeQuery());
+            ResultSet rs = ConexionBD.getRs();
 
             while (rs.next()) {
                 Cancion cancion = new Cancion(rs.getInt("idCancion"));
-
                 this.favoritos.add(cancion);
             }
 

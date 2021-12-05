@@ -93,14 +93,14 @@ public class Album {
         try {
             ConexionBD bd = new ConexionBD();
 
-            bd.setPs(bd.getConexion().prepareStatement("SELECT * FROM album WHERE id = ?"));
-            bd.getPs().setInt(1, this.id);
+            ConexionBD.setPs(bd.getConexion().prepareStatement("SELECT * FROM album WHERE id = ?"));
+            ConexionBD.getPs().setInt(1, this.id);
 
-            bd.setRs(bd.getPs().executeQuery());
+            ConexionBD.setRs(ConexionBD.getPs().executeQuery());
 
-            if (bd.getRs().next()) {
-                this.nombre = bd.getRs().getString("nombreAlbum");
-                this.fecha = LocalDate.parse(bd.getRs().getString("fechaEstreno"));
+            if (ConexionBD.getRs().next()) {
+                this.nombre = ConexionBD.getRs().getString("nombreAlbum");
+                this.fecha = LocalDate.parse(ConexionBD.getRs().getString("fechaEstreno"));
             }
 
         } catch (Exception e) {

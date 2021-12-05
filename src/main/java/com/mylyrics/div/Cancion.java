@@ -29,15 +29,15 @@ public class Cancion {
         try {
             ConexionBD bd = new ConexionBD();
 
-            bd.setPs(bd.getConexion().prepareStatement("SELECT * FROM cancion WHERE id = ?"));
-            bd.getPs().setInt(1, id);
-            bd.setRs(bd.getPs().executeQuery());
+            ConexionBD.setPs(bd.getConexion().prepareStatement("SELECT * FROM cancion WHERE id = ?"));
+            ConexionBD.getPs().setInt(1, id);
+            ConexionBD.setRs(ConexionBD.getPs().executeQuery());
 
-            bd.getRs().next();
+            ConexionBD.getRs().next();
 
-            this.nombre = bd.getRs().getString("nombreCancion");
-            this.letra = bd.getRs().getString("letra");
-            this.letraTraducida = bd.getRs().getString("letraTraducida");
+            this.nombre = ConexionBD.getRs().getString("nombreCancion");
+            this.letra = ConexionBD.getRs().getString("letra");
+            this.letraTraducida = ConexionBD.getRs().getString("letraTraducida");
 
             int idAutor = ConexionBD.getRs().getInt("idAutor");
             int idGenero = ConexionBD.getRs().getInt("idGenero");
@@ -176,7 +176,7 @@ public class Cancion {
         ArrayList<String> letrasplit = new ArrayList<>(Arrays.asList(letra.split(" ")));
 
         for (int i = 0; i < letrasplit.size(); i++) {
-            if (i % 5 == 0 && i!=0) {
+            if (i % 5 == 0 && i != 0) {
                 System.out.println(" ");
             }
             System.out.print(letrasplit.get(i) + " ");

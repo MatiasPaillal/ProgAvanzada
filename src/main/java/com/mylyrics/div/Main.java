@@ -11,7 +11,6 @@ public class Main {
     public static final Scanner TECLADO = new Scanner(System.in);
     public static Logger logger = Logger.getLogger(Main.class.getName());
 
-
     public static Persona iniciarSesion() {
         boolean isAdmin = false;
         boolean login = false;
@@ -94,7 +93,9 @@ public class Main {
     public static void menuAdmin() {
         int opcion = 0;
         boolean exit = false;
-        String nombreAlbum, nombreCancion, nombreAutor;
+        String nombreAlbum;
+        String nombreCancion;
+        String nombreAutor;
 
         do {
             do {
@@ -156,8 +157,7 @@ public class Main {
         } while (!exit);
     }
 
-   public static void menuUsuario(Persona user) {
-
+    public static void menuUsuario(Persona user) {
         int opcion = 0;
         boolean exit = false;
         int idCancion;
@@ -192,6 +192,7 @@ public class Main {
                     String nombreCancion = TECLADO.nextLine();
 
                     user.mostrarCancionesPorNombre(nombreCancion);
+
                     break;
                 case 4:
                     user.mostrarAlbumes();
@@ -207,7 +208,6 @@ public class Main {
                     user.traerFavoritos();
                     user.mostrarFavoritas();
 
-
                     break;
                 case 6:
                     user.traerFavoritos();
@@ -217,28 +217,11 @@ public class Main {
                     user.quitarCancionFavoritos(idCancion);
                     break;
 
-
                 default:
                     exit = true;
                     break;
             }
-            if (opcion != 6  ) {
-                System.out.println("Ingrese el número correspondiente a la canción que desee ver");
-                int idCancionElegida = TECLADO.nextInt();
-                TECLADO.nextLine(); //Limpiar Buffer
-                Cancion cancionElegida = new Cancion(idCancionElegida);
-                cancionElegida.mostrarInfoCancion();
-
-                if(opcion != 5) {
-                    System.out.println("Si desea agregar a favoritos ingrese 1");
-                    opcion = TECLADO.nextInt();
-                    if (opcion == 1) {
-
-                        user.agregarFavoritos(cancionElegida);
-                    }
-                }
-
-            }
+            elejirCancion(user, opcion);
         } while (!exit);
 
     }
@@ -267,7 +250,6 @@ public class Main {
 
 
     public static void main(String[] args) throws IOException {
-
         FileHandler fileLog = new FileHandler("mylog.log", true);
         SimpleFormatter formatter = new SimpleFormatter();
         fileLog.setFormatter(formatter);
