@@ -1,23 +1,12 @@
 package com.mylyrics.div;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
 public class Autor {
-    public static final Scanner TECLADO = new Scanner(System.in);
     private int id;
     private String nombreArtistico;
     private ArrayList<Album> albums;
 
-    public Autor(int id, String nombreArtistico) {
-        this.id = id;
-        this.nombreArtistico = nombreArtistico;
-    }
-
-    public Autor() {
-
-    }
 
     public Autor(int id) {
         this.id = id;
@@ -55,7 +44,7 @@ public class Autor {
             ConexionBD.setRs(ConexionBD.getPs().executeQuery());
 
             if (ConexionBD.getRs().next()) {
-                System.out.println(ConexionBD.getRs().getInt("id"));
+
                 this.id = ConexionBD.getRs().getInt("id");
             }
 
@@ -121,23 +110,9 @@ public class Autor {
         return nombreArtistico;
     }
 
-    public void setNombreArtistico(String nombreArtistico) {
-        this.nombreArtistico = nombreArtistico;
-    }
-
-    public List<Album> getAlbums() {
-        return albums;
-    }
-
-    public void setAlbums(List<Album> albums) {
-        this.albums = (ArrayList<Album>) albums;
-    }
-
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+
 }

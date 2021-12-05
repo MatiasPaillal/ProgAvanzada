@@ -241,46 +241,15 @@ public class Persona {
         }
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public void setNombre() {
         System.out.print("\nIngrese su nombre: ");
         this.nombre = new Scanner(System.in).nextLine();
-    }
-
-    public void setNombreUsuario(String nombreUsuario) {
-        this.nombreUsuario = nombreUsuario;
-    }
-
-    public void setFechaNacimiento(LocalDate fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-    }
-
-    public List<Cancion> getFavoritos() {
-        return favoritos;
-    }
-
-    public void setFavoritos(List<Cancion> favoritos) {
-        this.favoritos = (ArrayList<Cancion>) favoritos;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getNombreUsuario() {
-        return nombreUsuario;
     }
 
     public boolean isAdmin() {
         return isAdmin;
     }
 
-    public void setAdmin(boolean admin) {
-        isAdmin = admin;
-    }
 
     public void mostrarAutores() {
         try {

@@ -1,7 +1,4 @@
 package com.mylyrics.test;
-
-
-import com.mylyrics.div.Administrador;
 import com.mylyrics.div.Album;
 import com.mylyrics.div.Cancion;
 import org.junit.jupiter.api.Assertions;
@@ -38,12 +35,6 @@ class TestCancion {
 
     }
 
-    @Test
-    void comprobarFormulariov1() {
-        Administrador admin = new Administrador();
-        boolean respuesta = admin.formularioCancion("matias","cry","JAZZ","a","a","a");
-        Assertions.assertTrue(respuesta);
 
-    }
 
 }

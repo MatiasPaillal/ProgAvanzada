@@ -45,14 +45,17 @@ public class Main {
                         login = true;
                     } else {
                         System.out.println("Contraseña Incorrecta.");
+                        System.out.println(" ");
                         logger.warning("Se está intentando iniciar sesion a la cuenta del siguiente nombre de usuario: " + nombreUsuario + "\n");
                         System.out.println(" ");
                     }
                 } else {
+                    System.out.println(" ");
                     logger.warning("No se encuentra el usuario en la base de datos\n");
                     System.out.println(" ");
                 }
             } catch (Exception e) {
+                System.out.println(" ");
                 logger.warning("Error al conectarse a la base de datos. " + e.getMessage() + "\n");
                 System.out.println(" ");
             }
@@ -95,21 +98,15 @@ public class Main {
 
         do {
             do {
-                System.out.println("1) Agregar un Album");
-                System.out.println("2) Agregar una Canción");
-                System.out.println("3) Agregar un Autor");
-                System.out.println("4) Agregar una Traducción");
-                System.out.println("5) Cambiar nombre de un Autor");
-                System.out.println("0) Cerrar Sesión");
+                System.out.println("1) Agregar un Album\n" + "2) Agregar una Canción\n" + "3) Agregar un Autor\n" + "4) Agregar una Traducción\n" + "5) Cambiar nombre de un Autor\n" + "0) Cerrar Sesión\n");
                 opcion = TECLADO.nextInt();
                 TECLADO.nextLine();
-            } while (opcion > 5 || opcion < 0);
+            } while (opcion > 6 || opcion < 0);
 
             switch (opcion) {
                 case 1:
                     System.out.print("\nIngrese nombre del autor: ");
                     nombreAutor = TECLADO.nextLine();
-                    Autor autor = new Autor(nombreAutor);
                     System.out.print("\nIngrese nombre del album: ");
                     nombreAlbum = TECLADO.nextLine();
                     Album.formularioAlbum(nombreAutor, nombreAlbum);
@@ -169,14 +166,7 @@ public class Main {
         do {
             do {
                 user.traerFavoritos();
-                System.out.println("Buscar canción por: ");
-                System.out.println("1) Autor");
-                System.out.println("2) Género");
-                System.out.println("3) Nombre");
-                System.out.println("4) Nombre del Albúm");
-                System.out.println("5) Ver Canciones Favoritas");
-                System.out.println("6) Eliminar cancion de lista de favoritos");
-                System.out.println("0) Cerrar Sesión");
+                System.out.println("Buscar canción por: \n" + "1) Autor\n" + "2) Género\n" + "3) Nombre\n" + "4) Nombre del Albúm\n" + "5) Ver Canciones Favoritas\n" + "6) Eliminar cancion de lista de favoritos\n" + "0) Cerrar Sesión\n");
                 opcion = TECLADO.nextInt();
                 TECLADO.nextLine();
             } while (opcion > 6 || opcion < 0);
@@ -250,6 +240,28 @@ public class Main {
 
             }
         } while (!exit);
+
+    }
+
+    public static void elejirCancion(Persona user, int opcion) {
+        if (opcion != 6) {
+            System.out.println("Ingrese el número correspondiente a la canción que desee ver");
+            int idCancionElegida = TECLADO.nextInt();
+            TECLADO.nextLine(); //Limpiar Buffer
+            Cancion cancionElegida = new Cancion(idCancionElegida);
+            cancionElegida.mostrarInfoCancion();
+
+            if (opcion != 5) {
+                System.out.println("Si desea agregar a favoritos ingrese 1");
+                opcion = TECLADO.nextInt();
+                if (opcion == 1) {
+
+                    user.agregarFavoritos(cancionElegida);
+                }
+            }
+
+        }
+
 
     }
 

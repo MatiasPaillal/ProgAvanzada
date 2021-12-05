@@ -2,7 +2,6 @@ package com.mylyrics.div;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Album {
@@ -81,7 +80,6 @@ public class Album {
             ConexionBD.setRs(ConexionBD.getPs().executeQuery());
 
             if (ConexionBD.getRs().next()) {
-                System.out.println(ConexionBD.getRs().getInt("id"));
                 this.id = ConexionBD.getRs().getInt("id");
             }
 
@@ -136,31 +134,4 @@ public class Album {
         return id;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public Autor getAutor() {
-        return autor;
-    }
-
-    public void setAutor(Autor autor) {
-        this.autor = autor;
-    }
-
-    public List<Cancion> getCanciones() {
-        return canciones;
-    }
-
-    public void setCanciones(List<Cancion> canciones) {
-        this.canciones = (ArrayList<Cancion>) canciones;
-    }
-
-    public LocalDate getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(LocalDate fecha) {
-        this.fecha = fecha;
-    }
 }

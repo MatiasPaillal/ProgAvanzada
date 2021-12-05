@@ -1,6 +1,5 @@
 package com.mylyrics.div;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -71,32 +70,8 @@ public class Cancion {
         return this.nombre;
     }
 
-    public String getLetra() {
-
-        return this.letra;
-    }
-
-    public Genero getGenero() {
-
-        return this.genero;
-    }
-
-    public String getNameAutor() {
-
-        return this.autor.getNombreArtistico();
-    }
-
-    public String getNameAlbum() {
-
-        return this.album.getNombre();
-    }
-
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public boolean ingresarCancion() {
