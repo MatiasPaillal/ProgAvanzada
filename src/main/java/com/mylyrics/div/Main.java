@@ -46,10 +46,15 @@ public class Main {
                     } else {
                         System.out.println("Contraseña Incorrecta.");
                         logger.warning("Se está intentando iniciar sesion a la cuenta del siguiente nombre de usuario: " + nombreUsuario + "\n");
+                        System.out.println(" ");
                     }
+                } else {
+                    logger.warning("No se encuentra el usuario en la base de datos\n");
+                    System.out.println(" ");
                 }
             } catch (Exception e) {
-                logger.warning(e.getMessage() + " 'No se encuentra el usuario en la base de datos'\n");
+                logger.warning("Error al conectarse a la base de datos. " + e.getMessage() + "\n");
+                System.out.println(" ");
             }
 
         } while (!login);
@@ -158,23 +163,20 @@ public class Main {
 
         int opcion = 0;
         boolean exit = false;
-        int idCancion;
 
 
         do {
             do {
-                user.traerFavoritos();
                 System.out.println("Buscar canción por: ");
                 System.out.println("1) Autor");
                 System.out.println("2) Género");
                 System.out.println("3) Nombre");
                 System.out.println("4) Nombre del Albúm");
-                System.out.println("5) Ver Canciones Favoritas");
-                System.out.println("6) Eliminar cancion de lista de favoritos");
+                System.out.println("5) Canciones Favoritas");
                 System.out.println("0) Cerrar Sesión");
                 opcion = TECLADO.nextInt();
                 TECLADO.nextLine();
-            } while (opcion > 6 || opcion < 0);
+            } while (opcion > 5 || opcion < 0);
 
             switch (opcion) {
                 case 1:
@@ -211,39 +213,17 @@ public class Main {
                 case 5:
                     user.traerFavoritos();
                     user.mostrarFavoritas();
-
-
                     break;
-                case 6:
-                    user.traerFavoritos();
-                    user.mostrarFavoritas();
-                    System.out.println("Ingrese cancion a eliminar de su lista de favoritos");
-                    idCancion = TECLADO.nextInt();
-                    user.quitarCancionFavoritos(idCancion);
-                    break;
-
 
                 default:
                     exit = true;
                     break;
             }
-            if (opcion != 6  ) {
-                System.out.println("Ingrese el número correspondiente a la canción que desee ver");
-                int idCancionElegida = TECLADO.nextInt();
-                TECLADO.nextLine(); //Limpiar Buffer
-                Cancion cancionElegida = new Cancion(idCancionElegida);
-                cancionElegida.mostrarInfoCancion();
-
-                if(opcion != 5) {
-                    System.out.println("Si desea agregar a favoritos ingrese 1");
-                    opcion = TECLADO.nextInt();
-                    if (opcion == 1) {
-
-                        user.agregarFavoritos(cancionElegida);
-                    }
-                }
-
-            }
+            System.out.println("Ingrese el número correspondiente a la canción que desee ver");
+            int idCancionElegida = TECLADO.nextInt();
+            TECLADO.nextLine(); //Limpiar Buffer
+            Cancion cancionElegida = new Cancion(idCancionElegida);
+            cancionElegida.mostrarInfoCancion();
         } while (!exit);
 
     }

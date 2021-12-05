@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b22a6bd4-c1a2-4bd5-8321-f2952f685604" name="Changes" comment="Cambios">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Persona.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/mylyrics/test/testUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mylyrics/test/testUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Main.java" afterDir="false" />
     </list>
     <list id="9bf0b5c8-1235-4f17-b2ba-77350c7cf7a1" name="Changes by Francisco" comment="Changes by Francisco" />
     <option name="SHOW_DIALOG" value="false" />
@@ -332,7 +330,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638665443890</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Cambios">
+      <created>1638743206137</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1638743206137</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,9 +362,9 @@
     <MESSAGE value="nuevas clases" />
     <MESSAGE value="nuevas clases y atributos" />
     <MESSAGE value="menu listo" />
-    <MESSAGE value="Cambios" />
     <MESSAGE value="Changes by Francisco" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes by Francisco" />
+    <MESSAGE value="Cambios" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambios" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
