@@ -101,21 +101,15 @@ public class Autor {
         }
     }
 
-    public static void formularioAutor() {
+    public static void formularioAutor(String nombreAutor) {
 
-        System.out.print("\nIngrese el nombre artístico del autor: ");
-        String nombreAutor = TECLADO.nextLine();
+
         Autor autor = new Autor(nombreAutor);
         autor.registrarAutor();
 
     }
-    public static void cambiarNombreAutor() {
+    public static void cambiarNombreAutor(String nombreAutor,String nuevoNombreAutor) {
         try {
-            System.out.print("\nIngrese el nombre del autor: ");
-            String nombreAutor = TECLADO.nextLine();
-            System.out.print("\nIngrese nuevo nombre del autor: ");
-            String nuevoNombreAutor = TECLADO.nextLine();
-
             Autor autor = new Autor(nombreAutor);
             autor.editarNombre(nuevoNombreAutor);
         } catch (Exception e) {

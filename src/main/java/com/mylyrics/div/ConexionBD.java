@@ -115,4 +115,5 @@ class ConexionBD {
     public static void setRs(ResultSet rs) {
         ConexionBD.rs = rs;
     }
+
 }

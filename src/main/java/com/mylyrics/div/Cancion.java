@@ -136,20 +136,10 @@ public class Cancion {
     }
 
 
-
-
-    public static void cambiarTraduccion() {
+    public static void cambiarTraduccion(String nombreAutor, String nombreCancion, String letra) {
         try {
-            System.out.print("\nIngrese el nombre del autor: ");
-            String nombreAutor = TECLADO.nextLine();
-
-            System.out.print("\nIngrese el nombre de la cancion: ");
-            String nombreCancion = TECLADO.nextLine();
-
-
             Autor autor = new Autor(nombreAutor);
-            System.out.print("\nIngrese traduccion de la letra ");
-            String letra = TECLADO.nextLine();
+
 
             Cancion cancion = new Cancion(nombreCancion, autor);
             cancion.editarTraduccion(letra);
@@ -169,5 +159,32 @@ public class Cancion {
                 ", autor=" + autor +
                 ", album=" + album +
                 '}';
+    }
+
+    public void mostrarInfoCancion() {
+        System.out.print("Nombre: " + this.nombre + "\n" +
+                "Autor: " + this.autor.getNombreArtistico() + "\n" +
+                "Album: " + this.album.getNombre() + "\n" +
+                "Genero: " + this.genero + "\n"
+        );
+        System.out.println("\nLetra:");
+        dividirLetras(this.letra);
+        System.out.println("\nLetraTraducida:");
+        dividirLetras(this.letraTraducida);
+
+    }
+
+    public void dividirLetras(String letra) {
+        ArrayList<String> letrasplit = new ArrayList<>(Arrays.asList(letra.split(" ")));
+
+        for (int i = 0; i < letrasplit.size(); i++) {
+            if (i % 5 == 0 && i!=0) {
+                System.out.println(" ");
+            }
+            System.out.print(letrasplit.get(i) + " ");
+        }
+        System.out.println("");
+
+
     }
 }

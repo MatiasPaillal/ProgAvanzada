@@ -187,6 +187,46 @@ public class Persona {
         );
     }
 
+    public boolean quitarCancionFavoritos(int idCancion) {
+        ConexionBD bd = new ConexionBD();
+
+        try {
+            ConexionBD.setPs(bd.getConexion().prepareStatement("DELETE FROM cancionesFavoritas WHERE nombreUsuarioPersona=? AND idCancion=?"));
+            ConexionBD.getPs().setString(1, this.nombreUsuario);
+            ConexionBD.getPs().setInt(2, idCancion);
+
+
+            ConexionBD.getPs().executeUpdate();
+            return true;
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+            return false;
+
+        }
+
+    }
+
+    public void traerFavoritos() {
+        try {
+            ConexionBD bd = new ConexionBD();
+
+            bd.setPs(bd.getConexion().prepareStatement("SELECT * FROM cancionesfavoritas WHERE nombreUsuarioPersona = ?"));
+            bd.getPs().setString(1, this.nombreUsuario);
+
+            bd.setRs(bd.getPs().executeQuery());
+            ResultSet rs = bd.getRs();
+
+            while (rs.next()) {
+                Cancion cancion = new Cancion(rs.getInt("idCancion"));
+
+                this.favoritos.add(cancion);
+            }
+
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+    }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }

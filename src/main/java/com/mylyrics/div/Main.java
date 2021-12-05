@@ -1,12 +1,16 @@
 package com.mylyrics.div;
 
-import java.time.DateTimeException;
-import java.time.Period;
+import java.io.IOException;
 import java.util.Scanner;
 import java.time.LocalDate;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 public class Main {
     public static final Scanner TECLADO = new Scanner(System.in);
+    public static Logger logger = Logger.getLogger(Main.class.getName());
+
 
     public static Persona iniciarSesion() {
         boolean isAdmin = false;
@@ -45,7 +49,7 @@ public class Main {
                     }
                 }
             } catch (Exception e) {
-                System.err.println("Error al encontrar el usuario.");
+                logger.warning(e.getMessage() + " 'No se encuentra el usuario en la base de datos'\n");
             }
         } while (!login);
 
@@ -81,6 +85,7 @@ public class Main {
     public static void menuAdmin() {
         int opcion = 0;
         boolean exit = false;
+        String nombreAlbum, nombreCancion, nombreAutor;
 
         do {
             do {
@@ -96,17 +101,22 @@ public class Main {
 
             switch (opcion) {
                 case 1:
-                    Album.formularioAlbum();
+                    System.out.print("\nIngrese nombre del autor: ");
+                    nombreAutor = TECLADO.nextLine();
+                    Autor autor = new Autor(nombreAutor);
+                    System.out.print("\nIngrese nombre del album: ");
+                    nombreAlbum = TECLADO.nextLine();
+                    Album.formularioAlbum(nombreAutor, nombreAlbum);
                     break;
                 case 2:
                     System.out.print("\nIngrese nombre del autor: ");
-                    String nombreAutor = TECLADO.nextLine();
+                    nombreAutor = TECLADO.nextLine();
                     System.out.print("\nIngrese nombre del album ");
-                    String nombreAlbum = TECLADO.nextLine();
+                    nombreAlbum = TECLADO.nextLine();
                     System.out.print("\nIngrese nombre del genero ");
                     String nombreGenero = TECLADO.nextLine();
                     System.out.print("\nIngrese nombre de cancion: ");
-                    String nombreCancion = TECLADO.nextLine();
+                    nombreCancion = TECLADO.nextLine();
                     System.out.print("\nIngrese letra de la cancion: ");
                     String letraCancion = TECLADO.nextLine();
                     System.out.print("\nIngrese letra traducida de la cancion: ");
@@ -114,13 +124,27 @@ public class Main {
                     Cancion.formularioCancion(nombreAutor, nombreAlbum, nombreGenero, nombreCancion, letraCancion, traduccionCancion);
                     break;
                 case 3:
-                    Autor.formularioAutor();
+                    System.out.print("\nIngrese el nombre artístico del autor: ");
+                    nombreAutor = TECLADO.nextLine();
+                    Autor.formularioAutor(nombreAutor);
                     break;
                 case 4:
-                    Cancion.cambiarTraduccion();
+                    System.out.print("\nIngrese el nombre del autor: ");
+                    nombreAutor = TECLADO.nextLine();
+
+                    System.out.print("\nIngrese el nombre de la cancion: ");
+                    nombreCancion = TECLADO.nextLine();
+
+                    System.out.print("\nIngrese traduccion de la letra ");
+                    String letra = TECLADO.nextLine();
+                    Cancion.cambiarTraduccion(nombreAutor, nombreCancion, letra);
                     break;
                 case 5:
-                    Autor.cambiarNombreAutor();
+                    System.out.print("\nIngrese el nombre del autor: ");
+                    nombreAutor = TECLADO.nextLine();
+                    System.out.print("\nIngrese nuevo nombre del autor: ");
+                    String nuevoNombreAutor = TECLADO.nextLine();
+                    Autor.cambiarNombreAutor(nombreAutor, nuevoNombreAutor);
                     break;
                 default:
                     exit = true;
@@ -133,6 +157,7 @@ public class Main {
 
         int opcion = 0;
         boolean exit = false;
+
 
         do {
             do {
@@ -152,6 +177,7 @@ public class Main {
                     System.out.print("Ingrese el nombre del autor: ");
                     String nombreAutor = TECLADO.nextLine();
                     user.mostrarCancionesPorAutor(nombreAutor);
+
                     break;
                 case 2:
                     user.mostrarGeneros();
@@ -186,7 +212,13 @@ public class Main {
 
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+
+        FileHandler fileLog = new FileHandler("mylog.log",true);
+        SimpleFormatter formatter = new SimpleFormatter();
+        fileLog.setFormatter(formatter);
+        logger.addHandler(fileLog);
+
         Persona persona = menu();
 
         if (persona.isAdmin()) {

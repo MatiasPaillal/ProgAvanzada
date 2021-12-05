@@ -112,14 +112,9 @@ public class Album {
         }
     }
 
-    public static void formularioAlbum() {
+    public static void formularioAlbum(String nombreAutor, String nombreAlbum) {
 
-        System.out.print("\nIngrese nombre del autor: ");
-        String nombreAutor = TECLADO.nextLine();
         Autor autor = new Autor(nombreAutor);
-        System.out.print("\nIngrese nombre del album: ");
-        String nombreAlbum = TECLADO.nextLine();
-
         Album album = new Album(nombreAlbum, autor);
         boolean bol = false;
         int anio;
