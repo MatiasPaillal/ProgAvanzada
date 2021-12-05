@@ -199,8 +199,25 @@ public class Persona {
         }
 
     }
+    public boolean agregarFavoritos(Cancion cancion) {
+        ConexionBD bd = new ConexionBD();
+
+        try {
+            ConexionBD.setPs(bd.getConexion().prepareStatement("INSERT INTO cancionesfavoritas (nombreUsuarioPersona,idCancion) VALUES(?,?)"));
+
+            ConexionBD.getPs().setString(1, this.nombreUsuario);
+            ConexionBD.getPs().setInt(2, cancion.getId());
+            ConexionBD.getPs().executeUpdate();
+
+            return true;
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+            return false;
+        }
+    }
 
     public void traerFavoritos() {
+        this.favoritos.clear();
         try {
             ConexionBD bd = new ConexionBD();
 

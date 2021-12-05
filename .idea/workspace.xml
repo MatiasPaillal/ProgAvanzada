@@ -6,26 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="b22a6bd4-c1a2-4bd5-8321-f2952f685604" name="Changes" comment="Cambios">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Album.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Autor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Autor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Cancion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Cancion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/ConexionBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/ConexionBD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Persona.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Administrador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Administrador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Album.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Album.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Autor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Autor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Cancion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Cancion.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Persona.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mylyrics/div/Persona.class" afterDir="false" />
     </list>
-    <list id="9bf0b5c8-1235-4f17-b2ba-77350c7cf7a1" name="Changes by Francisco" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Album.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Autor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Autor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Cancion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Cancion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Persona.java" afterDir="false" />
-    </list>
+    <list id="9bf0b5c8-1235-4f17-b2ba-77350c7cf7a1" name="Changes by Francisco" comment="Changes by Francisco" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,80 +28,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Autor.java">
-      <ranges>
-        <range start1="88" end1="90" start2="88" end2="90" changelist="9bf0b5c8-1235-4f17-b2ba-77350c7cf7a1" />
-        <range start1="91" end1="92" start2="91" end2="92" changelist="9bf0b5c8-1235-4f17-b2ba-77350c7cf7a1" />
-        <range start1="93" end1="96" start2="93" end2="95" changelist="9bf0b5c8-1235-4f17-b2ba-77350c7cf7a1" />
-        <range start1="103" end1="104" start2="102" end2="103" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
-        <range start1="105" end1="107" start2="104" end2="105" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
-        <range start1="111" end1="112" start2="109" end2="110" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
-        <range start1="113" end1="118" start2="111" end2="111" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Main.java">
-      <ranges>
-        <range start1="2" end1="4" start2="2" end2="3" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
-        <range start1="6" end1="6" start2="5" end2="8" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
-        <range start1="9" end1="9" start2="11" end2="13" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
-        <range start1="16" end1="18" start2="20" end2="21" changelist="9bf0b5c8-1235-4f17-b2ba-77350c7cf7a1" />
-        <range start1="44" end1="44" start2="47" end2="48" changelist="9bf0b5c8-1235-4f17-b2ba-77350c7cf7a1" />
-        <range start1="47" end1="48" start2="51" end2="52" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
-        <range start1="49" end1="49" start2="53" end2="54" changelist="9bf0b5c8-1235-4f17-b2ba-77350c7cf7a1" />
-        <range start1="51" end1="52" start2="56" end2="57" changelist="9bf0b5c8-1235-4f17-b2ba-77350c7cf7a1" />
-        <range start1="83" end1="83" start2="88" end2="89" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
-        <range start1="98" end1="99" start2="104" end2="110" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
-        <range start1="102" end1="103" start2="113" end2="114" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
-        <range start1="104" end1="105" start2="115" end2="116" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
-        <range start1="108" end1="109" start2="119" end2="120" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
-        <range start1="116" end1="117" start2="127" end2="130" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
-        <range start1="119" end1="120" start2="132" end2="141" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
-        <range start1="122" end1="123" start2="143" end2="148" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
-        <range start1="135" end1="135" start2="160" end2="161" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
-        <range start1="143" end1="143" start2="169" end2="170" changelist="9bf0b5c8-1235-4f17-b2ba-77350c7cf7a1" />
-        <range start1="154" end1="154" start2="181" end2="182" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
-        <range start1="179" end1="179" start2="207" end2="211" changelist="9bf0b5c8-1235-4f17-b2ba-77350c7cf7a1" />
-        <range start1="184" end1="184" start2="216" end2="221" changelist="9bf0b5c8-1235-4f17-b2ba-77350c7cf7a1" />
-        <range start1="187" end1="187" start2="224" end2="225" changelist="9bf0b5c8-1235-4f17-b2ba-77350c7cf7a1" />
-        <range start1="188" end1="189" start2="226" end2="233" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Cancion.java">
-      <ranges>
-        <range start1="2" end1="4" start2="2" end2="5" changelist="9bf0b5c8-1235-4f17-b2ba-77350c7cf7a1" />
-        <range start1="6" end1="7" start2="7" end2="7" changelist="9bf0b5c8-1235-4f17-b2ba-77350c7cf7a1" />
-        <range start1="18" end1="18" start2="18" end2="19" changelist="9bf0b5c8-1235-4f17-b2ba-77350c7cf7a1" />
-        <range start1="23" end1="24" start2="24" end2="25" changelist="9bf0b5c8-1235-4f17-b2ba-77350c7cf7a1" />
-        <range start1="27" end1="29" start2="28" end2="51" changelist="9bf0b5c8-1235-4f17-b2ba-77350c7cf7a1" />
-        <range start1="138" end1="141" start2="160" end2="161" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
-        <range start1="142" end1="149" start2="162" end2="162" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
-        <range start1="150" end1="152" start2="163" end2="164" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
-        <range start1="172" end1="172" start2="184" end2="211" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Persona.java">
-      <ranges>
-        <range start1="2" end1="2" start2="2" end2="3" changelist="9bf0b5c8-1235-4f17-b2ba-77350c7cf7a1" />
-        <range start1="20" end1="21" start2="21" end2="22" changelist="9bf0b5c8-1235-4f17-b2ba-77350c7cf7a1" />
-        <range start1="23" end1="24" start2="24" end2="25" changelist="9bf0b5c8-1235-4f17-b2ba-77350c7cf7a1" />
-        <range start1="29" end1="36" start2="30" end2="30" changelist="9bf0b5c8-1235-4f17-b2ba-77350c7cf7a1" />
-        <range start1="181" end1="187" start2="175" end2="181" changelist="9bf0b5c8-1235-4f17-b2ba-77350c7cf7a1" />
-        <range start1="188" end1="188" start2="182" end2="222" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/com/mylyrics/div/Album.java">
-      <ranges>
-        <range start1="31" end1="32" start2="31" end2="31" changelist="9bf0b5c8-1235-4f17-b2ba-77350c7cf7a1" />
-        <range start1="98" end1="100" start2="97" end2="99" changelist="9bf0b5c8-1235-4f17-b2ba-77350c7cf7a1" />
-        <range start1="101" end1="102" start2="100" end2="101" changelist="9bf0b5c8-1235-4f17-b2ba-77350c7cf7a1" />
-        <range start1="103" end1="107" start2="102" end2="105" changelist="9bf0b5c8-1235-4f17-b2ba-77350c7cf7a1" />
-        <range start1="114" end1="115" start2="112" end2="113" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
-        <range start1="116" end1="118" start2="114" end2="114" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
-        <range start1="119" end1="122" start2="115" end2="115" changelist="b22a6bd4-c1a2-4bd5-8321-f2952f685604" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectId" id="1zF1aoR931n4ZhK9YxQ6ozeyKDA" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -217,9 +130,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Log" />
-        <item itemvalue="JUnit.TestCancion.comprobarFormulariov1" />
         <item itemvalue="JUnit.TestCancion.comprobarFormulariov2" />
+        <item itemvalue="JUnit.TestCancion.comprobarFormulariov1" />
+        <item itemvalue="Application.Log" />
         <item itemvalue="JUnit.TestCancion.comprobarFormulario" />
       </list>
     </recent_temporary>
@@ -258,7 +171,8 @@
       <workItem from="1638565446204" duration="134000" />
       <workItem from="1638565822343" duration="73000" />
       <workItem from="1638567686164" duration="10053000" />
-      <workItem from="1638652777336" duration="12273000" />
+      <workItem from="1638652777336" duration="12650000" />
+      <workItem from="1638736340669" duration="4567000" />
     </task>
     <task id="LOCAL-00001" summary="proyecto">
       <created>1633729251929</created>
@@ -407,7 +321,21 @@
       <option name="project" value="LOCAL" />
       <updated>1638577161851</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Cambios">
+      <created>1638665419935</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1638665419935</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Changes by Francisco">
+      <created>1638665443890</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1638665443890</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
