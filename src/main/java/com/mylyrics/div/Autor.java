@@ -86,14 +86,13 @@ public class Autor {
         try {
             ConexionBD bd = new ConexionBD();
 
-            ConexionBD.setPs(bd.getConexion().prepareStatement("SELECT * FROM autor WHERE id = ?"));
-            ConexionBD.getPs().setInt(1, this.id);
+            bd.setPs(bd.getConexion().prepareStatement("SELECT * FROM autor WHERE id = ?"));
+            bd.getPs().setInt(1, this.id);
 
-            ConexionBD.setRs(ConexionBD.getPs().executeQuery());
+            bd.setRs(bd.getPs().executeQuery());
 
-            if (ConexionBD.getRs().next()) {
-                this.nombreArtistico = ConexionBD.getRs().getString("nombreArtistico");
-
+            if (bd.getRs().next()) {
+                this.nombreArtistico = bd.getRs().getString("nombreArtistico");
             }
 
         } catch (Exception e) {

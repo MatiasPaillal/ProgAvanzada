@@ -1,5 +1,6 @@
 package com.mylyrics.div;
 
+import java.sql.ResultSet;
 import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.Period;
@@ -18,21 +19,14 @@ public class Persona {
     private String password;
     private String nombreUsuario;
     private LocalDate fechaNacimiento;
-    private ArrayList<Cancion> favoritos;
+    private ArrayList<Cancion> favoritos = new ArrayList<>();
     private boolean isAdmin;
 
-    public Persona(String nombre, String password, String nombreUsuario, boolean isAdmin) {
+    public Persona(String nombre, String password, String nombreUsuario, LocalDate fechaNacimiento, boolean isAdmin) {
         this.nombre = nombre;
         this.password = password;
         this.nombreUsuario = nombreUsuario;
         this.isAdmin = isAdmin;
-    }
-
-    public Persona(String nombre, String password, String nombreUsuario, LocalDate fechaNacimiento) {
-        this.nombre = nombre;
-        this.password = password;
-        this.nombreUsuario = nombreUsuario;
-        this.fechaNacimiento = fechaNacimiento;
     }
 
     public Persona() {
@@ -179,12 +173,12 @@ public class Persona {
     }
 
     public void mostrarFavoritas() {
-        this.favoritos.stream().forEach(cancion ->
-                System.out.println(cancion.getNombre() +
-                        cancion.getNameAutor() +
-                        cancion.getGenero() +
-                        cancion.getNameAlbum())
-        );
+        try {
+            this.favoritos.stream().forEach(cancion ->
+                    System.out.println(cancion.getId() + ") " + cancion.getNombre()));
+        } catch (NullPointerException e) {
+            System.out.println("Usted no tiene canciones en su lista de canciones favoritas");
+        }
     }
 
     public boolean quitarCancionFavoritos(int idCancion) {

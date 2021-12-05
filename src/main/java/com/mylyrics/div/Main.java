@@ -18,8 +18,7 @@ public class Main {
         String nombreUsuario;
         String password = "";
         String nombre = "";
-
-        LocalDate fechaNacimiento = LocalDate.now();
+        LocalDate fechaNacimiento = null;
 
         do {
             System.out.print("\nIngrese su nombre de usuario: ");
@@ -46,14 +45,16 @@ public class Main {
                         login = true;
                     } else {
                         System.out.println("Contraseña Incorrecta.");
+                        logger.warning("Se está intentando iniciar sesion a la cuenta del siguiente nombre de usuario: " + nombreUsuario + "\n");
                     }
                 }
             } catch (Exception e) {
                 logger.warning(e.getMessage() + " 'No se encuentra el usuario en la base de datos'\n");
             }
+
         } while (!login);
 
-        return new Persona(nombre, password, nombreUsuario, isAdmin);
+        return new Persona(nombre, password, nombreUsuario, fechaNacimiento, isAdmin);
     }
 
     public static Persona registrarUsuario() {
@@ -166,6 +167,7 @@ public class Main {
                 System.out.println("2) Género");
                 System.out.println("3) Nombre");
                 System.out.println("4) Nombre del Albúm");
+                System.out.println("5) Canciones Favoritas");
                 System.out.println("0) Cerrar Sesión");
                 opcion = TECLADO.nextInt();
                 TECLADO.nextLine();
@@ -203,14 +205,24 @@ public class Main {
                     }
 
                     break;
+                case 5:
+                    user.traerFavoritos();
+                    user.mostrarFavoritas();
+                    break;
 
                 default:
                     exit = true;
                     break;
             }
+            System.out.println("Ingrese el número correspondiente a la canción que desee ver");
+            int idCancionElegida = TECLADO.nextInt();
+            TECLADO.nextLine(); //Limpiar Buffer
+            Cancion cancionElegida = new Cancion(idCancionElegida);
+            cancionElegida.mostrarInfoCancion();
         } while (!exit);
 
     }
+
 
     public static void main(String[] args) throws IOException {
 

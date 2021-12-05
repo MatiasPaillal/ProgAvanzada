@@ -29,7 +29,6 @@ public class Album {
     }
 
     public Album(String nombre) {
-        this.id = 0;
         this.nombre = nombre;
         agregarId();
     }
@@ -96,15 +95,14 @@ public class Album {
         try {
             ConexionBD bd = new ConexionBD();
 
-            ConexionBD.setPs(bd.getConexion().prepareStatement("SELECT * FROM album WHERE id = ?"));
-            ConexionBD.getPs().setInt(1, this.id);
+            bd.setPs(bd.getConexion().prepareStatement("SELECT * FROM album WHERE id = ?"));
+            bd.getPs().setInt(1, this.id);
 
-            ConexionBD.setRs(ConexionBD.getPs().executeQuery());
+            bd.setRs(bd.getPs().executeQuery());
 
-            if (ConexionBD.getRs().next()) {
-                this.nombre = ConexionBD.getRs().getString("nombreAlbum");
-                this.fecha = LocalDate.parse(ConexionBD.getRs().getString("fechaEstreno"));
-
+            if (bd.getRs().next()) {
+                this.nombre = bd.getRs().getString("nombreAlbum");
+                this.fecha = LocalDate.parse(bd.getRs().getString("fechaEstreno"));
             }
 
         } catch (Exception e) {

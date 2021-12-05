@@ -1,10 +1,10 @@
 package com.mylyrics.div;
 
-import java.sql.SQLException;
-import java.util.Scanner;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Cancion {
-    public static final Scanner TECLADO = new Scanner(System.in);
     private int id;
     private String nombre;
     private String letra;
@@ -16,17 +16,39 @@ public class Cancion {
     public Cancion() {
 
     }
+
     public static boolean formularioCancion(String nombreAutor, String nombreAlbum, String nombreGenero, String nombreCancion, String letraCancion, String traduccionCancion) {
 
         Autor autor = new Autor(nombreAutor);
         Album album = new Album(nombreAlbum);
         Genero genero = Genero.buscarGenero(nombreGenero);
-        Cancion cancion= new Cancion(nombreCancion, letraCancion, traduccionCancion, genero, autor, album);
+        Cancion cancion = new Cancion(nombreCancion, letraCancion, traduccionCancion, genero, autor, album);
         return cancion.ingresarCancion();
     }
 
-    public Cancion(String nombre) {
-        this.nombre = nombre;
+    public Cancion(int id) {
+        try {
+            ConexionBD bd = new ConexionBD();
+
+            bd.setPs(bd.getConexion().prepareStatement("SELECT * FROM cancion WHERE id = ?"));
+            bd.getPs().setInt(1, id);
+            bd.setRs(bd.getPs().executeQuery());
+
+            bd.getRs().next();
+
+            this.nombre = bd.getRs().getString("nombreCancion");
+            this.letra = bd.getRs().getString("letra");
+            this.letraTraducida = bd.getRs().getString("letraTraducida");
+
+            int idAutor = ConexionBD.getRs().getInt("idAutor");
+            int idGenero = ConexionBD.getRs().getInt("idGenero");
+            int idAlbum = ConexionBD.getRs().getInt("idAlbum");
+
+            rellenarCancion(id, nombre, letra, letraTraducida, idAlbum, idAutor, idGenero);
+
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
     }
 
     public Cancion(String nombre, Autor autor) {
